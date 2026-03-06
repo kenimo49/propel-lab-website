@@ -1,0 +1,22 @@
+---
+import { faqItems } from '../data/faq';
+---
+
+<section id="faq" class="py-20 bg-gray-50">
+  <div class="mx-auto max-w-3xl px-4">
+    <h2 class="text-3xl font-bold text-center mb-12">よくある質問</h2>
+    <div class="space-y-4">
+      {faqItems.map((item) => (
+        <details class="bg-white rounded-lg border border-gray-100 overflow-hidden group">
+          <summary class="px-6 py-4 cursor-pointer font-medium text-gray-800 hover:text-accent transition-colors list-none flex items-center justify-between">
+            <span>{item.question}</span>
+            <span class="text-gray-400 group-open:rotate-180 transition-transform">&#9660;</span>
+          </summary>
+          <div class="px-6 pb-4 text-gray-600 text-sm leading-relaxed">
+            {item.answer}
+          </div>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>

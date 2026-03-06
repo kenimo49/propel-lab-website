@@ -1,0 +1,181 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = '合同会社Propel-Lab — 仕組みとエンジニアリングの力で、次世代の経営モデルを構築する' } = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="canonical" href={canonicalURL.href} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="sitemap" href="/sitemap.xml" />
+
+    <!-- OGP -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL.href} />
+    <meta property="og:site_name" content="合同会社 Propel-Lab" />
+    <meta property="og:locale" content="ja_JP" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@kenimo49" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+
+    <!-- JSON-LD -->
+    <script type="application/ld+json" set:html={JSON.stringify([
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "合同会社 Propel-Lab",
+        "alternateName": "プロペルラボ",
+        "url": "https://www.propel-lab.co.jp/",
+        "email": "info@propel-lab.co.jp",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "福岡市中央区",
+          "addressRegion": "福岡県",
+          "addressCountry": "JP",
+          "streetAddress": "天神4丁目6-28 天神ファーストビル7階"
+        },
+        "foundingDate": "2025-04-24",
+        "founder": {
+          "@type": "Person",
+          "name": "井本 賢"
+        },
+        "description": "仕組みとエンジニアリングの力で、次世代の経営モデルを構築する"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "合同会社 Propel-Lab",
+        "url": "https://www.propel-lab.co.jp/"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "井本 賢",
+        "alternateName": "ken imoto",
+        "jobTitle": "代表社員",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "合同会社 Propel-Lab"
+        },
+        "knowsAbout": ["Android開発", "Web開発", "ロボティクス", "AIエージェント"],
+        "sameAs": [
+          "https://linkedin.com/in/kenimo49",
+          "https://qiita.com/kenimo49",
+          "https://zenn.dev/kenimo49",
+          "https://note.com/kenimo49",
+          "https://x.com/kenimo49",
+          "https://youtube.com/@Yureru-s4n",
+          "https://www.amazon.co.jp/stores/author/B0GQNPRCGF"
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "LearningMate",
+        "provider": { "@type": "Organization", "name": "合同会社 Propel-Lab" },
+        "serviceType": "教育コンテンツ",
+        "description": "LLM活用の教育コンテンツ企画・制作・販売"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "AI-Loop",
+        "provider": { "@type": "Organization", "name": "合同会社 Propel-Lab" },
+        "serviceType": "マーケティング自動化",
+        "description": "SNS運用自動化・コンテンツマーケティング支援"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "AutoCrew",
+        "provider": { "@type": "Organization", "name": "合同会社 Propel-Lab" },
+        "serviceType": "業務自動化コンサルティング",
+        "description": "LLMによる自動実行エージェント構成・業務最適化"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Yureru",
+        "provider": { "@type": "Organization", "name": "合同会社 Propel-Lab" },
+        "serviceType": "音楽・クリエイティブ",
+        "description": "感動の構造化と音楽化プロジェクト"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Propel-Labはどのような会社ですか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "合同会社Propel-Labは、AI・LLM技術を活用した事業を展開する福岡発のテクノロジー企業です。教育コンテンツ制作、マーケティング自動化、業務自動化コンサルティング、音楽・クリエイティブ事業の4つの柱で活動しています。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "LLMOとは何ですか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "LLMO（LLM Optimization）とは、ChatGPTやClaudeなどのLLM（大規模言語モデル）がWebサイトの情報を正確に理解・引用できるよう最適化する手法です。構造化データ、Markdown形式のコンテンツ提供、llms.txtなどを活用します。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "どのようなサービスを提供していますか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "LearningMate（教育コンテンツ）、AI-Loop（マーケティング自動化）、AutoCrew（業務自動化コンサルティング）、Yureru（音楽・クリエイティブ）の4事業を展開しています。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "お問い合わせ方法を教えてください。",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "info@propel-lab.co.jp までメールでお問い合わせください。事業内容に関するご質問、コンサルティングのご相談など、お気軽にご連絡ください。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "代表者の経歴を教えてください。",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "代表の井本賢はエンジニア歴8年。Android/Web開発、ロボティクス、AIエージェントを専門とし、元ロボットエンジニアとしてPepper × SLAMの共同開発に携わりました。Kindle著者として4冊を出版し、Qiitaでは39,000以上のPVを獲得しています。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "AutoCrewではどのような業務自動化が可能ですか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "LLMを活用したマルチエージェント構成により、定型業務の自動化、データ処理、レポート生成など幅広い業務の効率化が可能です。MCP（Model Context Protocol）やCLI Skillを活用した高度なエージェント設計を提供します。"
+            }
+          }
+        ]
+      }
+    ])} />
+
+    <title>{title}</title>
+  </head>
+  <body class="bg-white text-gray-800 antialiased">
+    <slot />
+  </body>
+</html>

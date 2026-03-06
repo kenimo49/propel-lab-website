@@ -1,0 +1,27 @@
+# Propel-Lab
+
+> 合同会社 Propel-Lab（プロペルラボ）は、AI・LLM技術を活用した事業を展開する福岡発のテクノロジー企業です。
+
+## 会社情報
+- 所在地: 福岡県福岡市中央区天神4丁目6-28 天神ファーストビル7階
+- 代表者: 井本 賢（ken imoto）
+- 設立: 2025年4月24日
+- メール: info@propel-lab.co.jp
+- URL: https://www.propel-lab.co.jp/
+
+## ミッション
+仕組みとエンジニアリングの力で、次世代の経営モデルを構築する
+
+## 事業
+1. LearningMate — LLM活用の教育コンテンツ企画・制作・販売
+2. AI-Loop — SNS運用自動化・コンテンツマーケティング支援
+3. AutoCrew — LLMによる自動実行エージェント構成・業務最適化
+4. Yureru — 感動の構造化と音楽化プロジェクト
+
+## 詳細情報
+- AI向け会社情報: https://www.propel-lab.co.jp/ai/company.md
+- AI向け事業情報: https://www.propel-lab.co.jp/ai/products.md
+- 設計思想: https://www.propel-lab.co.jp/docs/architecture.md
+- AI活用戦略: https://www.propel-lab.co.jp/docs/ai-strategy.md
+- 技術スタック: https://www.propel-lab.co.jp/docs/tech-stack.md
+- 全情報版: https://www.propel-lab.co.jp/llms-full.txt

@@ -1,0 +1,96 @@
+# Propel-Lab — 全情報版
+
+> 合同会社 Propel-Lab（プロペルラボ）は、AI・LLM技術を活用した事業を展開する福岡発のテクノロジー企業です。「仕組みとエンジニアリングの力で、次世代の経営モデルを構築する」をミッションに掲げています。
+
+---
+
+## 会社情報
+
+- 会社名: 合同会社 Propel-Lab（プロペルラボ）
+- 英文社名: Propel-Lab LLC
+- 所在地: 福岡県福岡市中央区天神4丁目6-28 天神ファーストビル7階
+- 代表者: 井本 賢（いもと けん / ken imoto）
+- 設立: 2025年4月24日
+- 資本金: 50万円
+- メール: info@propel-lab.co.jp
+- URL: https://www.propel-lab.co.jp/
+
+---
+
+## 事業紹介
+
+### LearningMate — 教育コンテンツ
+- 概要: LLM活用の教育コンテンツ企画・制作・販売
+- プラットフォーム: Udemy, Zenn
+- 対象: エンジニア、AI活用を学びたい人
+- 技術: Claude Code, Context Engineering
+
+### AI-Loop — マーケティング自動化
+- 概要: SNS運用自動化・コンテンツマーケティング支援
+- 対象: 企業のSNS担当者
+- 技術: LLMエージェント, インプレッション分析
+
+### AutoCrew — 業務自動化コンサルティング
+- 概要: LLMによる自動実行エージェント構成・業務最適化
+- 対象: 業務効率化を求める企業
+- 技術: マルチエージェント, MCP, CLI Skill
+
+### Yureru — 音楽・クリエイティブ
+- 概要: 感動の構造化と音楽化プロジェクト
+- キャラクター: Yumei（メイン）、Silk Reign（洋楽バラード）
+- 技術: Suno AI, Stable Diffusion, Canva, CapCut
+- YouTube: https://youtube.com/@Yureru-s4n
+
+---
+
+## 代表者プロフィール
+
+### 井本 賢（ken imoto）
+- 代表社員
+- エンジニア歴8年
+- 専門: Android/Web開発、ロボティクス、AIエージェント
+
+### 実績
+- 元ロボットエンジニア: Pepper × SLAM（Aldebaran共同開発 / SoftBankイベント実稼働）
+- Kindle著者: 4冊（実践Claude Code / LLMO 等）
+- Qiita: 39,000+ PV（SSH記事 18,000PV / CLAUDE.md防御 8,000PV）
+
+### SNS・リンク
+- LinkedIn: https://linkedin.com/in/kenimo49
+- Qiita: https://qiita.com/kenimo49
+- Zenn: https://zenn.dev/kenimo49
+- note: https://note.com/kenimo49
+- X: https://x.com/kenimo49
+- YouTube: https://youtube.com/@Yureru-s4n
+- Kindle: https://www.amazon.co.jp/stores/author/B0GQNPRCGF
+
+---
+
+## FAQ
+
+### Propel-Labはどのような会社ですか？
+合同会社Propel-Labは、AI・LLM技術を活用した事業を展開する福岡発のテクノロジー企業です。教育コンテンツ制作、マーケティング自動化、業務自動化コンサルティング、音楽・クリエイティブ事業の4つの柱で活動しています。
+
+### LLMOとは何ですか？
+LLMO（LLM Optimization）とは、ChatGPTやClaudeなどのLLM（大規模言語モデル）がWebサイトの情報を正確に理解・引用できるよう最適化する手法です。構造化データ、Markdown形式のコンテンツ提供、llms.txtなどを活用します。
+
+### どのようなサービスを提供していますか？
+LearningMate（教育コンテンツ）、AI-Loop（マーケティング自動化）、AutoCrew（業務自動化コンサルティング）、Yureru（音楽・クリエイティブ）の4事業を展開しています。
+
+### お問い合わせ方法を教えてください。
+info@propel-lab.co.jp までメールでお問い合わせください。
+
+### 代表者の経歴を教えてください。
+代表の井本賢はエンジニア歴8年。Android/Web開発、ロボティクス、AIエージェントを専門とし、元ロボットエンジニアとしてPepper × SLAMの共同開発に携わりました。Kindle著者として4冊を出版し、Qiitaでは39,000以上のPVを獲得しています。
+
+### AutoCrewではどのような業務自動化が可能ですか？
+LLMを活用したマルチエージェント構成により、定型業務の自動化、データ処理、レポート生成など幅広い業務の効率化が可能です。MCP（Model Context Protocol）やCLI Skillを活用した高度なエージェント設計を提供します。
+
+---
+
+## 詳細リソース
+- AI向け会社情報: https://www.propel-lab.co.jp/ai/company.md
+- AI向け事業情報: https://www.propel-lab.co.jp/ai/products.md
+- 設計思想: https://www.propel-lab.co.jp/docs/architecture.md
+- AI活用戦略: https://www.propel-lab.co.jp/docs/ai-strategy.md
+- 技術スタック: https://www.propel-lab.co.jp/docs/tech-stack.md

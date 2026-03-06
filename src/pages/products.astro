@@ -1,0 +1,60 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { services } from '../data/services';
+---
+
+<Layout title="事業紹介 — 合同会社 Propel-Lab" description="合同会社Propel-Labの事業紹介。LearningMate、AI-Loop、AutoCrew、Yureruの4事業を展開。">
+  <Header />
+  <main class="pt-24 pb-20">
+    <div class="mx-auto max-w-4xl px-4">
+      <h1 class="text-4xl font-bold mb-4">事業紹介</h1>
+      <p class="text-gray-600 mb-12">AI・LLM技術を軸にした4つの事業を展開しています。</p>
+
+      <div class="space-y-12">
+        {services.map((service) => (
+          <section class="bg-white rounded-xl p-8 border border-gray-100 shadow-sm">
+            <div class="mb-4">
+              <h2 class="text-2xl font-bold">{service.name}</h2>
+              <p class="text-sm text-accent font-medium">{service.category}</p>
+            </div>
+            <p class="text-gray-700 mb-4 text-lg">{service.summary}</p>
+            <div class="grid sm:grid-cols-2 gap-4 text-sm">
+              <div>
+                <span class="font-medium text-gray-500">対象:</span>
+                <span class="text-gray-700 ml-1">{service.target}</span>
+              </div>
+              {service.platforms && (
+                <div>
+                  <span class="font-medium text-gray-500">プラットフォーム:</span>
+                  <span class="text-gray-700 ml-1">{service.platforms.join(', ')}</span>
+                </div>
+              )}
+              {service.characters && (
+                <div>
+                  <span class="font-medium text-gray-500">キャラクター:</span>
+                  <span class="text-gray-700 ml-1">{service.characters.join(', ')}</span>
+                </div>
+              )}
+              {service.youtube && (
+                <div>
+                  <span class="font-medium text-gray-500">YouTube:</span>
+                  <a href={service.youtube} target="_blank" rel="noopener noreferrer" class="text-accent hover:underline ml-1">
+                    チャンネルを見る
+                  </a>
+                </div>
+              )}
+            </div>
+            <div class="mt-4 flex flex-wrap gap-2">
+              {service.tech.map((t) => (
+                <span class="text-xs px-3 py-1 bg-navy/5 text-navy rounded-full">{t}</span>
+              ))}
+            </div>
+          </section>
+        ))}
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Layout>

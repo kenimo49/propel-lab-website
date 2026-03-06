@@ -222,3 +222,83 @@ export async function GET() {
 | /products | products.astro | products.md.ts |
 | /faq | (indexに含む) | faq.md.ts |
 | /llms.txt | - | public/llms.txt |
+
+## テスト: Playwright Test Agents
+
+Playwright Test Agentsを使ってLLMO対策の品質を自動検証する。
+
+### セットアップ
+```bash
+npm install -D @playwright/test
+npx playwright install
+```
+
+### テスト構成
+```
+tests/
+├── llmo/
+│   ├── json-ld.spec.ts       # JSON-LD構造化データ検証
+│   ├── llms-txt.spec.ts      # llms.txt / llms-full.txt 検証
+│   ├── url-md.spec.ts        # URL.mdパターン検証（Content-Type含む）
+│   ├── ai-directory.spec.ts  # /ai/ ディレクトリ検証
+│   ├── docs-directory.spec.ts # /docs/ ディレクトリ検証
+│   └── robots-txt.spec.ts    # robots.txt クローラー許可検証
+├── seo/
+│   ├── meta-tags.spec.ts     # title/description/OGP検証
+│   └── sitemap.spec.ts       # sitemap.xml 検証
+└── pages/
+    ├── index.spec.ts         # トップページ表示検証
+    ├── company.spec.ts       # 会社概要ページ検証
+    └── products.spec.ts      # 事業紹介ページ検証
+```
+
+### テスト内容
+
+#### JSON-LD検証 (json-ld.spec.ts)
+- Organization スキーマが存在するか
+- Person スキーマにsameAsリンクが含まれるか
+- Service スキーマが4事業分あるか
+- FAQPage スキーマが存在するか
+
+#### URL.md検証 (url-md.spec.ts)
+- /company.md のレスポンスが200か
+- Content-Typeが text/markdown か
+- Markdown内に会社名が含まれるか
+- /products.md も同様に検証
+
+#### llms.txt検証 (llms-txt.spec.ts)
+- /llms.txt が200で返るか
+- /ai/ と /docs/ へのリンクが含まれるか
+- /llms-full.txt が存在するか
+
+#### robots.txt検証 (robots-txt.spec.ts)
+- GPTBot Allow: / が含まれるか
+- ClaudeBot Allow: / が含まれるか
+- Sitemap URLが正しいか
+
+### playwright.config.ts
+```typescript
+import { defineConfig } from '@playwright/test';
+
+export default defineConfig({
+  webServer: {
+    command: 'npm run preview',
+    port: 4321,
+    reuseExistingServer: true,
+  },
+  use: {
+    baseURL: 'http://localhost:4321',
+  },
+});
+```
+
+### npm scripts追加
+```json
+{
+  "scripts": {
+    "test": "playwright test",
+    "test:llmo": "playwright test tests/llmo/",
+    "test:seo": "playwright test tests/seo/"
+  }
+}
+```

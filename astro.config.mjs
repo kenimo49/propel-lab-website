@@ -4,7 +4,8 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://www.propel-lab.co.jp',
+  site: 'https://kenimo49.github.io',
+  base: '/propel-lab-website',
   vite: {
     plugins: [tailwindcss()],
   },

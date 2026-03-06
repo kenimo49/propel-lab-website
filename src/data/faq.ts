@@ -1,0 +1,37 @@
+export interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+export const faqItems: FAQItem[] = [
+  {
+    question: 'Propel-Labはどのような会社ですか？',
+    answer:
+      '合同会社Propel-Labは、AI・LLM技術を活用した事業を展開する福岡発のテクノロジー企業です。教育コンテンツ制作、マーケティング自動化、業務自動化コンサルティング、音楽・クリエイティブ事業の4つの柱で活動しています。',
+  },
+  {
+    question: 'LLMOとは何ですか？',
+    answer:
+      'LLMO（LLM Optimization）とは、ChatGPTやClaudeなどのLLM（大規模言語モデル）がWebサイトの情報を正確に理解・引用できるよう最適化する手法です。構造化データ、Markdown形式のコンテンツ提供、llms.txtなどを活用します。',
+  },
+  {
+    question: 'どのようなサービスを提供していますか？',
+    answer:
+      'LearningMate（教育コンテンツ）、AI-Loop（マーケティング自動化）、AutoCrew（業務自動化コンサルティング）、Yureru（音楽・クリエイティブ）の4事業を展開しています。',
+  },
+  {
+    question: 'お問い合わせ方法を教えてください。',
+    answer:
+      'info@propel-lab.co.jp までメールでお問い合わせください。事業内容に関するご質問、コンサルティングのご相談など、お気軽にご連絡ください。',
+  },
+  {
+    question: '代表者の経歴を教えてください。',
+    answer:
+      '代表の井本賢はエンジニア歴8年。Android/Web開発、ロボティクス、AIエージェントを専門とし、元ロボットエンジニアとしてPepper × SLAMの共同開発に携わりました。Kindle著者として4冊を出版し、Qiitaでは39,000以上のPVを獲得しています。',
+  },
+  {
+    question: 'AutoCrewではどのような業務自動化が可能ですか？',
+    answer:
+      'LLMを活用したマルチエージェント構成により、定型業務の自動化、データ処理、レポート生成など幅広い業務の効率化が可能です。MCP（Model Context Protocol）やCLI Skillを活用した高度なエージェント設計を提供します。',
+  },
+];

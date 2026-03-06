@@ -1,8 +1,9 @@
+import { url } from '../helpers';
 import { test, expect } from '@playwright/test';
 
 test.describe('/ai/ ディレクトリ', () => {
   test('/ai/company.md が存在する', async ({ request }) => {
-    const res = await request.get('/ai/company.md');
+    const res = await request.get(url('/ai/company.md'));
     expect(res.status()).toBe(200);
     const text = await res.text();
     expect(text).toContain('Propel-Lab');
@@ -10,7 +11,7 @@ test.describe('/ai/ ディレクトリ', () => {
   });
 
   test('/ai/products.md が存在する', async ({ request }) => {
-    const res = await request.get('/ai/products.md');
+    const res = await request.get(url('/ai/products.md'));
     expect(res.status()).toBe(200);
     const text = await res.text();
     expect(text).toContain('LearningMate');
@@ -22,17 +23,17 @@ test.describe('/ai/ ディレクトリ', () => {
 
 test.describe('/docs/ ディレクトリ', () => {
   test('/docs/architecture.md が存在する', async ({ request }) => {
-    const res = await request.get('/docs/architecture.md');
+    const res = await request.get(url('/docs/architecture.md'));
     expect(res.status()).toBe(200);
   });
 
   test('/docs/ai-strategy.md が存在する', async ({ request }) => {
-    const res = await request.get('/docs/ai-strategy.md');
+    const res = await request.get(url('/docs/ai-strategy.md'));
     expect(res.status()).toBe(200);
   });
 
   test('/docs/tech-stack.md が存在する', async ({ request }) => {
-    const res = await request.get('/docs/tech-stack.md');
+    const res = await request.get(url('/docs/tech-stack.md'));
     expect(res.status()).toBe(200);
   });
 });

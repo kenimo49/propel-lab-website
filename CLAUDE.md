@@ -160,3 +160,65 @@ Sitemap: https://www.propel-lab.co.jp/sitemap.xml
 - 個人の住所・電話番号は公開しない
 - 資本金50万円は会社概要に含めてOK
 - persona-manager等のプロダクト名は公開しない（事業名で表記）
+
+## 重要: URL.md パターン（Jeremy Howard llms.txt 拡張）
+
+全ページで「同じURLに .md を付けるとMarkdownが返る」を実装する。
+
+### 設計方針
+- **人間向け**: `/company` → HTML（Astroページ）
+- **LLM向け**: `/company.md` → 生Markdown（Content-Type: text/markdown）
+- 同じデータソース（Content Collections）から2系統出力
+
+### 実装パターン: Astro Endpoint (.md.ts)
+
+```
+src/content/
+├── company/
+│   └── index.md          # データソース（1箇所で管理）
+├── services/
+│   ├── learningmate.md
+│   ├── ai-loop.md
+│   ├── autocrew.md
+│   └── yureru.md
+└── faq/
+    └── index.md
+
+src/pages/
+├── company.astro          # HTML版
+├── company.md.ts          # Markdown版（endpoint）
+├── products.astro         # HTML版
+├── products.md.ts         # Markdown版
+├── faq.md.ts              # Markdown版
+└── [slug].md.ts           # 動的Markdown配信（必要に応じて）
+```
+
+### Endpoint実装例
+
+```typescript
+// src/pages/company.md.ts
+import { getEntry } from 'astro:content';
+
+export async function GET() {
+  const entry = await getEntry('company', 'index');
+  return new Response(entry.body, {
+    headers: {
+      'Content-Type': 'text/markdown; charset=utf-8',
+    },
+  });
+}
+```
+
+### ⚠️ 注意
+- `src/pages/foo.md` はAstroではHTML生成用。生Markdownを返すには `.md.ts` endpoint を使う
+- 静的ビルドでは `getStaticPaths()` で生成対象を列挙
+- Content Collections で型安全にデータ管理
+- `/ai/` と `/docs/` のMarkdownファイルもこのパターンに統合可能
+
+### 対象URL一覧
+| URL | HTML | Markdown |
+|-----|------|----------|
+| /company | company.astro | company.md.ts |
+| /products | products.astro | products.md.ts |
+| /faq | (indexに含む) | faq.md.ts |
+| /llms.txt | - | public/llms.txt |

@@ -19,15 +19,14 @@
 
 ## 代表者プロフィール
 
-井本 賢（ken imoto）。エンジニア歴8年。Android/Web開発、ロボティクス、AIエージェントを専門とする。
+井本 賢（ken imoto）。ソフトウェアエンジニア歴8年。Android/Web開発、エッジコンピューティング、ロボティクスを経て、現在はAIエージェント設計・コンテキストエンジニアリング・LLM活用に注力。
 
-### 実績
-- 元ロボットエンジニア: Pepper × SLAM（Aldebaran共同開発 / SoftBankイベント実稼働）
-- Kindle著者: 4冊（実践Claude Code / LLMO 等）
-- Qiita: 39,000+ PV（SSH記事 18,000PV / CLAUDE.md防御 8,000PV）
+- 5プロジェクト並列での開発経験。AWS/Azure/Firebaseの3大クラウドを同時に扱った実績
+- LLM×コンテキストエンジニアリングの導入でTypeScript開発の生産性300%向上を実現
+- 著書「実践Claude Code」（Zenn / Amazon Kindle）、「LLMO — AIに選ばれる最適化戦略」（Zenn）
 
 ### リンク
-- LinkedIn: https://linkedin.com/in/kenimo49
+- LinkedIn: https://www.linkedin.com/in/kenimo49
 - Qiita: https://qiita.com/kenimo49
 - Zenn: https://zenn.dev/kenimo49
 - note: https://note.com/kenimo49

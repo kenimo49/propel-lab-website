@@ -28,7 +28,7 @@ title: 会社概要 — 合同会社 Propel-Lab
 
 ## 代表者プロフィール
 
-井本 賢（ken imoto）。エンジニア歴8年。Android/Web開発、ロボティクス、AIエージェントを専門とする。元ロボットエンジニアとしてPepper × SLAM（Aldebaran共同開発 / SoftBankイベント実稼働）に携わる。Kindle著者として4冊出版（実践Claude Code / LLMO 等）。Qiita 39,000+ PV。
+ソフトウェアエンジニア歴8年。Android/Web開発、エッジコンピューティング、ロボティクスを経て、現在はAIエージェント設計・コンテキストエンジニアリング・LLM活用に注力。5プロジェクト並列での開発経験があり、AWS/Azure/Firebaseの3大クラウドを同時に扱った実績を持つ。LLM×コンテキストエンジニアリングの導入でTypeScript開発の生産性300%向上を実現。著書「実践Claude Code」（Zenn / Amazon Kindle）、「LLMO — AIに選ばれる最適化戦略」（Zenn）。詳しい経歴は[LinkedIn](https://www.linkedin.com/in/kenimo49)をご覧ください。
 
 ### SNS・リンク
 

@@ -91,7 +91,7 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
     <section class="py-20 bg-white">
       <div class="mx-auto max-w-4xl px-4">
         <h2 class="text-3xl font-bold mb-8">人気曲</h2>
-        <div class="grid md:grid-cols-1 gap-6">
+        <div class="grid md:grid-cols-2 gap-6">
           <div class="rounded-xl overflow-hidden shadow-sm">
             <div class="aspect-video">
               <iframe
@@ -107,7 +107,25 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
             </div>
             <div class="p-4 bg-gray-50">
               <h3 class="font-bold">【失恋ソング】君がいた場所で – Yumei</h3>
-              <p class="text-sm text-gray-500">12,000+ 回再生 — 切ない想い出の歌</p>
+              <p class="text-sm text-gray-500">12,000+ 回再生</p>
+            </div>
+          </div>
+          <div class="rounded-xl overflow-hidden shadow-sm">
+            <div class="aspect-video">
+              <iframe
+                width="100%"
+                height="100%"
+                src="https://www.youtube.com/embed/TFOfX2S8nSk"
+                title="【泣ける曲】あなたを想い出す夜に – Yumei"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+                loading="lazy"
+              ></iframe>
+            </div>
+            <div class="p-4 bg-gray-50">
+              <h3 class="font-bold">【泣ける曲】あなたを想い出す夜に – Yumei</h3>
+              <p class="text-sm text-gray-500">切ない想い出の歌・感動するバラード</p>
             </div>
           </div>
         </div>

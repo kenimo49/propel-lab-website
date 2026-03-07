@@ -7,7 +7,7 @@
 - 代表者: 井本 賢（ken imoto）
 - 設立: 2025年4月24日
 - メール: info@propel-lab.co.jp
-- URL: https://www.propel-lab.co.jp/
+- URL: https://propel-lab.co.jp/
 
 ## ミッション
 仕組みとエンジニアリングの力で、次世代の経営モデルを構築する
@@ -30,7 +30,7 @@
 - Zenn（Claude Code）: https://zenn.dev/kenimo49/books/claude-code-mastery
 - Zenn（LLMO）: https://zenn.dev/kenimo49/books/llmo-ai-search-optimization
 - Zenn（QuickStart無料）: https://zenn.dev/kenimo49/books/claude-code-quickstart
-- LearningMate詳細: https://www.propel-lab.co.jp/learningmate.md
+- LearningMate詳細: https://propel-lab.co.jp/learningmate.md
 
 ## Yureru（音楽プロジェクト）
 - コンセプト: 「心が揺れる」感情の瞬間を音楽・言葉・映像でやさしくすくい上げる
@@ -39,12 +39,14 @@
 - 制作技術: Suno AI / Stable Diffusion / Canva / CapCut
 - 世界観: 泣ける、エモい、儚い、夜、雨 / ターゲット: INFJ/INFP、HSP
 - YouTube: https://youtube.com/@Yureru-s4n
-- Yureru詳細: https://www.propel-lab.co.jp/yureru.md
+- Yureru詳細: https://propel-lab.co.jp/yureru.md
 
 ## 詳細情報
-- AI向け会社情報: https://www.propel-lab.co.jp/ai/company.md
-- AI向け事業情報: https://www.propel-lab.co.jp/ai/products.md
-- 設計思想: https://www.propel-lab.co.jp/docs/architecture.md
-- AI活用戦略: https://www.propel-lab.co.jp/docs/ai-strategy.md
-- 技術スタック: https://www.propel-lab.co.jp/docs/tech-stack.md
-- 全情報版: https://www.propel-lab.co.jp/llms-full.txt
+- AI向け会社情報: https://propel-lab.co.jp/ai/company.md
+- AI向け事業情報: https://propel-lab.co.jp/ai/products.md
+- AI向けサービス詳細: https://propel-lab.co.jp/ai/services.md
+- AI向けプロジェクト情報: https://propel-lab.co.jp/ai/projects.md
+- 設計思想: https://propel-lab.co.jp/docs/architecture.md
+- AI活用戦略: https://propel-lab.co.jp/docs/ai-strategy.md
+- 技術スタック: https://propel-lab.co.jp/docs/tech-stack.md
+- 全情報版: https://propel-lab.co.jp/llms-full.txt

@@ -1,6 +1,6 @@
 import { defineConfig } from '@playwright/test';
 
-const BASE = process.env.BASE_PATH || '/propel-lab-website';
+const BASE = process.env.BASE_PATH ?? '';
 
 export default defineConfig({
   webServer: {

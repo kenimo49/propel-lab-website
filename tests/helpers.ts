@@ -1,10 +1,10 @@
 // Base path for all test URLs
-export const BASE = process.env.BASE_PATH || '/propel-lab-website';
+export const BASE = process.env.BASE_PATH ?? '';
 
 export function url(path: string): string {
-  // Avoid double slash
+  const base = BASE || '';
   if (path.startsWith('/')) {
-    return `${BASE}${path}`;
+    return `${base}${path}`;
   }
-  return `${BASE}/${path}`;
+  return path ? `${base}/${path}` : base || '/';
 }

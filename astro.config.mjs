@@ -5,8 +5,8 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://kenimo49.github.io',
-  base: '/propel-lab-website',
+  site: 'https://propel-lab.co.jp',
+  base: '/',
   integrations: [sitemap()],
   vite: {
     plugins: [tailwindcss()],

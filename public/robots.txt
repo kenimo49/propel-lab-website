@@ -10,4 +10,4 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-Sitemap: https://www.propel-lab.co.jp/sitemap.xml
+Sitemap: https://propel-lab.co.jp/sitemap-index.xml

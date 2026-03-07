@@ -1,0 +1,3 @@
+Contact: mailto:info@propel-lab.co.jp
+Preferred-Languages: ja, en
+Canonical: https://propel-lab.co.jp/.well-known/security.txt

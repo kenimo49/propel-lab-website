@@ -10,4 +10,9 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
+User-agent: PerplexityBot
+Allow: /
+
 Sitemap: https://propel-lab.co.jp/sitemap-index.xml
+
+# Canonical domain: https://propel-lab.co.jp (www redirects here)

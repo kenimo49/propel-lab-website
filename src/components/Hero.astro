@@ -3,7 +3,10 @@ import { company } from '../data/company';
 ---
 
 <section class="relative min-h-screen flex items-center justify-center bg-navy text-white overflow-hidden">
-  <div class="absolute inset-0 bg-gradient-to-br from-navy via-navy-light to-navy opacity-90"></div>
+  <div class="absolute inset-0">
+    <img src={`${import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : import.meta.env.BASE_URL + '/'}images/hero-blueprint.jpg`} alt="" class="w-full h-full object-cover" />
+  </div>
+  <div class="absolute inset-0 bg-navy/80"></div>
   <div class="relative z-10 mx-auto max-w-4xl px-4 text-center py-32">
     <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
       {company.name}

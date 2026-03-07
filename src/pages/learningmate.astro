@@ -9,6 +9,7 @@ const books = [
   {
     title: '実践Claude Code — コンテキストエンジニアリングで開発が変わる',
     titleEn: 'Practical Claude Code',
+    cover: 'book-claude-code-ja.jpg',
     description: '「Vibe Codingって何？」から始めて、プロダクトのアウトプットを300%向上させたエンジニアの全記録。Claude Codeの設計思想から、CLAUDE.mdの実践パターン、チーム開発、セキュリティまで——本気で使い倒すための実践書。',
     price: '¥980（Kindle）/ ¥1,000（Zenn）',
     tags: ['Claude Code', 'コンテキストエンジニアリング', 'CLAUDE.md', 'AI開発', 'Vibe Coding'],
@@ -21,6 +22,7 @@ const books = [
   {
     title: 'LLMO — AIがあなたのコンテンツを見つける3つの経路',
     titleEn: 'LLMO — Three Paths for AI to Discover Your Content',
+    cover: 'book-llmo-ja.jpg',
     description: 'SEOの次に来る最適化手法「LLMO（LLM Optimization）」。ChatGPTやClaudeなどのAIがWebサイトの情報を正確に理解・引用できるよう最適化する実践ガイド。構造化データ、llms.txt、Markdown配信の3つの経路を徹底解説。',
     price: '¥1,980（Kindle）',
     tags: ['LLMO', 'LLM Optimization', 'SEO', '構造化データ', 'llms.txt', 'AI検索'],
@@ -32,6 +34,7 @@ const books = [
   {
     title: 'Practical Claude Code — Context Engineering That Transforms Your Development',
     titleEn: 'Practical Claude Code (English)',
+    cover: 'book-claude-code-en.jpg',
     description: 'The complete record of an engineer who improved product output by 300% with Claude Code. From design philosophy to CLAUDE.md patterns, team development, and security — a practical guide for serious usage.',
     price: '¥0（Kindle Unlimited）/ ¥1,250',
     tags: ['Claude Code', 'Context Engineering', 'AI Development', 'English'],
@@ -43,6 +46,7 @@ const books = [
   {
     title: 'LLMO — Three Paths for AI to Discover Your Content',
     titleEn: 'LLMO (English)',
+    cover: 'book-llmo-en.jpg',
     description: 'The next optimization methodology after SEO: LLMO (LLM Optimization). A practical guide to help AI systems like ChatGPT and Claude accurately understand and cite your website content.',
     price: '¥0（Kindle Unlimited）/ ¥1,250',
     tags: ['LLMO', 'LLM Optimization', 'SEO', 'Structured Data', 'English'],
@@ -107,7 +111,11 @@ const zennBooks = [
         <p class="text-gray-500 mb-8">エンジニアのためのAI実践シリーズ — 著者: ken imoto</p>
         <div class="space-y-6">
           {books.map((book) => (
-            <div class="bg-white rounded-xl p-6 md:p-8 shadow-sm border border-gray-100">
+            <div class="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 flex flex-col md:flex-row">
+              <div class="md:w-48 flex-shrink-0">
+                <img src={`${base}images/${book.cover}`} alt={book.title} class="w-full h-full object-cover" />
+              </div>
+              <div class="p-6 md:p-8">
               <p class="text-xs text-accent font-medium mb-2">{book.series}</p>
               <h3 class="text-xl font-bold mb-2">{book.title}</h3>
               <p class="text-gray-600 mb-4">{book.description}</p>
@@ -124,6 +132,7 @@ const zennBooks = [
                 {book.tags.map((tag) => (
                   <span class="text-xs px-2 py-1 bg-navy/5 text-navy rounded-full">{tag}</span>
                 ))}
+              </div>
               </div>
             </div>
           ))}

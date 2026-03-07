@@ -14,12 +14,14 @@ import { services } from '../data/services';
 
       <div class="space-y-12">
         {services.map((service) => (
-          <section class={`bg-white rounded-xl p-8 border border-gray-100 shadow-sm ${service.id === 'yureru' ? 'cursor-pointer hover:shadow-md transition-shadow' : ''}`}
-            data-href={service.id === 'yureru' ? `${import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : import.meta.env.BASE_URL + '/'}yureru` : undefined}>
+          <section class={`bg-white rounded-xl p-8 border border-gray-100 shadow-sm ${(service.id === 'yureru' || service.id === 'learningmate') ? 'cursor-pointer hover:shadow-md transition-shadow' : ''}`}
+            data-href={(service.id === 'yureru' || service.id === 'learningmate') ? `${import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : import.meta.env.BASE_URL + '/'}${service.id === 'yureru' ? 'yureru' : 'learningmate'}` : undefined}>
             <div class="mb-4">
               <h2 class="text-2xl font-bold">
                 {service.id === 'yureru' ? (
                   <a href={`${import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : import.meta.env.BASE_URL + '/'}yureru`} class="hover:text-accent transition-colors">{service.name} →</a>
+                ) : service.id === 'learningmate' ? (
+                  <a href={`${import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : import.meta.env.BASE_URL + '/'}learningmate`} class="hover:text-accent transition-colors">{service.name} →</a>
                 ) : service.name}
               </h2>
               <p class="text-sm text-accent font-medium">{service.category}</p>

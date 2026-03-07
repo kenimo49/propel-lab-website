@@ -1,0 +1,189 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+
+const books = [
+  {
+    title: '実践Claude Code — コンテキストエンジニアリングで開発が変わる',
+    titleEn: 'Practical Claude Code',
+    description: '「Vibe Codingって何？」から始めて、プロダクトのアウトプットを300%向上させたエンジニアの全記録。Claude Codeの設計思想から、CLAUDE.mdの実践パターン、チーム開発、セキュリティまで——本気で使い倒すための実践書。',
+    price: '¥980（Kindle）/ ¥1,000（Zenn）',
+    tags: ['Claude Code', 'コンテキストエンジニアリング', 'CLAUDE.md', 'AI開発', 'Vibe Coding'],
+    links: {
+      kindle: 'https://www.amazon.co.jp/stores/author/B0GQNPRCGF',
+      zenn: 'https://zenn.dev/kenimo49/books/claude-code-mastery',
+    },
+    series: 'エンジニアのためのAI実践シリーズ 巻1',
+  },
+  {
+    title: 'LLMO — AIがあなたのコンテンツを見つける3つの経路',
+    titleEn: 'LLMO — Three Paths for AI to Discover Your Content',
+    description: 'SEOの次に来る最適化手法「LLMO（LLM Optimization）」。ChatGPTやClaudeなどのAIがWebサイトの情報を正確に理解・引用できるよう最適化する実践ガイド。構造化データ、llms.txt、Markdown配信の3つの経路を徹底解説。',
+    price: '¥1,980（Kindle）',
+    tags: ['LLMO', 'LLM Optimization', 'SEO', '構造化データ', 'llms.txt', 'AI検索'],
+    links: {
+      kindle: 'https://www.amazon.co.jp/stores/author/B0GQNPRCGF',
+    },
+    series: 'エンジニアのためのAI実践シリーズ 巻2',
+  },
+  {
+    title: 'Practical Claude Code — Context Engineering That Transforms Your Development',
+    titleEn: 'Practical Claude Code (English)',
+    description: 'The complete record of an engineer who improved product output by 300% with Claude Code. From design philosophy to CLAUDE.md patterns, team development, and security — a practical guide for serious usage.',
+    price: '¥0（Kindle Unlimited）/ ¥1,250',
+    tags: ['Claude Code', 'Context Engineering', 'AI Development', 'English'],
+    links: {
+      kindle: 'https://www.amazon.co.jp/stores/author/B0GQNPRCGF',
+    },
+    series: 'English Edition',
+  },
+  {
+    title: 'LLMO — Three Paths for AI to Discover Your Content',
+    titleEn: 'LLMO (English)',
+    description: 'The next optimization methodology after SEO: LLMO (LLM Optimization). A practical guide to help AI systems like ChatGPT and Claude accurately understand and cite your website content.',
+    price: '¥0（Kindle Unlimited）/ ¥1,250',
+    tags: ['LLMO', 'LLM Optimization', 'SEO', 'Structured Data', 'English'],
+    links: {
+      kindle: 'https://www.amazon.co.jp/stores/author/B0GQNPRCGF',
+    },
+    series: 'English Edition',
+  },
+];
+
+const zennBooks = [
+  {
+    title: '実践Claude Code — コンテキストエンジニアリングで開発が変わる',
+    description: 'Kindle版と同内容。Zennプラットフォームで購読可能。',
+    price: '¥1,000',
+    url: 'https://zenn.dev/kenimo49/books/claude-code-mastery',
+    type: '有料Book',
+  },
+  {
+    title: 'Claude Codeクイックスタート — 30分で始めるAIエージェント開発',
+    description: 'Claude Codeの導入から実践活用まで。AGENTS.mdの書き方、ツールの使い分け、RAGを超えるAgentic Searchまで、現役エンジニアの実践知を凝縮。',
+    price: '無料',
+    url: 'https://zenn.dev/kenimo49/books/claude-code-quickstart',
+    type: '無料miniBook',
+  },
+];
+---
+
+<Layout title="LearningMate — 出版・教育コンテンツ | Propel-Lab" description="Propel-Labの教育コンテンツ事業LearningMate。Claude Code、LLMO、コンテキストエンジニアリングの実践書をKindle・Zennで出版。エンジニアのためのAI実践シリーズ。">
+  <Header />
+  <main class="pt-20">
+    <!-- Hero -->
+    <section class="relative py-32 bg-navy text-white overflow-hidden">
+      <div class="absolute inset-0">
+        <img src={`${base}images/learningmate-education.jpg`} alt="" class="w-full h-full object-cover" />
+      </div>
+      <div class="absolute inset-0 bg-navy/80"></div>
+      <div class="relative z-10 mx-auto max-w-4xl px-4 text-center">
+        <h1 class="text-4xl md:text-6xl font-bold mb-6">LearningMate</h1>
+        <p class="text-lg md:text-xl text-gray-300 leading-relaxed max-w-2xl mx-auto">
+          エンジニアのためのAI実践シリーズ<br/>
+          Claude Code・LLMO・コンテキストエンジニアリングの実践知を書籍で届ける
+        </p>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="py-20 bg-white">
+      <div class="mx-auto max-w-4xl px-4">
+        <h2 class="text-3xl font-bold mb-8">LearningMateとは</h2>
+        <div class="space-y-4 text-gray-700 leading-relaxed">
+          <p>LearningMateは、Propel-Labの教育コンテンツ事業です。AIエージェント開発、コンテキストエンジニアリング、LLMO（LLM Optimization）など、最先端のAI活用手法を実践的な書籍・教材として提供しています。</p>
+          <p>すべての書籍は、代表の井本賢が実際のプロダクト開発で得た知見に基づいて執筆。理論だけでなく、実測データ・実装パターン・失敗事例を含む実践書です。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kindle Books -->
+    <section class="py-20 bg-gray-50">
+      <div class="mx-auto max-w-4xl px-4">
+        <h2 class="text-3xl font-bold mb-4">Kindle書籍</h2>
+        <p class="text-gray-500 mb-8">エンジニアのためのAI実践シリーズ — 著者: ken imoto</p>
+        <div class="space-y-6">
+          {books.map((book) => (
+            <div class="bg-white rounded-xl p-6 md:p-8 shadow-sm border border-gray-100">
+              <p class="text-xs text-accent font-medium mb-2">{book.series}</p>
+              <h3 class="text-xl font-bold mb-2">{book.title}</h3>
+              <p class="text-gray-600 mb-4">{book.description}</p>
+              <div class="flex flex-wrap items-center gap-4 mb-4">
+                <span class="text-sm font-medium text-navy">{book.price}</span>
+                {Object.entries(book.links).map(([name, url]) => (
+                  <a href={url} target="_blank" rel="noopener noreferrer"
+                     class="text-sm text-accent hover:underline">
+                    {name === 'kindle' ? 'Amazon Kindle →' : 'Zenn →'}
+                  </a>
+                ))}
+              </div>
+              <div class="flex flex-wrap gap-2">
+                {book.tags.map((tag) => (
+                  <span class="text-xs px-2 py-1 bg-navy/5 text-navy rounded-full">{tag}</span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+        <div class="mt-8 text-center">
+          <a href="https://www.amazon.co.jp/stores/author/B0GQNPRCGF" target="_blank" rel="noopener noreferrer"
+             class="inline-block px-8 py-3 bg-[#FF9900] hover:bg-[#E88B00] text-white font-semibold rounded-lg transition-colors">
+            Amazon著者ページを見る
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Zenn Books -->
+    <section class="py-20 bg-white">
+      <div class="mx-auto max-w-4xl px-4">
+        <h2 class="text-3xl font-bold mb-8">Zenn Books</h2>
+        <div class="grid md:grid-cols-2 gap-6">
+          {zennBooks.map((book) => (
+            <a href={book.url} target="_blank" rel="noopener noreferrer"
+               class="block bg-gray-50 rounded-xl p-6 hover:shadow-md transition-shadow border border-gray-100">
+              <p class="text-xs text-accent font-medium mb-2">{book.type}</p>
+              <h3 class="font-bold mb-2">{book.title}</h3>
+              <p class="text-sm text-gray-600 mb-3">{book.description}</p>
+              <span class="text-sm font-medium text-navy">{book.price}</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- What is LLMO -->
+    <section class="py-20 bg-gray-50">
+      <div class="mx-auto max-w-4xl px-4">
+        <h2 class="text-3xl font-bold mb-8">LLMOとは — AIに選ばれる最適化戦略</h2>
+        <div class="space-y-4 text-gray-700 leading-relaxed">
+          <p><strong>LLMO（LLM Optimization）</strong>とは、ChatGPT、Claude、Gemini、PerplexityなどのLLM（大規模言語モデル）がWebサイトの情報を正確に理解・引用できるよう最適化する手法です。</p>
+          <p>従来のSEO（検索エンジン最適化）がGoogleのクローラーを対象としていたのに対し、LLMOはAIのクローラー（GPTBot、ClaudeBot等）を対象とします。</p>
+          <p>具体的には以下の3つの経路で最適化します：</p>
+          <ol class="list-decimal pl-6 space-y-2">
+            <li><strong>構造化データ（JSON-LD）</strong> — Schema.orgに準拠した構造化マークアップ</li>
+            <li><strong>llms.txt</strong> — Jeremy Howard提唱のAI向けサイトガイドファイル</li>
+            <li><strong>Markdown配信（URL.mdパターン）</strong> — 同一URLの.md版でAIが直接読めるコンテンツを提供</li>
+          </ol>
+          <p>このサイト自体がLLMO最適化の実践例です。<a href={`${base}llms.txt`} class="text-accent hover:underline">/llms.txt</a>や<a href={`${base}company.md`} class="text-accent hover:underline">/company.md</a>で確認できます。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- What is Context Engineering -->
+    <section class="py-20 bg-white">
+      <div class="mx-auto max-w-4xl px-4">
+        <h2 class="text-3xl font-bold mb-8">コンテキストエンジニアリングとは</h2>
+        <div class="space-y-4 text-gray-700 leading-relaxed">
+          <p><strong>コンテキストエンジニアリング</strong>とは、AIコーディングツール（Claude Code等）が最大のパフォーマンスを発揮するために、プロジェクトの文脈情報を構造化・最適化する設計手法です。</p>
+          <p>CLAUDE.md、AGENTS.md、TOOLS.mdなどの設計ファイルを適切に配置することで、AIエージェントがコードベースを正確に理解し、品質の高いコードを生成できるようになります。</p>
+          <p>Propel-Labでは、コンテキストエンジニアリングの導入により<strong>TypeScript開発の生産性を300%向上</strong>させた実績があります。</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>

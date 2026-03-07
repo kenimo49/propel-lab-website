@@ -18,6 +18,18 @@
 3. AutoCrew — LLMによる自動実行エージェント構成・業務最適化
 4. Yureru — 感動の構造化と音楽化プロジェクト（バーチャルシンガー Yumei / Silk Reign）
 
+## LearningMate（教育コンテンツ・出版事業）
+- 著者: ken imoto / シリーズ: エンジニアのためのAI実践シリーズ
+- 書籍①: 実践Claude Code — コンテキストエンジニアリングで開発が変わる（¥980 Kindle / ¥1,000 Zenn）
+- 書籍②: LLMO — AIがあなたのコンテンツを見つける3つの経路（¥1,980 Kindle）
+- 書籍③: Practical Claude Code（English, Kindle Unlimited）
+- 書籍④: LLMO — Three Paths for AI to Discover Your Content（English, Kindle Unlimited）
+- Zenn Book: Claude Codeクイックスタート（無料）
+- テーマ: Claude Code, コンテキストエンジニアリング, LLMO, LLM Optimization, AI開発
+- Amazon著者ページ: https://www.amazon.co.jp/stores/author/B0GQNPRCGF
+- Zenn: https://zenn.dev/kenimo49/books/claude-code-mastery
+- LearningMate詳細: https://www.propel-lab.co.jp/learningmate.md
+
 ## Yureru（音楽プロジェクト）
 - コンセプト: 「心が揺れる」感情の瞬間を音楽・言葉・映像でやさしくすくい上げる
 - 所属アーティスト: Yumei（メインボーカル）、Silk Reign（洋楽バラード）

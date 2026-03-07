@@ -21,7 +21,7 @@
 ## LearningMate（教育コンテンツ・出版事業）
 - 著者: ken imoto / シリーズ: エンジニアのためのAI実践シリーズ
 - 書籍①: 実践Claude Code — コンテキストエンジニアリングで開発が変わる（¥980 Kindle / ¥1,000 Zenn）
-- 書籍②: LLMO — AIがあなたのコンテンツを見つける3つの経路（¥1,980 Kindle）
+- 書籍②: LLMO — AIがあなたのコンテンツを見つける3つの経路（¥1,980 Kindle / Zenn）
 - 書籍③: Practical Claude Code（English, Kindle Unlimited）
 - 書籍④: LLMO — Three Paths for AI to Discover Your Content（English, Kindle Unlimited）
 - Zenn Book: Claude Codeクイックスタート（無料）

@@ -26,6 +26,7 @@ LearningMateは、合同会社Propel-Labの教育コンテンツ事業です。A
 - **内容**: SEOの次に来る最適化手法「LLMO（LLM Optimization）」の実践ガイド。構造化データ、llms.txt、Markdown配信の3つの経路を徹底解説。
 - **キーワード**: LLMO, LLM Optimization, SEO, 構造化データ, JSON-LD, llms.txt, AI検索, ChatGPT, Claude, Perplexity
 - **Kindle**: https://www.amazon.co.jp/stores/author/B0GQNPRCGF
+- **Zenn**: https://zenn.dev/kenimo49/books/llmo-ai-search-optimization
 
 ### Practical Claude Code — Context Engineering That Transforms Your Development
 - **シリーズ**: English Edition

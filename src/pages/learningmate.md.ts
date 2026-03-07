@@ -17,15 +17,15 @@ LearningMateは、合同会社Propel-Labの教育コンテンツ事業です。A
 - **価格**: ¥980（Kindle）/ ¥1,000（Zenn Book）
 - **内容**: Claude Codeの設計思想から、CLAUDE.mdの実践パターン、チーム開発、セキュリティまで。コンテキストエンジニアリングの導入でTypeScript開発の生産性300%向上を実現した全記録。
 - **キーワード**: Claude Code, コンテキストエンジニアリング, CLAUDE.md, AGENTS.md, Vibe Coding, AI開発
-- **Kindle**: https://www.amazon.co.jp/stores/author/B0GQNPRCGF
+- **Kindle**: https://amzn.asia/d/03Qnb8QT
 - **Zenn**: https://zenn.dev/kenimo49/books/claude-code-mastery
 
 ### LLMO — AIがあなたのコンテンツを見つける3つの経路
 - **シリーズ**: エンジニアのためのAI実践シリーズ 巻2
-- **価格**: ¥1,980（Kindle）
+- **価格**: ¥1,980（Kindle / Zenn）
 - **内容**: SEOの次に来る最適化手法「LLMO（LLM Optimization）」の実践ガイド。構造化データ、llms.txt、Markdown配信の3つの経路を徹底解説。
 - **キーワード**: LLMO, LLM Optimization, SEO, 構造化データ, JSON-LD, llms.txt, AI検索, ChatGPT, Claude, Perplexity
-- **Kindle**: https://www.amazon.co.jp/stores/author/B0GQNPRCGF
+- **Kindle**: https://amzn.asia/d/02zAl1VB
 - **Zenn**: https://zenn.dev/kenimo49/books/llmo-ai-search-optimization
 
 ### Practical Claude Code — Context Engineering That Transforms Your Development
@@ -33,14 +33,14 @@ LearningMateは、合同会社Propel-Labの教育コンテンツ事業です。A
 - **価格**: ¥0（Kindle Unlimited）/ ¥1,250
 - **内容**: English version of "実践Claude Code". Complete record of 300% productivity improvement through Context Engineering.
 - **Keywords**: Claude Code, Context Engineering, AI Development, CLAUDE.md
-- **Kindle**: https://www.amazon.co.jp/stores/author/B0GQNPRCGF
+- **Kindle**: https://amzn.asia/d/0hU3BP1i
 
 ### LLMO — Three Paths for AI to Discover Your Content
 - **シリーズ**: English Edition
 - **価格**: ¥0（Kindle Unlimited）/ ¥1,250
 - **内容**: English version. The next optimization methodology after SEO: LLMO (LLM Optimization).
 - **Keywords**: LLMO, LLM Optimization, SEO, Structured Data, llms.txt
-- **Kindle**: https://www.amazon.co.jp/stores/author/B0GQNPRCGF
+- **Kindle**: https://amzn.asia/d/04rulUoN
 
 ## Zenn Books
 

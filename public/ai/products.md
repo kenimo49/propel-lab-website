@@ -1,11 +1,22 @@
 # 合同会社 Propel-Lab — 事業情報
 
 ## LearningMate
-- **カテゴリ**: 教育コンテンツ
+- **カテゴリ**: 教育コンテンツ・出版事業
 - **概要**: LLM活用の教育コンテンツ企画・制作・販売
-- **プラットフォーム**: Udemy, Zenn
+- **著者**: ken imoto（井本 賢）
+- **シリーズ**: エンジニアのためのAI実践シリーズ
+- **プラットフォーム**: Amazon Kindle, Zenn, Udemy（予定）
 - **対象**: エンジニア、AI活用を学びたい人
-- **技術**: Claude Code, Context Engineering
+- **技術**: Claude Code, Context Engineering, LLMO
+- **書籍一覧**:
+  - 実践Claude Code — コンテキストエンジニアリングで開発が変わる（Kindle ¥980 / Zenn ¥1,000）
+  - LLMO — AIがあなたのコンテンツを見つける3つの経路（Kindle ¥1,980 / Zenn）
+  - Practical Claude Code（English, Kindle Unlimited）
+  - LLMO — Three Paths for AI to Discover Your Content（English, Kindle Unlimited）
+  - Claude Codeクイックスタート（Zenn 無料）
+- **Amazon著者ページ**: https://www.amazon.co.jp/stores/author/B0GQNPRCGF
+- **Zenn**: https://zenn.dev/kenimo49
+- **詳細**: https://www.propel-lab.co.jp/learningmate.md
 
 ## AI-Loop
 - **カテゴリ**: マーケティング自動化

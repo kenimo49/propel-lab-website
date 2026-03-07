@@ -27,7 +27,9 @@
 - Zenn Book: Claude Codeクイックスタート（無料）
 - テーマ: Claude Code, コンテキストエンジニアリング, LLMO, LLM Optimization, AI開発
 - Amazon著者ページ: https://www.amazon.co.jp/stores/author/B0GQNPRCGF
-- Zenn: https://zenn.dev/kenimo49/books/claude-code-mastery
+- Zenn（Claude Code）: https://zenn.dev/kenimo49/books/claude-code-mastery
+- Zenn（LLMO）: https://zenn.dev/kenimo49/books/llmo-ai-search-optimization
+- Zenn（QuickStart無料）: https://zenn.dev/kenimo49/books/claude-code-quickstart
 - LearningMate詳細: https://www.propel-lab.co.jp/learningmate.md
 
 ## Yureru（音楽プロジェクト）

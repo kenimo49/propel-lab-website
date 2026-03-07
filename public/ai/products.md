@@ -19,9 +19,19 @@
 - **対象**: 業務効率化を求める企業
 - **技術**: マルチエージェント, MCP, CLI Skill
 
-## Yureru
+## Yureru — 心が揺れる音楽プロジェクト
 - **カテゴリ**: 音楽・クリエイティブ
-- **概要**: 感動の構造化と音楽化プロジェクト
-- **キャラクター**: Yumei（メイン）、Silk Reign（洋楽バラード）
-- **技術**: Suno AI, Stable Diffusion, Canva, CapCut
+- **概要**: 「心が揺れる」感情の瞬間を音楽・言葉・映像でやさしくすくい上げるプロジェクト
+- **コンセプト**: 繊細な"揺れ"に焦点を当て、意味を限定しない"余白"のある表現で、聴く人それぞれの心にそっと寄り添う
+- **所属アーティスト**:
+  - **Yumei（ユメイ）**: メインボーカル。"名前のつかない気持ち"を歌にするバーチャルシンガー
+  - **Silk Reign（シルクレイン）**: 洋楽バラード。深い感情を繊細な声で表現
+- **数字**: 公開楽曲409本以上 / YouTube登録者3,815人
+- **世界観**: 泣ける、エモい、儚い、夜、雨、手紙、孤独、記憶
+- **ターゲット**: INFJ/INFP、繊細さん（HSP）、孤独感を抱える人
+- **制作技術**: Suno AI（楽曲生成）、Stable Diffusion（アートワーク）、Canva（サムネイル）、CapCut（映像編集）
+- **配信**: YouTube、Spotify（Soundrop経由）
 - **YouTube**: https://youtube.com/@Yureru-s4n
+- **note**: https://note.com/yureru_propel
+- **Instagram**: https://www.instagram.com/yureru_s4n/
+- **詳細**: https://www.propel-lab.co.jp/yureru.md

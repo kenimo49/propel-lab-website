@@ -3,7 +3,7 @@ import { test, expect } from '@playwright/test';
 
 test.describe('ナビゲーション・内部リンク', () => {
   test('全ページの内部リンクが404にならない', async ({ page, request }) => {
-    const pagesToCheck = ['/', '/products', '/company'];
+    const pagesToCheck = ['/', '/products', '/company', '/yureru'];
     const checked = new Set<string>();
     const errors: string[] = [];
 

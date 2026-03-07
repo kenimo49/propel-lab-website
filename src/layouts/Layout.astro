@@ -125,6 +125,25 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
       },
       {
         "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Yureru",
+        "alternateName": "ゆれる",
+        "description": "「心が揺れる」感情の瞬間を音楽・言葉・映像でやさしくすくい上げるプロジェクト。バーチャルシンガーYumei、Silk Reignが所属。",
+        "genre": ["J-Pop", "バラード", "エモ", "アンビエント"],
+        "foundingDate": "2024",
+        "member": [
+          { "@type": "Person", "name": "Yumei", "alternateName": "ユメイ", "description": "メインボーカル。繊細な感情を歌に込めるバーチャルシンガー。" },
+          { "@type": "Person", "name": "Silk Reign", "alternateName": "シルクレイン", "description": "洋楽バラードを中心に深い感情を表現するアーティスト。" }
+        ],
+        "sameAs": [
+          "https://youtube.com/@Yureru-s4n",
+          "https://note.com/yureru_propel",
+          "https://www.instagram.com/yureru_s4n/"
+        ],
+        "parentOrganization": { "@type": "Organization", "name": "合同会社 Propel-Lab" }
+      },
+      {
+        "@context": "https://schema.org",
         "@type": "FAQPage",
         "mainEntity": [
           {

@@ -16,7 +16,16 @@
 1. LearningMate — LLM活用の教育コンテンツ企画・制作・販売
 2. AI-Loop — SNS運用自動化・コンテンツマーケティング支援
 3. AutoCrew — LLMによる自動実行エージェント構成・業務最適化
-4. Yureru — 感動の構造化と音楽化プロジェクト
+4. Yureru — 感動の構造化と音楽化プロジェクト（バーチャルシンガー Yumei / Silk Reign）
+
+## Yureru（音楽プロジェクト）
+- コンセプト: 「心が揺れる」感情の瞬間を音楽・言葉・映像でやさしくすくい上げる
+- 所属アーティスト: Yumei（メインボーカル）、Silk Reign（洋楽バラード）
+- 公開楽曲: 409本以上 / YouTube登録者: 3,815人
+- 制作技術: Suno AI / Stable Diffusion / Canva / CapCut
+- 世界観: 泣ける、エモい、儚い、夜、雨 / ターゲット: INFJ/INFP、HSP
+- YouTube: https://youtube.com/@Yureru-s4n
+- Yureru詳細: https://www.propel-lab.co.jp/yureru.md
 
 ## 詳細情報
 - AI向け会社情報: https://www.propel-lab.co.jp/ai/company.md

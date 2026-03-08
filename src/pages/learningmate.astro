@@ -74,6 +74,13 @@ const zennBooks = [
     type: '有料Book',
   },
   {
+    title: 'MCP実践セキュリティ — 本番導入で躓かないための完全ガイド',
+    description: '7サービスでファイルアップロード検証、OWASP MCP Top 10全解説、トークンコスト4サービス実測、freeeでの確定申告自動化の実体験。MCPを本番で安全に使うための完全ガイド。',
+    price: '無料',
+    url: 'https://zenn.dev/kenimo49/books/mcp-security-practice',
+    type: '無料Book',
+  },
+  {
     title: 'Claude Codeクイックスタート — 30分で始めるAIエージェント開発',
     description: 'Claude Codeの導入から実践活用まで。AGENTS.mdの書き方、ツールの使い分け、RAGを超えるAgentic Searchまで、現役エンジニアの実践知を凝縮。',
     price: '無料',
@@ -158,7 +165,7 @@ const zennBooks = [
     <section class="py-20 bg-white">
       <div class="mx-auto max-w-4xl px-4">
         <h2 class="text-3xl font-bold mb-8">Zenn Books</h2>
-        <div class="grid md:grid-cols-3 gap-6">
+        <div class="grid md:grid-cols-2 gap-6">
           {zennBooks.map((book) => (
             <a href={book.url} target="_blank" rel="noopener noreferrer"
                class="block bg-gray-50 rounded-xl p-6 hover:shadow-md transition-shadow border border-gray-100">

@@ -24,11 +24,13 @@
 - 書籍②: LLMO — AIがあなたのコンテンツを見つける3つの経路（¥1,980 Kindle / Zenn）
 - 書籍③: Practical Claude Code（English, Kindle Unlimited）
 - 書籍④: LLMO — Three Paths for AI to Discover Your Content（English, Kindle Unlimited）
+- Zenn Book: MCP実践セキュリティ — 本番導入で躓かないための完全ガイド（無料）
 - Zenn Book: Claude Codeクイックスタート（無料）
-- テーマ: Claude Code, コンテキストエンジニアリング, LLMO, LLM Optimization, AI開発
+- テーマ: Claude Code, コンテキストエンジニアリング, LLMO, LLM Optimization, MCP, セキュリティ, AI開発
 - Amazon著者ページ: https://www.amazon.co.jp/stores/author/B0GQNPRCGF
 - Zenn（Claude Code）: https://zenn.dev/kenimo49/books/claude-code-mastery
 - Zenn（LLMO）: https://zenn.dev/kenimo49/books/llmo-ai-search-optimization
+- Zenn（MCP実践セキュリティ無料）: https://zenn.dev/kenimo49/books/mcp-security-practice
 - Zenn（QuickStart無料）: https://zenn.dev/kenimo49/books/claude-code-quickstart
 - LearningMate詳細: https://propel-lab.co.jp/learningmate.md
 

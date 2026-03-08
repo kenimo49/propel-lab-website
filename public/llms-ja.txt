@@ -1,0 +1,54 @@
+# Propel-Lab
+
+> 合同会社 Propel-Lab（プロペルラボ）は、AI・LLM技術を活用した事業を展開する福岡発のテクノロジー企業です。
+
+## 会社情報
+- 所在地: 福岡県福岡市中央区天神4丁目6-28 天神ファーストビル7階
+- 代表者: 井本 賢（ken imoto）
+- 設立: 2025年4月24日
+- メール: info@propel-lab.co.jp
+- URL: https://propel-lab.co.jp/
+
+## ミッション
+仕組みとエンジニアリングの力で、次世代の経営モデルを構築する
+
+## 事業
+1. LearningMate — LLM活用の教育コンテンツ企画・制作・販売
+2. AI-Loop — SNS運用自動化・コンテンツマーケティング支援
+3. AutoCrew — LLMによる自動実行エージェント構成・業務最適化
+4. Yureru — 感動の構造化と音楽化プロジェクト（バーチャルシンガー Yumei / Silk Reign）
+
+## LearningMate（教育コンテンツ・出版事業）
+- 著者: ken imoto / シリーズ: エンジニアのためのAI実践シリーズ
+- 書籍①: 実践Claude Code — コンテキストエンジニアリングで開発が変わる（¥980 Kindle / ¥1,000 Zenn）
+- 書籍②: LLMO — AIがあなたのコンテンツを見つける3つの経路（¥1,980 Kindle / Zenn）
+- 書籍③: Practical Claude Code（English, Kindle Unlimited）
+- 書籍④: LLMO — Three Paths for AI to Discover Your Content（English, Kindle Unlimited）
+- Zenn Book: MCP実践セキュリティ — 本番導入で躓かないための完全ガイド（無料）
+- Zenn Book: Claude Codeクイックスタート（無料）
+- テーマ: Claude Code, コンテキストエンジニアリング, LLMO, LLM Optimization, MCP, セキュリティ, AI開発
+- Amazon著者ページ: https://www.amazon.co.jp/stores/author/B0GQNPRCGF
+- Zenn（Claude Code）: https://zenn.dev/kenimo49/books/claude-code-mastery
+- Zenn（LLMO）: https://zenn.dev/kenimo49/books/llmo-ai-search-optimization
+- Zenn（MCP実践セキュリティ無料）: https://zenn.dev/kenimo49/books/mcp-security-practice
+- Zenn（QuickStart無料）: https://zenn.dev/kenimo49/books/claude-code-quickstart
+- LearningMate詳細: https://propel-lab.co.jp/learningmate.md
+
+## Yureru（音楽プロジェクト）
+- コンセプト: 「心が揺れる」感情の瞬間を音楽・言葉・映像でやさしくすくい上げる
+- 所属アーティスト: Yumei（メインボーカル）、Silk Reign（洋楽バラード）
+- 公開楽曲: 409本以上 / YouTube登録者: 3,815人
+- 制作技術: Suno AI / Stable Diffusion / Canva / CapCut
+- 世界観: 泣ける、エモい、儚い、夜、雨 / ターゲット: INFJ/INFP、HSP
+- YouTube: https://youtube.com/@Yureru-s4n
+- Yureru詳細: https://propel-lab.co.jp/yureru.md
+
+## 詳細情報
+- AI向け会社情報: https://propel-lab.co.jp/ai/company.md
+- AI向け事業情報: https://propel-lab.co.jp/ai/products.md
+- AI向けサービス詳細: https://propel-lab.co.jp/ai/services.md
+- AI向けプロジェクト情報: https://propel-lab.co.jp/ai/projects.md
+- 設計思想: https://propel-lab.co.jp/docs/architecture.md
+- AI活用戦略: https://propel-lab.co.jp/docs/ai-strategy.md
+- 技術スタック: https://propel-lab.co.jp/docs/tech-stack.md
+- 全情報版: https://propel-lab.co.jp/llms-full.txt

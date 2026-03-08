@@ -1,0 +1,304 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+---
+
+<Layout
+  title="Propel-Lab — Engineering the Next Generation of Business Models with AI"
+  description="Propel-Lab LLC is an AI/LLM technology company based in Fukuoka, Japan. We build next-generation business models through engineering and systems thinking."
+  lang="en"
+>
+  <Header />
+  <main>
+    <!-- Hero -->
+    <section class="relative min-h-screen flex items-center justify-center bg-navy text-white overflow-hidden">
+      <div class="absolute inset-0">
+        <img src={`${base}images/hero-blueprint.jpg`} alt="" class="w-full h-full object-cover" />
+      </div>
+      <div class="absolute inset-0 bg-navy/80"></div>
+      <div class="relative z-10 mx-auto max-w-4xl px-4 text-center py-32">
+        <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+          Propel-Lab
+        </h1>
+        <p class="text-lg md:text-2xl text-gray-300 mb-8 leading-relaxed">
+          Engineering the Next Generation of Business Models with AI
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="#services"
+            class="inline-block px-8 py-3 bg-accent hover:bg-accent-dark text-white font-semibold rounded-lg transition-colors"
+          >
+            Our Services
+          </a>
+          <a
+            href="#contact"
+            class="inline-block px-8 py-3 border border-white/30 hover:bg-white/10 text-white font-semibold rounded-lg transition-colors"
+          >
+            Contact Us
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="py-20 bg-white">
+      <div class="mx-auto max-w-4xl px-4">
+        <h2 class="text-3xl font-bold text-center mb-12 text-navy">About Propel-Lab</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div>
+            <p class="text-gray-600 leading-relaxed mb-4">
+              <strong>Propel-Lab LLC</strong> is an AI/LLM technology company founded in 2025, headquartered in Fukuoka, Japan.
+              We leverage AI and Large Language Models to engineer next-generation business models.
+            </p>
+            <p class="text-gray-600 leading-relaxed">
+              Our mission: <em>"Engineer the next generation of business models through systems thinking and technology."</em>
+            </p>
+          </div>
+          <div class="bg-gray-50 rounded-xl p-6">
+            <h3 class="font-semibold text-navy mb-4">Company Info</h3>
+            <dl class="text-sm space-y-2 text-gray-600">
+              <div class="flex"><dt class="w-28 font-medium text-gray-700">Company</dt><dd>Propel-Lab LLC</dd></div>
+              <div class="flex"><dt class="w-28 font-medium text-gray-700">Location</dt><dd>Fukuoka, Japan</dd></div>
+              <div class="flex"><dt class="w-28 font-medium text-gray-700">Founded</dt><dd>April 2025</dd></div>
+              <div class="flex"><dt class="w-28 font-medium text-gray-700">Founder</dt><dd>Ken Imoto</dd></div>
+              <div class="flex"><dt class="w-28 font-medium text-gray-700">Focus</dt><dd>AI / LLM / Agent Engineering</dd></div>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="py-20 bg-gray-50">
+      <div class="mx-auto max-w-5xl px-4">
+        <h2 class="text-3xl font-bold text-center mb-12 text-navy">Services</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+          <!-- LearningMate -->
+          <div class="bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow">
+            <div class="text-3xl mb-4">📚</div>
+            <h3 class="text-xl font-bold text-navy mb-3">LearningMate</h3>
+            <p class="text-sm text-accent font-medium mb-2">Educational Content & Publishing</p>
+            <p class="text-gray-600 text-sm leading-relaxed">
+              Planning, producing, and selling educational content focused on LLM technologies.
+              Published books on Claude Code, Context Engineering, and LLMO in both Japanese and English via Kindle and Zenn.
+            </p>
+          </div>
+
+          <!-- AI-Loop -->
+          <div class="bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow">
+            <div class="text-3xl mb-4">🔄</div>
+            <h3 class="text-xl font-bold text-navy mb-3">AI-Loop</h3>
+            <p class="text-sm text-accent font-medium mb-2">Marketing Automation</p>
+            <p class="text-gray-600 text-sm leading-relaxed">
+              SNS automation and content marketing support powered by LLM agents.
+              Data-driven content strategy, cross-platform performance analytics, and automated post generation.
+            </p>
+          </div>
+
+          <!-- AutoCrew -->
+          <div class="bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow">
+            <div class="text-3xl mb-4">🤖</div>
+            <h3 class="text-xl font-bold text-navy mb-3">AutoCrew</h3>
+            <p class="text-sm text-accent font-medium mb-2">Business Automation Consulting</p>
+            <p class="text-gray-600 text-sm leading-relaxed">
+              Multi-agent system architecture and business process automation using LLMs.
+              Leveraging MCP (Model Context Protocol) and CLI Skills for advanced agent design and workflow optimization.
+            </p>
+          </div>
+
+          <!-- Yureru -->
+          <div class="bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow">
+            <div class="text-3xl mb-4">🎵</div>
+            <h3 class="text-xl font-bold text-navy mb-3">Yureru</h3>
+            <p class="text-sm text-accent font-medium mb-2">Music & Creative</p>
+            <p class="text-gray-600 text-sm leading-relaxed">
+              A music project that captures fleeting emotional moments through music, words, and visuals.
+              Featuring virtual singers Yumei and Silk Reign — 409+ tracks published, 3,815+ YouTube subscribers.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Founder -->
+    <section id="founder" class="py-20 bg-white">
+      <div class="mx-auto max-w-4xl px-4">
+        <h2 class="text-3xl font-bold text-center mb-12 text-navy">Founder</h2>
+        <div class="flex flex-col md:flex-row gap-8 items-start">
+          <div class="flex-1">
+            <h3 class="text-2xl font-bold text-navy mb-2">Ken Imoto</h3>
+            <p class="text-accent font-medium mb-4">Real-time AI Agent Engineer / Founder & CEO</p>
+            <p class="text-gray-600 leading-relaxed mb-4">
+              Software engineer with 8+ years of experience spanning Android/Web development, edge computing, and robotics.
+              Currently focused on AI agent design, context engineering, and LLM optimization (LLMO).
+            </p>
+            <ul class="space-y-2 text-sm text-gray-600">
+              <li class="flex items-start gap-2">
+                <span class="text-accent mt-0.5">▸</span>
+                Former robotics engineer: Pepper × SLAM (Aldebaran co-development / SoftBank live deployment)
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-accent mt-0.5">▸</span>
+                Managed 5 parallel projects with AWS/Azure/Firebase simultaneously
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-accent mt-0.5">▸</span>
+                Achieved 300% productivity boost in TypeScript dev via LLM × Context Engineering
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-accent mt-0.5">▸</span>
+                Kindle author: 4 books (Practical Claude Code / LLMO — bilingual JP/EN)
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-accent mt-0.5">▸</span>
+                Qiita: 39,000+ PV (SSH security 18K PV / CLAUDE.md defense 8K PV)
+              </li>
+            </ul>
+          </div>
+          <div class="md:w-64 w-full">
+            <div class="bg-gray-50 rounded-xl p-6">
+              <h4 class="font-semibold text-navy mb-3 text-sm">Connect</h4>
+              <ul class="space-y-2 text-sm">
+                <li><a href="https://linkedin.com/in/kenimo49" class="text-accent hover:underline" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                <li><a href="https://x.com/kenimo49" class="text-accent hover:underline" target="_blank" rel="noopener noreferrer">X (Twitter)</a></li>
+                <li><a href="https://qiita.com/kenimo49" class="text-accent hover:underline" target="_blank" rel="noopener noreferrer">Qiita</a></li>
+                <li><a href="https://zenn.dev/kenimo49" class="text-accent hover:underline" target="_blank" rel="noopener noreferrer">Zenn</a></li>
+                <li><a href="https://dev.to/kenimo49" class="text-accent hover:underline" target="_blank" rel="noopener noreferrer">DEV.to</a></li>
+                <li><a href="https://youtube.com/@Yureru-s4n" class="text-accent hover:underline" target="_blank" rel="noopener noreferrer">YouTube</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Publications -->
+    <section id="publications" class="py-20 bg-gray-50">
+      <div class="mx-auto max-w-4xl px-4">
+        <h2 class="text-3xl font-bold text-center mb-12 text-navy">Publications</h2>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-white rounded-xl p-6 shadow-sm">
+            <h3 class="font-bold text-navy mb-1">Practical Claude Code</h3>
+            <p class="text-xs text-gray-500 mb-2">Context Engineering for Modern Development</p>
+            <p class="text-sm text-gray-600 mb-3">How Claude Code's design philosophy and CLAUDE.md patterns achieved a 300% productivity boost in TypeScript development.</p>
+            <div class="flex gap-3 text-xs">
+              <a href="https://www.amazon.co.jp/stores/author/B0GQNPRCGF" class="text-accent hover:underline" target="_blank" rel="noopener noreferrer">Kindle (EN/JP)</a>
+              <a href="https://zenn.dev/kenimo49/books/claude-code-mastery" class="text-accent hover:underline" target="_blank" rel="noopener noreferrer">Zenn</a>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-6 shadow-sm">
+            <h3 class="font-bold text-navy mb-1">LLMO — Three Paths for AI to Discover Your Content</h3>
+            <p class="text-xs text-gray-500 mb-2">LLM Optimization Guide</p>
+            <p class="text-sm text-gray-600 mb-3">A practical guide to LLMO: structured data, llms.txt, and Markdown delivery — making your content discoverable by ChatGPT, Claude, and Gemini.</p>
+            <div class="flex gap-3 text-xs">
+              <a href="https://www.amazon.co.jp/stores/author/B0GQNPRCGF" class="text-accent hover:underline" target="_blank" rel="noopener noreferrer">Kindle (EN/JP)</a>
+              <a href="https://zenn.dev/kenimo49/books/llmo-ai-search-optimization" class="text-accent hover:underline" target="_blank" rel="noopener noreferrer">Zenn</a>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-6 shadow-sm">
+            <h3 class="font-bold text-navy mb-1">MCP Security in Practice</h3>
+            <p class="text-xs text-gray-500 mb-2">Complete Guide for Production Deployment</p>
+            <p class="text-sm text-gray-600 mb-3">Security best practices for deploying Model Context Protocol in production environments.</p>
+            <div class="flex gap-3 text-xs">
+              <a href="https://zenn.dev/kenimo49/books/mcp-security-practice" class="text-accent hover:underline" target="_blank" rel="noopener noreferrer">Zenn (Free)</a>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl p-6 shadow-sm">
+            <h3 class="font-bold text-navy mb-1">Claude Code QuickStart</h3>
+            <p class="text-xs text-gray-500 mb-2">Get Started Fast</p>
+            <p class="text-sm text-gray-600 mb-3">A free quick-start guide to Claude Code for developers looking to integrate AI into their workflow.</p>
+            <div class="flex gap-3 text-xs">
+              <a href="https://zenn.dev/kenimo49/books/claude-code-quickstart" class="text-accent hover:underline" target="_blank" rel="noopener noreferrer">Zenn (Free)</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-20 bg-navy text-white">
+      <div class="mx-auto max-w-4xl px-4 text-center">
+        <h2 class="text-3xl font-bold mb-8">Contact</h2>
+        <p class="text-gray-300 mb-8 leading-relaxed">
+          Interested in our services? Have questions about AI agent design, LLMO, or our publications?<br />
+          We'd love to hear from you.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+          <a
+            href="mailto:info@propel-lab.co.jp"
+            class="inline-flex items-center gap-2 px-8 py-3 bg-accent hover:bg-accent-dark text-white font-semibold rounded-lg transition-colors"
+          >
+            ✉️ info@propel-lab.co.jp
+          </a>
+          <a
+            href="https://linkedin.com/in/kenimo49"
+            class="inline-flex items-center gap-2 px-8 py-3 border border-white/30 hover:bg-white/10 text-white font-semibold rounded-lg transition-colors"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            💼 LinkedIn DM
+          </a>
+          <a
+            href="https://x.com/kenimo49"
+            class="inline-flex items-center gap-2 px-8 py-3 border border-white/30 hover:bg-white/10 text-white font-semibold rounded-lg transition-colors"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            𝕏 X DM
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+
+  <!-- JSON-LD: Organization (English) -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Propel-Lab LLC",
+    "alternateName": "合同会社 Propel-Lab",
+    "url": "https://www.propel-lab.co.jp/en",
+    "email": "info@propel-lab.co.jp",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Fukuoka",
+      "addressRegion": "Fukuoka Prefecture",
+      "addressCountry": "JP",
+      "streetAddress": "Tenjin 4-6-28, Tenjin First Bldg. 7F"
+    },
+    "foundingDate": "2025-04-24",
+    "founder": {
+      "@type": "Person",
+      "name": "Ken Imoto"
+    },
+    "description": "An AI/LLM technology company based in Fukuoka, Japan. Engineering next-generation business models through systems thinking and AI."
+  })} />
+
+  <!-- JSON-LD: Person (English) -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Ken Imoto",
+    "alternateName": "井本 賢",
+    "jobTitle": "Founder & CEO / Real-time AI Agent Engineer",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Propel-Lab LLC"
+    },
+    "knowsAbout": ["AI Agent Design", "Context Engineering", "LLM Optimization (LLMO)", "Claude Code", "Android Development", "Web Development", "WebRTC", "Edge Computing", "Robotics"],
+    "sameAs": [
+      "https://linkedin.com/in/kenimo49",
+      "https://qiita.com/kenimo49",
+      "https://zenn.dev/kenimo49",
+      "https://note.com/kenimo49",
+      "https://x.com/kenimo49",
+      "https://youtube.com/@Yureru-s4n",
+      "https://www.amazon.co.jp/stores/author/B0GQNPRCGF",
+      "https://dev.to/kenimo49"
+    ]
+  })} />
+</Layout>

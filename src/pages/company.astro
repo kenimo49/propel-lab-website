@@ -59,25 +59,44 @@ import { profile } from '../data/profile';
 
       <section>
         <h2 class="text-2xl font-bold mb-6 pb-2 border-b border-gray-200">代表者プロフィール</h2>
-        <div class="bg-gray-50 rounded-xl p-8">
-          <h3 class="text-xl font-bold">{profile.name}</h3>
-          <p class="text-gray-500 mb-4">{profile.nameEn} / {profile.title} / {profile.experience}</p>
-          <ul class="space-y-2 mb-4">
-            {profile.highlights.map((h) => (
-              <li class="text-gray-600 text-sm flex items-start gap-2">
-                <span class="text-accent mt-0.5">&#9654;</span>
-                <span>{h}</span>
-              </li>
+        <div class="bg-[#0f172a] rounded-2xl p-8 text-center">
+          <img
+            src={`${base}images/avatar.jpg`}
+            alt={profile.name}
+            class="w-32 h-32 rounded-full object-cover mx-auto mb-4"
+            style="border: 3px solid #1e3a5f;"
+          />
+          <h3 class="text-xl font-bold text-white mb-1">{profile.name}</h3>
+          <p class="text-gray-400 mb-1">{profile.nameEn} / {profile.title}</p>
+          <p class="text-sm text-gray-500 tracking-wider mb-6">LLMO · WebRTC · Real-time AI · Context Engineering</p>
+
+          <p class="text-gray-300 text-sm leading-relaxed max-w-xl mx-auto mb-6">
+            ソフトウェアエンジニア歴8年。Android/Web開発、ロボティクスを経て、現在はAIエージェント設計・LLMO・コンテキストエンジニアリングに注力。
+          </p>
+
+          <div class="flex flex-wrap justify-center gap-2 mb-6">
+            {['LLMO', 'WebRTC', 'Real-time AI', 'Context Engineering', 'MCP', 'Android', 'Claude Code', 'Multi-Agent', 'TypeScript', 'Robotics'].map((tag) => (
+              <span class="px-3 py-1 bg-[#1e293b] text-[#60a5fa] text-xs rounded-full border border-[#334155]">
+                {tag}
+              </span>
             ))}
-          </ul>
-          <div class="flex flex-wrap gap-3">
-            {Object.entries(profile.links).map(([name, url]) => (
-              <a
-                href={url}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="text-sm text-navy hover:text-accent transition-colors underline"
-              >
+          </div>
+
+          <div class="flex flex-wrap items-center justify-center gap-3 mb-4">
+            <a href="https://kenimoto.dev" target="_blank" rel="noopener noreferrer"
+              class="px-5 py-2 bg-[#60a5fa] text-[#0f172a] rounded-lg hover:bg-[#93c5fd] transition-colors font-bold text-sm">
+              kenimoto.dev →
+            </a>
+            <a href="https://www.linkedin.com/in/kenimo49" target="_blank" rel="noopener noreferrer"
+              class="px-5 py-2 bg-[#1e293b] text-white rounded-lg hover:bg-[#334155] transition-colors text-sm border border-[#334155]">
+              LinkedIn
+            </a>
+          </div>
+
+          <div class="flex flex-wrap justify-center gap-3">
+            {Object.entries(profile.links).filter(([name]) => name !== 'linkedin' && name !== 'portfolio').map(([name, url]) => (
+              <a href={url} target="_blank" rel="noopener noreferrer"
+                class="text-sm text-[#64748b] hover:text-[#60a5fa] transition-colors">
                 {name.charAt(0).toUpperCase() + name.slice(1)}
               </a>
             ))}

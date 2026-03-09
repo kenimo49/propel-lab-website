@@ -18,5 +18,7 @@ export const profile = {
     x: 'https://x.com/kenimo49',
     youtube: 'https://youtube.com/@Yureru-s4n',
     kindle: 'https://www.amazon.co.jp/stores/author/B0GQNPRCGF',
+    portfolio: 'https://kenimoto.dev',
+    blog: 'https://kenimo49.hatenablog.com/',
   },
 };

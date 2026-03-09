@@ -8,7 +8,7 @@ export const profile = {
   highlights: [
     '元ロボットエンジニア: Pepper × SLAM（Aldebaran共同開発 / SoftBankイベント実稼働）',
     'Kindle著者: 4冊（実践Claude Code / LLMO 等）',
-    'Qiita: 39,000+ PV（SSH記事 18,000PV / CLAUDE.md防御 8,000PV）',
+    'Qiita: 45,000+ PV（SSH記事 26,000PV / 102 LGTM / CLAUDE.md防御 8,000PV）',
   ],
   links: {
     linkedin: 'https://linkedin.com/in/kenimo49',

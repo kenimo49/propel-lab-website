@@ -1,42 +1,73 @@
 ---
 import { profile } from '../data/profile';
+
+const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
 ---
 
 <section id="profile" class="py-20 bg-white">
   <div class="mx-auto max-w-4xl px-4">
     <h2 class="text-3xl font-bold text-center mb-12">代表者プロフィール</h2>
-    <div class="bg-gray-50 rounded-xl p-8 md:p-12">
-      <div class="mb-6">
-        <h3 class="text-2xl font-bold">{profile.name}</h3>
-        <p class="text-gray-500">{profile.nameEn} / {profile.title}</p>
+    <div class="bg-[#0f172a] rounded-2xl p-8 md:p-12 text-center">
+      <!-- Avatar -->
+      <img
+        src={`${base}images/avatar.jpg`}
+        alt={profile.name}
+        class="w-36 h-36 rounded-full object-cover mx-auto mb-6 border-3 border-[#1e3a5f]"
+        style="border: 3px solid #1e3a5f;"
+      />
+
+      <!-- Name & Title -->
+      <h3 class="text-2xl font-bold text-white mb-1">{profile.name}</h3>
+      <p class="text-gray-400 mb-1">{profile.nameEn} / {profile.title}</p>
+      <p class="text-sm text-gray-500 tracking-wider mb-6">LLMO · WebRTC · Real-time AI · Context Engineering</p>
+
+      <!-- Bio -->
+      <p class="text-gray-300 leading-relaxed max-w-2xl mx-auto mb-8">
+        ソフトウェアエンジニア歴8年。Android/Web開発、ロボティクスを経て、現在はAIエージェント設計・LLMO・コンテキストエンジニアリングに注力。LLM導入でTypeScript開発の生産性300%向上を実現。
+      </p>
+
+      <!-- Tech Stack -->
+      <div class="flex flex-wrap justify-center gap-3 mb-8">
+        {['LLMO', 'WebRTC', 'Real-time AI', 'Context Engineering', 'MCP', 'Android', 'Claude Code', 'Multi-Agent', 'TypeScript', 'Robotics'].map((tag) => (
+          <span class="px-4 py-1.5 bg-[#1e293b] text-[#60a5fa] text-sm rounded-full border border-[#334155]">
+            {tag}
+          </span>
+        ))}
       </div>
-      <div class="mb-8 space-y-4 text-gray-700 leading-relaxed">
-        <p>ソフトウェアエンジニア歴8年。Android/Web開発、エッジコンピューティング、ロボティクスを経て、現在はAIエージェント設計・コンテキストエンジニアリング・LLM活用に注力。</p>
-        <p>5プロジェクト並列での開発経験があり、AWS/Azure/Firebaseの3大クラウドを同時に扱った実績を持つ。LLM×コンテキストエンジニアリングの導入でTypeScript開発の生産性300%向上を実現。</p>
-        <p>著書「実践Claude Code」（Zenn / Amazon Kindle）、「LLMO — AIに選ばれる最適化戦略」（Zenn）。note・Qiita・Zennで技術発信中。</p>
-      </div>
-      <div class="flex flex-wrap items-center gap-4">
+
+      <!-- CTA + Links -->
+      <div class="flex flex-wrap items-center justify-center gap-4 mb-6">
+        <a
+          href="https://kenimoto.dev"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 px-6 py-3 bg-[#60a5fa] text-[#0f172a] rounded-lg hover:bg-[#93c5fd] transition-colors font-bold text-sm"
+        >
+          kenimoto.dev →
+        </a>
         <a
           href="https://www.linkedin.com/in/kenimo49"
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-flex items-center gap-2 px-6 py-3 bg-[#0A66C2] text-white rounded-lg hover:bg-[#004182] transition-colors font-medium"
+          class="inline-flex items-center gap-2 px-6 py-3 bg-[#1e293b] text-white rounded-lg hover:bg-[#334155] transition-colors font-medium text-sm border border-[#334155]"
         >
-          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-          詳しい経歴を見る
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          LinkedIn
         </a>
-        <div class="flex flex-wrap gap-3">
-          {Object.entries(profile.links).filter(([name]) => name !== 'linkedin').map(([name, url]) => (
-            <a
-              href={url}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="text-sm text-navy hover:text-accent transition-colors underline"
-            >
-              {name.charAt(0).toUpperCase() + name.slice(1)}
-            </a>
-          ))}
-        </div>
+      </div>
+
+      <!-- Social Links -->
+      <div class="flex flex-wrap justify-center gap-4">
+        {Object.entries(profile.links).filter(([name]) => name !== 'linkedin' && name !== 'portfolio').map(([name, url]) => (
+          <a
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-sm text-[#64748b] hover:text-[#60a5fa] transition-colors"
+          >
+            {name.charAt(0).toUpperCase() + name.slice(1)}
+          </a>
+        ))}
       </div>
     </div>
   </div>

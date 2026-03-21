@@ -25,6 +25,7 @@ Engineer the next generation of business models through systems thinking and tec
 - Book 2: LLMO — Three Paths for AI to Discover Your Content (¥1,980 Kindle / Zenn)
 - Book 3: 実践Claude Code (Japanese, Kindle ¥980 / Zenn ¥1,000)
 - Book 4: LLMO — AIがあなたのコンテンツを見つける3つの経路 (Japanese, ¥1,980 Kindle / Zenn)
+- Book 5: LLMO Website Builder — Build an LLMO-Optimized Website from Scratch (¥500, Zenn)
 - Free: MCP Security in Practice (Zenn), Claude Code QuickStart (Zenn)
 - Topics: Claude Code, Context Engineering, LLMO, LLM Optimization, MCP, Security, AI Development
 - Amazon Author: https://www.amazon.co.jp/stores/author/B0GQNPRCGF
@@ -32,6 +33,7 @@ Engineer the next generation of business models through systems thinking and tec
 - Zenn (LLMO): https://zenn.dev/kenimo49/books/llmo-ai-search-optimization
 - Zenn (MCP Security): https://zenn.dev/kenimo49/books/mcp-security-practice
 - Zenn (QuickStart): https://zenn.dev/kenimo49/books/claude-code-quickstart
+- Zenn (LLMO Website Builder): https://zenn.dev/kenimo49/books/llmo-website-builder
 
 ## Yureru (Music Project)
 - Concept: Capturing fleeting emotional moments through music, words, and visuals
@@ -40,6 +42,7 @@ Engineer the next generation of business models through systems thinking and tec
 - YouTube: https://youtube.com/@Yureru-s4n
 
 ## Detailed Resources
+- AI LearningMate (Books): https://propel-lab.co.jp/ai/learningmate.md
 - AI Company Overview: https://propel-lab.co.jp/ai/about.md
 - AI Founder Profile: https://propel-lab.co.jp/ai/founder.md
 - AI LLMO Framework: https://propel-lab.co.jp/ai/llmo.md

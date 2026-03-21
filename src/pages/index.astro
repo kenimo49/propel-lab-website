@@ -8,9 +8,45 @@ import Profile from '../components/Profile.astro';
 import FAQ from '../components/FAQ.astro';
 import Contact from '../components/Contact.astro';
 import Footer from '../components/Footer.astro';
+
+
+const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
 ---
 
 <Layout title="合同会社 Propel-Lab — 仕組みとエンジニアリングの力で、次世代の経営モデルを構築する">
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "合同会社 Propel-Lab",
+    "alternateName": "Propel-Lab LLC",
+    "url": "https://propel-lab.co.jp",
+    "email": "info@propel-lab.co.jp",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "福岡市中央区",
+      "addressRegion": "福岡県",
+      "addressCountry": "JP",
+      "streetAddress": "天神4-6-28 天神第一ビル7F"
+    },
+    "foundingDate": "2025-04-24",
+    "founder": {
+      "@type": "Person",
+      "name": "井本 賢",
+      "alternateName": "Ken Imoto",
+      "jobTitle": "代表社員",
+      "url": "https://kenimoto.dev",
+      "sameAs": ["https://linkedin.com/in/kenimo49", "https://github.com/kenimo49"]
+    },
+    "description": "AI・LLM技術を活用し、仕組みとエンジニアリングの力で次世代の経営モデルを構築する福岡のテクノロジー企業",
+    "knowsAbout": ["LLMO", "Context Engineering", "WebRTC", "AI Agent Design", "Claude Code"]
+  })} />
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Propel-Lab",
+    "url": "https://propel-lab.co.jp",
+    "inLanguage": ["ja", "en"]
+  })} />
   <Header />
   <main>
     <Hero />

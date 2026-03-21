@@ -14,6 +14,7 @@
   - Practical Claude Code（English, Kindle Unlimited）
   - LLMO — Three Paths for AI to Discover Your Content（English, Kindle Unlimited）
   - MCP実践セキュリティ — 本番導入で躓かないための完全ガイド（Zenn 無料）
+  - LLMO Website Builder — LLMOに最適化されたホームページをゼロから作る（Zenn ¥500）
   - Claude Codeクイックスタート（Zenn 無料）
 - **Amazon著者ページ**: https://www.amazon.co.jp/stores/author/B0GQNPRCGF
 - **Zenn**: https://zenn.dev/kenimo49

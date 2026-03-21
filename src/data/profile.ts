@@ -3,12 +3,12 @@ export const profile = {
   nameKana: 'いもと けん',
   nameEn: 'ken imoto',
   title: '代表社員',
-  experience: 'エンジニア歴8年',
-  specialties: ['Android/Web開発', 'ロボティクス', 'AIエージェント'],
+  experience: 'WebRTC×音声AIエンジニア',
+  specialties: ['WebRTC/リアルタイム通信', '音声AI', 'コンテキストエンジニアリング'],
   highlights: [
-    '元ロボットエンジニア: Pepper × SLAM（Aldebaran共同開発 / SoftBankイベント実稼働）',
-    'Kindle著者: 4冊（実践Claude Code / LLMO 等）',
-    'Qiita: 45,000+ PV（SSH記事 26,000PV / 102 LGTM / CLAUDE.md防御 8,000PV）',
+    'LLMOフレームワーク提唱者（AI検索最適化）',
+    'Kindle著者: 5冊（実践Claude Code / LLMO 等）',
+    'Qiita: 67,000+ PV',
   ],
   links: {
     linkedin: 'https://linkedin.com/in/kenimo49',

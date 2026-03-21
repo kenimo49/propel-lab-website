@@ -65,6 +65,7 @@ const zennBooks = [
     price: '¥1,000',
     url: 'https://zenn.dev/kenimo49/books/claude-code-mastery',
     type: '有料Book',
+    cover: 'zenn-covers/claude-code-mastery.png',
   },
   {
     title: 'LLMO — AIに選ばれる最適化戦略',
@@ -72,6 +73,15 @@ const zennBooks = [
     price: '¥1,980',
     url: 'https://zenn.dev/kenimo49/books/llmo-ai-search-optimization',
     type: '有料Book',
+    cover: 'zenn-covers/llmo.png',
+  },
+  {
+    title: 'LLMO Website Builder — LLMOに最適化されたホームページをゼロから作る',
+    description: 'JSON-LD、llms.txt、Markdown配信。AI検索に選ばれるサイトをAstro + Tailwindで構築する実践ガイド。',
+    price: '¥500',
+    url: 'https://zenn.dev/kenimo49/books/llmo-website-builder',
+    type: '有料Book',
+    cover: 'zenn-covers/llmo-website-builder.png',
   },
   {
     title: 'MCP実践セキュリティ — 本番導入で躓かないための完全ガイド',
@@ -79,6 +89,7 @@ const zennBooks = [
     price: '無料',
     url: 'https://zenn.dev/kenimo49/books/mcp-security-practice',
     type: '無料Book',
+    cover: 'zenn-covers/mcp-security.png',
   },
   {
     title: 'Claude Codeクイックスタート — 30分で始めるAIエージェント開発',
@@ -86,6 +97,7 @@ const zennBooks = [
     price: '無料',
     url: 'https://zenn.dev/kenimo49/books/claude-code-quickstart',
     type: '無料miniBook',
+    cover: 'zenn-covers/quickstart.png',
   },
 ];
 ---
@@ -168,11 +180,16 @@ const zennBooks = [
         <div class="grid md:grid-cols-2 gap-6">
           {zennBooks.map((book) => (
             <a href={book.url} target="_blank" rel="noopener noreferrer"
-               class="block bg-gray-50 rounded-xl p-6 hover:shadow-md transition-shadow border border-gray-100">
-              <p class="text-xs text-accent font-medium mb-2">{book.type}</p>
-              <h3 class="font-bold mb-2">{book.title}</h3>
-              <p class="text-sm text-gray-600 mb-3">{book.description}</p>
-              <span class="text-sm font-medium text-navy">{book.price}</span>
+               class="flex bg-gray-50 rounded-xl overflow-hidden hover:shadow-md transition-shadow border border-gray-100">
+              <div class="w-24 flex-shrink-0">
+                <img src={`${base}images/${book.cover}`} alt={book.title} class="w-full h-full object-cover" />
+              </div>
+              <div class="p-4 flex-1">
+                <p class="text-xs text-accent font-medium mb-1">{book.type}</p>
+                <h3 class="font-bold mb-1 text-sm">{book.title}</h3>
+                <p class="text-xs text-gray-600 mb-2">{book.description}</p>
+                <span class="text-sm font-medium text-navy">{book.price}</span>
+              </div>
             </a>
           ))}
         </div>

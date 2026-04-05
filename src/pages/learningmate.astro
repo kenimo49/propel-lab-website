@@ -7,6 +7,31 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
 
 const books = [
   {
+    title: 'ハーネス・エンジニアリング — AIを"使う"から"操る"へ',
+    titleEn: 'Harness Engineering',
+    cover: 'book-harness-engineering-ja.png',
+    description: 'OpenAI・Anthropic・LangChain・Martin Fowler・学術の5社5視点を横断比較し、AIエージェント制御の全体像を体系化。AGENTS.md/CLAUDE.mdの実践設計、hooks/lifecycle、フィードバックループ、Self-Evolving Agentまで全14章・図解13枚で解説。',
+    price: '¥1,500（Kindle）/ ¥1,500（Zenn）',
+    tags: ['ハーネスエンジニアリング', 'AIエージェント', 'CLAUDE.md', 'AGENTS.md', 'hooks'],
+    links: {
+      kindle: 'https://amzn.asia/d/0eE7m2BJ',
+      zenn: 'https://zenn.dev/kenimo49/books/harness-engineering-guide',
+    },
+    series: 'エンジニアのためのAI実践シリーズ 最新刊',
+  },
+  {
+    title: 'Harness Engineering — From Using AI to Controlling AI',
+    titleEn: 'Harness Engineering (English)',
+    cover: 'book-harness-engineering-en.jpg',
+    description: 'Comparing five perspectives — OpenAI, Anthropic, LangChain, Martin Fowler, and academic research — to systematically explain Harness Engineering. 14 chapters with 13 diagrams covering hooks, lifecycle, feedback loops, and Self-Evolving Agents.',
+    price: '$9.99（Kindle）',
+    tags: ['Harness Engineering', 'AI Agent', 'CLAUDE.md', 'AGENTS.md', 'English'],
+    links: {
+      kindle: 'https://a.co/d/0hD6MvVu',
+    },
+    series: 'English Edition — NEW',
+  },
+  {
     title: '実践Claude Code — コンテキストエンジニアリングで開発が変わる',
     titleEn: 'Practical Claude Code',
     cover: 'book-claude-code-ja.jpg',
@@ -60,6 +85,14 @@ const books = [
 
 const zennBooks = [
   {
+    title: 'ハーネス・エンジニアリング — AIを"使う"から"操る"へ',
+    description: 'プロンプト→コンテキスト→ハーネス。2026年のAIエージェント制御を5社5視点で体系化。',
+    price: '¥1,500',
+    url: 'https://zenn.dev/kenimo49/books/harness-engineering-guide',
+    type: '有料Book — NEW',
+    cover: 'zenn-covers/harness-engineering-guide.png',
+  },
+  {
     title: '実践Claude Code — コンテキストエンジニアリングで開発が変わる',
     description: 'Kindle版と同内容。Zennプラットフォームで購読可能。',
     price: '¥1,000',
@@ -112,6 +145,29 @@ const zennBooks = [
 
 <Layout title="LearningMate — 出版・教育コンテンツ | Propel-Lab" description="Propel-Labの教育コンテンツ事業LearningMate。Claude Code、LLMO、コンテキストエンジニアリングの実践書をKindle・Zennで出版。エンジニアのためのAI実践シリーズ。" ogImage="book-claude-code-ja.jpg">
   <script slot="head" type="application/ld+json" set:html={JSON.stringify([
+    {
+      "@context": "https://schema.org",
+      "@type": "Book",
+      "name": "ハーネス・エンジニアリング — AIを\"使う\"から\"操る\"へ",
+      "author": { "@type": "Person", "name": "ken imoto" },
+      "bookFormat": "EBook",
+      "isbn": "",
+      "inLanguage": "ja",
+      "url": "https://amzn.asia/d/0eE7m2BJ",
+      "publisher": { "@type": "Organization", "name": "Propel-Lab" },
+      "about": ["ハーネスエンジニアリング", "AIエージェント", "CLAUDE.md", "AGENTS.md"]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Book",
+      "name": "Harness Engineering — From Using AI to Controlling AI",
+      "author": { "@type": "Person", "name": "ken imoto" },
+      "bookFormat": "EBook",
+      "inLanguage": "en",
+      "url": "https://a.co/d/0hD6MvVu",
+      "publisher": { "@type": "Organization", "name": "Propel-Lab" },
+      "about": ["Harness Engineering", "AI Agent", "CLAUDE.md", "AGENTS.md"]
+    },
     {
       "@context": "https://schema.org",
       "@type": "Book",

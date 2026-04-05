@@ -8,51 +8,55 @@ const navItems = [
 ];
 ---
 
-<header class="fixed top-0 left-0 right-0 z-50 bg-navy/95 backdrop-blur-sm">
-  <div class="mx-auto max-w-6xl px-4 py-4 flex items-center justify-between">
-    <a href={import.meta.env.BASE_URL} class="flex items-center">
-      <img src={`${base}images/propel-lab-logo-header.png`} alt="Propel-Lab" class="h-10 w-auto brightness-0 invert" />
+<header class="fixed top-0 left-0 right-0 z-50 bg-cream/90 backdrop-blur-md border-b border-charcoal/5">
+  <div class="mx-auto max-w-7xl px-6 lg:px-12 py-4 flex items-center justify-between">
+    <a href={import.meta.env.BASE_URL} class="flex items-center gap-3 group">
+      <img
+        src={`${base}images/propel-lab-logo-header.png`}
+        alt="Propel-Lab"
+        class="h-8 w-auto opacity-90 group-hover:opacity-100 transition-opacity"
+      />
     </a>
     <button
       id="menu-toggle"
-      class="text-white md:hidden"
+      class="text-charcoal md:hidden"
       aria-label="メニュー"
     >
-      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
       </svg>
     </button>
-    <nav id="nav-menu" class="hidden md:flex items-center gap-6">
+    <nav id="nav-menu" class="hidden md:flex items-center gap-8">
       {navItems.map((item) => (
         <a
           href={item.href}
-          class="text-sm text-gray-300 hover:text-white transition-colors"
+          class="text-sm tracking-wide text-mid hover:text-charcoal transition-colors duration-300 font-mono"
         >
           {item.label}
         </a>
       ))}
       <a
         href={`${base}en`}
-        class="text-xs text-gray-500 hover:text-gray-300 transition-colors ml-2 border border-gray-600 rounded px-2 py-0.5"
+        class="text-xs text-dim hover:text-charcoal transition-colors duration-300 font-mono ml-2 border border-charcoal/15 rounded px-2.5 py-1 hover:border-charcoal/30"
       >
         EN
       </a>
     </nav>
   </div>
   <!-- Mobile menu -->
-  <nav id="mobile-menu" class="hidden md:hidden bg-navy border-t border-white/10">
-    <div class="px-4 py-2 flex flex-col gap-2">
+  <nav id="mobile-menu" class="hidden md:hidden bg-cream/95 backdrop-blur-md border-t border-charcoal/5">
+    <div class="px-6 py-3 flex flex-col gap-1">
       {navItems.map((item) => (
         <a
           href={item.href}
-          class="text-sm text-gray-300 hover:text-white py-2 transition-colors"
+          class="text-sm text-mid hover:text-charcoal py-2.5 transition-colors font-mono tracking-wide"
         >
           {item.label}
         </a>
       ))}
       <a
         href={`${base}en`}
-        class="text-xs text-gray-500 hover:text-gray-300 py-2 transition-colors"
+        class="text-xs text-dim hover:text-charcoal py-2.5 transition-colors font-mono"
       >
         🌐 English
       </a>

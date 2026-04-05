@@ -243,9 +243,14 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
       gtag('config', 'G-16FQPBK8YG');
     </script>
 
+    <!-- Google Fonts: Sora + Noto Serif JP + JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Noto+Serif+JP:wght@400;500;700&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
     <title>{title}</title>
   </head>
-  <body class="bg-white text-gray-800 antialiased">
+  <body class="bg-cream text-charcoal antialiased">
     <slot />
   </body>
 </html>

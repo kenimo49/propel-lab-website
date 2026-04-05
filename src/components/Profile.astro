@@ -4,71 +4,102 @@ import { profile } from '../data/profile';
 const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
 ---
 
-<section id="profile" class="py-20 bg-white">
-  <div class="mx-auto max-w-4xl px-4">
-    <h2 class="text-3xl font-bold text-center mb-12">代表者プロフィール</h2>
-    <div class="bg-[#0f172a] rounded-2xl p-8 md:p-12 text-center">
-      <!-- Avatar -->
-      <img
-        src={`${base}images/avatar.jpg`}
-        alt={profile.name}
-        class="w-36 h-36 rounded-full object-cover mx-auto mb-6 border-3 border-[#1e3a5f]"
-        style="border: 3px solid #1e3a5f;"
-      />
+<section id="profile" class="py-24 lg:py-32 bg-cream grain-overlay relative">
+  <div class="mx-auto max-w-7xl px-6 lg:px-12 relative z-10">
+    <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+      <!-- Left column: Editorial profile -->
+      <div class="lg:col-span-5">
+        <!-- Section label -->
+        <div class="flex items-center gap-3 mb-8 fade-in-up">
+          <div class="w-8 h-px bg-gold"></div>
+          <span class="font-mono text-xs text-gold tracking-[0.2em] uppercase">Profile</span>
+        </div>
 
-      <!-- Name & Title -->
-      <h3 class="text-2xl font-bold text-white mb-1">{profile.name}</h3>
-      <p class="text-gray-400 mb-1">{profile.nameEn} / {profile.title}</p>
-      <p class="text-sm text-gray-500 tracking-wider mb-6">LLMO · WebRTC · Voice AI · Context Engineering</p>
+        <!-- Avatar -->
+        <div class="relative mb-8 fade-in-up stagger-1">
+          <div class="w-48 h-48 lg:w-56 lg:h-56 overflow-hidden">
+            <img
+              src={`${base}images/avatar.jpg`}
+              alt={profile.name}
+              class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+            />
+          </div>
+          <!-- Corner accent -->
+          <div class="absolute -bottom-2 -right-2 w-12 h-12 border-b-2 border-r-2 border-gold/30"></div>
+        </div>
 
-      <!-- Bio -->
-      <p class="text-gray-300 leading-relaxed max-w-2xl mx-auto mb-8">
-        WebRTC×音声AIエンジニア。リアルタイム通信システムの設計・開発を専門とし、AIとの音声会話プロダクトの構築にも取り組む。LLMO（AI検索最適化）フレームワークの提唱者。コンテキストエンジニアリングの実践知見を書籍・技術記事で発信中。Qiita 67,000+ PV。
-      </p>
+        <!-- Name -->
+        <h3 class="text-2xl lg:text-3xl font-bold text-charcoal mb-1 fade-in-up stagger-2">{profile.name}</h3>
+        <p class="text-dim text-sm font-mono tracking-wider mb-1 fade-in-up stagger-2">{profile.nameEn}</p>
+        <p class="text-gold text-sm font-mono tracking-wider mb-6 fade-in-up stagger-2">{profile.title}</p>
 
-      <!-- Tech Stack -->
-      <div class="flex flex-wrap justify-center gap-3 mb-8">
-        {['LLMO', 'WebRTC', 'Voice AI', 'Real-time AI', 'Context Engineering', 'MCP', 'Claude Code', 'Multi-Agent', 'TypeScript', 'Android'].map((tag) => (
-          <span class="px-4 py-1.5 bg-[#1e293b] text-[#60a5fa] text-sm rounded-full border border-[#334155]">
-            {tag}
-          </span>
-        ))}
-      </div>
-
-      <!-- CTA + Links -->
-      <div class="flex flex-wrap items-center justify-center gap-4 mb-6">
-        <a
-          href="https://kenimoto.dev"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex items-center gap-2 px-6 py-3 bg-[#60a5fa] text-[#0f172a] rounded-lg hover:bg-[#93c5fd] transition-colors font-bold text-sm"
-        >
-          kenimoto.dev →
-        </a>
-        <a
-          href="https://www.linkedin.com/in/kenimo49"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex items-center gap-2 px-6 py-3 bg-[#1e293b] text-white rounded-lg hover:bg-[#334155] transition-colors font-medium text-sm border border-[#334155]"
-        >
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-          LinkedIn
-        </a>
-      </div>
-
-      <!-- Social Links -->
-      <div class="flex flex-wrap justify-center gap-4">
-        {Object.entries(profile.links).filter(([name]) => name !== 'linkedin' && name !== 'portfolio').map(([name, url]) => (
+        <!-- CTA buttons -->
+        <div class="flex flex-wrap gap-3 fade-in-up stagger-3">
           <a
-            href={url}
+            href="https://kenimoto.dev"
             target="_blank"
             rel="noopener noreferrer"
-            class="text-sm text-[#64748b] hover:text-[#60a5fa] transition-colors"
+            class="inline-flex items-center gap-2 px-5 py-2.5 bg-charcoal text-cream text-xs font-mono tracking-wider hover:bg-charcoal-light transition-colors duration-300"
           >
-            {name.charAt(0).toUpperCase() + name.slice(1)}
+            kenimoto.dev →
           </a>
-        ))}
+          <a
+            href="https://www.linkedin.com/in/kenimo49"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 px-5 py-2.5 border border-charcoal/20 text-charcoal text-xs font-mono tracking-wider hover:border-charcoal/40 transition-colors duration-300"
+          >
+            <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            LinkedIn
+          </a>
+        </div>
+      </div>
+
+      <!-- Right column: Bio + Tech + Links -->
+      <div class="lg:col-span-7 lg:pt-16">
+        <!-- Expertise tags -->
+        <div class="font-mono text-[10px] text-dim tracking-[0.2em] uppercase mb-4 fade-in-up stagger-2">Specialization</div>
+        <p class="text-sm text-gold-muted font-mono tracking-wider mb-8 fade-in-up stagger-2">
+          LLMO · WebRTC · Voice AI · Context Engineering
+        </p>
+
+        <!-- Bio -->
+        <p class="text-charcoal leading-[1.9] text-base mb-10 fade-in-up stagger-3">
+          WebRTC×音声AIエンジニア。リアルタイム通信システムの設計・開発を専門とし、AIとの音声会話プロダクトの構築にも取り組む。LLMO（AI検索最適化）フレームワークの提唱者。コンテキストエンジニアリングの実践知見を書籍・技術記事で発信中。Qiita 67,000+ PV。
+        </p>
+
+        <!-- Tech stack — horizontal, monospace -->
+        <div class="mb-10 fade-in-up stagger-4">
+          <div class="font-mono text-[10px] text-dim tracking-[0.2em] uppercase mb-4">Tech Stack</div>
+          <div class="flex flex-wrap gap-2">
+            {['LLMO', 'WebRTC', 'Voice AI', 'Real-time AI', 'Context Engineering', 'MCP', 'Claude Code', 'Multi-Agent', 'TypeScript', 'Android'].map((tag) => (
+              <span class="px-3 py-1.5 text-[11px] font-mono text-charcoal/70 bg-charcoal/5 border border-charcoal/8 tracking-wide">
+                {tag}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        <!-- Social links — minimal, horizontal -->
+        <div class="fade-in-up stagger-5">
+          <div class="font-mono text-[10px] text-dim tracking-[0.2em] uppercase mb-4">Links</div>
+          <div class="flex flex-wrap gap-x-6 gap-y-2">
+            {Object.entries(profile.links).filter(([name]) => name !== 'linkedin' && name !== 'portfolio').map(([name, url]) => (
+              <a
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-sm text-dim hover:text-gold font-mono transition-colors duration-300"
+              >
+                {name.charAt(0).toUpperCase() + name.slice(1)}
+              </a>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   </div>
+
+  <!-- Bottom divider -->
+  <div class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/15 to-transparent"></div>
 </section>

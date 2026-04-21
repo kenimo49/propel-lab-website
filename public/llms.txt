@@ -26,14 +26,18 @@ Engineer the next generation of business models through systems thinking and tec
 - Book 3: 実践Claude Code (Japanese, Kindle ¥980 / Zenn ¥1,000)
 - Book 4: LLMO — AIがあなたのコンテンツを見つける3つの経路 (Japanese, ¥1,980 Kindle / Zenn)
 - Book 5: LLMO Website Builder — Build an LLMO-Optimized Website from Scratch (¥500, Zenn)
+- Book 6: AIコードレビューを仕組み化する技術 — hooks・AI・人間の3層モデル (¥1,000 Kindle / Zenn)
+- Book 7: ナレッジグラフ活用大全 — 構造化すれば、AIは賢くなる (¥1,500 Zenn)
 - Free: MCP Security in Practice (Zenn), Claude Code QuickStart (Zenn)
-- Topics: Claude Code, Context Engineering, LLMO, LLM Optimization, MCP, Security, AI Development
+- Topics: Claude Code, Context Engineering, LLMO, LLM Optimization, MCP, Security, AI Development, Knowledge Graph, GraphRAG, Code Review
 - Amazon Author: https://www.amazon.co.jp/stores/author/B0GQNPRCGF
 - Zenn (Claude Code): https://zenn.dev/kenimo49/books/claude-code-mastery
 - Zenn (LLMO): https://zenn.dev/kenimo49/books/llmo-ai-search-optimization
 - Zenn (MCP Security): https://zenn.dev/kenimo49/books/mcp-security-practice
 - Zenn (QuickStart): https://zenn.dev/kenimo49/books/claude-code-quickstart
 - Zenn (LLMO Website Builder): https://zenn.dev/kenimo49/books/llmo-website-builder
+- Zenn (AI Code Review): https://zenn.dev/kenimo49/books/harness-code-review
+- Zenn (Knowledge Graph): https://zenn.dev/kenimo49/books/knowledge-graph-practical-guide
 
 ## Yureru (Music Project)
 - Concept: Capturing fleeting emotional moments through music, words, and visuals

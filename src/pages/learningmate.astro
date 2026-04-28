@@ -7,6 +7,31 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
 
 const books = [
   {
+    title: '音声AIの300ms — 人はなぜAIとの会話に違和感を覚えるのか',
+    titleEn: 'The 300ms Threshold',
+    cover: 'book-voice-ai-300ms-ux-ja.jpg',
+    description: '人間の会話ターンは200ms。この生体リズムからの距離が、AIとの会話の違和感の正体。Nielsenの3閾値を音声UIに翻訳し、TTFB・ストリーミング設計・ターンテイキング・エッジAIまで全12章で解説。',
+    price: '¥1,200（Kindle）/ ¥1,200（Zenn）',
+    tags: ['音声AI', 'レイテンシUX', 'ターンテイキング', 'TTFB', 'エッジAI', 'Pipecat', 'LiveKit'],
+    links: {
+      kindle: 'https://www.amazon.co.jp/dp/B0GX2R5HP4',
+      zenn: 'https://zenn.dev/kenimo49/books/voice-ai-300ms-ux',
+    },
+    series: 'エンジニアのためのAI実践シリーズ 最新刊',
+  },
+  {
+    title: 'The 300ms Threshold — Why Talking to AI Feels Wrong',
+    titleEn: 'The 300ms Threshold (English)',
+    cover: 'book-voice-ai-300ms-ux-en.jpg',
+    description: 'Human conversation turns happen in 200ms. The distance from this biological rhythm is the source of uncanny feelings in AI conversations. Covers Nielsen\'s thresholds, TTFB, streaming architecture, turn-taking, and edge AI across 12 chapters.',
+    price: '$9.99（Kindle）',
+    tags: ['Voice AI', 'Latency UX', 'Turn-taking', 'TTFB', 'Edge AI', 'English'],
+    links: {
+      kindle: 'https://www.amazon.co.jp/dp/B0GYQ4L2KP',
+    },
+    series: 'English Edition — NEW',
+  },
+  {
     title: 'ハーネス・エンジニアリング — AIを"使う"から"操る"へ',
     titleEn: 'Harness Engineering',
     cover: 'book-harness-engineering-ja.png',
@@ -17,7 +42,7 @@ const books = [
       kindle: 'https://amzn.asia/d/0eE7m2BJ',
       zenn: 'https://zenn.dev/kenimo49/books/harness-engineering-guide',
     },
-    series: 'エンジニアのためのAI実践シリーズ 最新刊',
+    series: 'エンジニアのためのAI実践シリーズ',
   },
   {
     title: 'Harness Engineering — From Using AI to Controlling AI',
@@ -29,7 +54,7 @@ const books = [
     links: {
       kindle: 'https://a.co/d/0hD6MvVu',
     },
-    series: 'English Edition — NEW',
+    series: 'English Edition',
   },
   {
     title: '実践Claude Code — コンテキストエンジニアリングで開発が変わる',
@@ -84,6 +109,14 @@ const books = [
 ];
 
 const zennBooks = [
+  {
+    title: '音声AIの300ms — 人はなぜAIとの会話に違和感を覚えるのか',
+    description: '人間の会話ターン200msからの距離が違和感の正体。TTFB・ストリーミング・ターンテイキング・エッジAIまで全12章で解説。',
+    price: '¥1,200',
+    url: 'https://zenn.dev/kenimo49/books/voice-ai-300ms-ux',
+    type: '有料Book — NEW',
+    cover: 'zenn-covers/voice-ai-300ms-ux.png',
+  },
   {
     title: 'ハーネス・エンジニアリング — AIを"使う"から"操る"へ',
     description: 'プロンプト→コンテキスト→ハーネス。2026年のAIエージェント制御を5社5視点で体系化。',
@@ -161,6 +194,28 @@ const zennBooks = [
 
 <Layout title="LearningMate — 出版・教育コンテンツ | Propel-Lab" description="Propel-Labの教育コンテンツ事業LearningMate。Claude Code、LLMO、コンテキストエンジニアリングの実践書をKindle・Zennで出版。エンジニアのためのAI実践シリーズ。" ogImage="book-claude-code-ja.jpg">
   <script slot="head" type="application/ld+json" set:html={JSON.stringify([
+    {
+      "@context": "https://schema.org",
+      "@type": "Book",
+      "name": "音声AIの300ms — 人はなぜAIとの会話に違和感を覚えるのか",
+      "author": { "@type": "Person", "name": "ken imoto" },
+      "bookFormat": "EBook",
+      "inLanguage": "ja",
+      "url": "https://www.amazon.co.jp/dp/B0GX2R5HP4",
+      "publisher": { "@type": "Organization", "name": "Propel-Lab" },
+      "about": ["音声AI", "レイテンシUX", "ターンテイキング", "TTFB", "エッジAI"]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Book",
+      "name": "The 300ms Threshold — Why Talking to AI Feels Wrong",
+      "author": { "@type": "Person", "name": "ken imoto" },
+      "bookFormat": "EBook",
+      "inLanguage": "en",
+      "url": "https://www.amazon.co.jp/dp/B0GYQ4L2KP",
+      "publisher": { "@type": "Organization", "name": "Propel-Lab" },
+      "about": ["Voice AI", "Latency UX", "Turn-taking", "TTFB", "Edge AI"]
+    },
     {
       "@context": "https://schema.org",
       "@type": "Book",

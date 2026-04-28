@@ -27,7 +27,7 @@ export const faqItems: FAQItem[] = [
   {
     question: '代表者の経歴を教えてください。',
     answer:
-      '代表の井本賢はエンジニア歴8年。Android/Web開発、ロボティクス、AIエージェントを専門とし、元ロボットエンジニアとしてPepper × SLAMの共同開発に携わりました。Kindle著者として4冊を出版し、Qiitaでは39,000以上のPVを獲得しています。',
+      '代表の井本賢はエンジニア歴8年。Android/Web開発、ロボティクス、AIエージェントを専門とし、元ロボットエンジニアとしてPepper × SLAMの共同開発に携わりました。Kindle著者として12冊を出版し、Qiitaでは80,000以上のPVを獲得しています。',
   },
   {
     question: 'AutoCrewではどのような業務自動化が可能ですか？',

@@ -106,6 +106,55 @@ const books = [
     },
     series: 'English Edition',
   },
+  {
+    title: 'ナレッジグラフ活用大全 — 構造化すれば、AIは賢くなる',
+    titleEn: 'Knowledge Graph Guide',
+    cover: 'book-knowledge-graph-ja.jpg',
+    description: 'GraphRAGの仕組みと企業導入、Tree-sitter AST×MCPによるコードKG、感情常識ナレッジグラフ、パーソナルKGまで。15章でナレッジグラフの「なぜ・なに・どうやって」を網羅。',
+    price: '¥1,250（Kindle）/ ¥1,000（Zenn）',
+    tags: ['ナレッジグラフ', 'GraphRAG', 'Neo4j', 'プロパティグラフ', 'MCP'],
+    links: {
+      kindle: 'https://www.amazon.co.jp/dp/B0GX465PG7',
+      zenn: 'https://zenn.dev/kenimo49/books/knowledge-graph-practical-guide',
+    },
+    series: 'ナレッジ & データシリーズ',
+  },
+  {
+    title: 'The Practical Knowledge Graph Guide — Structure Your Data, Sharpen Your AI',
+    titleEn: 'Knowledge Graph Guide (English)',
+    cover: 'book-knowledge-graph-en.jpg',
+    description: 'From GraphRAG architecture to enterprise deployment, Tree-sitter AST × MCP code knowledge graphs, emotion commonsense KGs, and personal KGs. 15 chapters covering the why, what, and how of knowledge graphs.',
+    price: '$9.99（Kindle）',
+    tags: ['Knowledge Graph', 'GraphRAG', 'Neo4j', 'Property Graph', 'English'],
+    links: {
+      kindle: 'https://www.amazon.co.jp/dp/B0GX2Z73JV',
+    },
+    series: 'English Edition',
+  },
+  {
+    title: 'エンジニアリング100の言葉 — なぜその一文は記憶に残るのか',
+    titleEn: '100 Engineering Quotes',
+    cover: 'book-engineer-it-quotes-ja.jpg',
+    description: 'Brooks、Knuth、Torvaldsから現代のAIエンジニアまで。100の名言を「なぜ記憶に残るのか」の視点で読み解く。体験談18個、SUCCESs分析、クロスリファレンス40+箇所。',
+    price: '¥500（Kindle）',
+    tags: ['エンジニアリング名言', 'ソフトウェア哲学', 'キャリア', 'リーダーシップ'],
+    links: {
+      kindle: 'https://www.amazon.co.jp/dp/B0GXR5Q6NW',
+    },
+    series: 'エンジニアリング文化シリーズ',
+  },
+  {
+    title: 'Why Do Some Words Stay With You Forever? — 100 Engineering Quotes Decoded',
+    titleEn: '100 Engineering Quotes (English)',
+    cover: 'book-engineer-it-quotes-en.jpg',
+    description: 'From Brooks, Knuth, and Torvalds to modern AI engineers. 100 quotes decoded through the lens of "why do these words stick?" With 18 personal stories, SUCCESs analysis, and 40+ cross-references.',
+    price: '$4.99（Kindle）',
+    tags: ['Engineering Quotes', 'Software Philosophy', 'Career', 'Leadership', 'English'],
+    links: {
+      kindle: 'https://www.amazon.co.jp/dp/B0GX3CS95M',
+    },
+    series: 'English Edition',
+  },
 ];
 
 const zennBooks = [
@@ -194,6 +243,50 @@ const zennBooks = [
 
 <Layout title="LearningMate — 出版・教育コンテンツ | Propel-Lab" description="Propel-Labの教育コンテンツ事業LearningMate。Claude Code、LLMO、コンテキストエンジニアリングの実践書をKindle・Zennで出版。エンジニアのためのAI実践シリーズ。" ogImage="book-claude-code-ja.jpg">
   <script slot="head" type="application/ld+json" set:html={JSON.stringify([
+    {
+      "@context": "https://schema.org",
+      "@type": "Book",
+      "name": "ナレッジグラフ活用大全 — 構造化すれば、AIは賢くなる",
+      "author": { "@type": "Person", "name": "ken imoto" },
+      "bookFormat": "EBook",
+      "inLanguage": "ja",
+      "url": "https://www.amazon.co.jp/dp/B0GX465PG7",
+      "publisher": { "@type": "Organization", "name": "Propel-Lab" },
+      "about": ["ナレッジグラフ", "GraphRAG", "Neo4j", "プロパティグラフ"]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Book",
+      "name": "The Practical Knowledge Graph Guide — Structure Your Data, Sharpen Your AI",
+      "author": { "@type": "Person", "name": "ken imoto" },
+      "bookFormat": "EBook",
+      "inLanguage": "en",
+      "url": "https://www.amazon.co.jp/dp/B0GX2Z73JV",
+      "publisher": { "@type": "Organization", "name": "Propel-Lab" },
+      "about": ["Knowledge Graph", "GraphRAG", "Neo4j", "Property Graph"]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Book",
+      "name": "エンジニアリング100の言葉 — なぜその一文は記憶に残るのか",
+      "author": { "@type": "Person", "name": "ken imoto" },
+      "bookFormat": "EBook",
+      "inLanguage": "ja",
+      "url": "https://www.amazon.co.jp/dp/B0GXR5Q6NW",
+      "publisher": { "@type": "Organization", "name": "Propel-Lab" },
+      "about": ["エンジニアリング名言", "ソフトウェア哲学", "キャリア"]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Book",
+      "name": "Why Do Some Words Stay With You Forever? — 100 Engineering Quotes Decoded",
+      "author": { "@type": "Person", "name": "ken imoto" },
+      "bookFormat": "EBook",
+      "inLanguage": "en",
+      "url": "https://www.amazon.co.jp/dp/B0GX3CS95M",
+      "publisher": { "@type": "Organization", "name": "Propel-Lab" },
+      "about": ["Engineering Quotes", "Software Philosophy", "Career"]
+    },
     {
       "@context": "https://schema.org",
       "@type": "Book",

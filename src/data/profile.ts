@@ -7,7 +7,7 @@ export const profile = {
   specialties: ['WebRTC/リアルタイム通信', '音声AI', 'コンテキストエンジニアリング'],
   highlights: [
     'LLMOフレームワーク提唱者（AI検索最適化）',
-    'Kindle著者: 12冊（音声AIの300ms / ハーネスエンジニアリング / 実践Claude Code 等）',
+    'Kindle著者: 14冊（音声AIの300ms / ハーネスエンジニアリング / 実践Claude Code 等）',
     'Qiita: 67,000+ PV',
   ],
   links: {

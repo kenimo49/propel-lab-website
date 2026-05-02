@@ -37,6 +37,15 @@ export const services: Service[] = [
     tech: ['マルチエージェント', 'MCP', 'CLI Skill'],
   },
   {
+    id: 'kaoriq',
+    name: 'KaoriQ',
+    category: 'AI駆動EC自動運用',
+    summary: 'LLMエージェントによるECサイトの自律運用 — コンテンツ生成・SEO・LLMO・商品キュレーションを完全自動化',
+    target: 'EC事業者、D2Cブランド運営者',
+    tech: ['LLMエージェント', 'Shopify API', 'LLMO', 'harness-ops'],
+    platforms: ['kaoriq.com'],
+  },
+  {
     id: 'yureru',
     name: 'Yureru',
     category: '音楽・クリエイティブ',

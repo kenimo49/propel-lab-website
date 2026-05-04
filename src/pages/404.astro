@@ -1,0 +1,76 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  title="ページが見つかりません — 合同会社 Propel-Lab"
+  description="お探しのページは存在しないか、移動・削除された可能性があります。"
+>
+  <Header />
+  <main class="pt-24 pb-20 min-h-[60vh]">
+    <div class="mx-auto max-w-3xl px-4 text-center">
+      <p class="text-7xl md:text-8xl font-bold text-accent mb-6 tracking-tight">404</p>
+      <h1 class="text-3xl md:text-4xl font-bold text-charcoal mb-4">ページが見つかりません</h1>
+      <p class="text-mid text-base md:text-lg leading-relaxed mb-12 max-w-xl mx-auto">
+        お探しのページは存在しないか、URL が変更された可能性があります。<br class="hidden md:block" />
+        以下のリンクから目的の情報をお探しください。
+      </p>
+
+      <nav class="flex flex-wrap gap-3 justify-center text-sm">
+        <a
+          href="/"
+          class="px-5 py-2.5 rounded-lg bg-navy text-white font-medium hover:bg-navy/90 transition-colors"
+        >
+          トップへ戻る
+        </a>
+        <a
+          href="/products"
+          class="px-5 py-2.5 rounded-lg border border-gray-200 text-charcoal font-medium hover:border-accent hover:text-accent transition-colors"
+        >
+          事業紹介
+        </a>
+        <a
+          href="/company"
+          class="px-5 py-2.5 rounded-lg border border-gray-200 text-charcoal font-medium hover:border-accent hover:text-accent transition-colors"
+        >
+          会社情報
+        </a>
+        <a
+          href="/#contact"
+          class="px-5 py-2.5 rounded-lg border border-gray-200 text-charcoal font-medium hover:border-accent hover:text-accent transition-colors"
+        >
+          お問い合わせ
+        </a>
+      </nav>
+
+      <div class="mt-16 pt-12 border-t border-gray-100 text-left max-w-xl mx-auto">
+        <h2 class="text-sm font-semibold text-mid mb-4 uppercase tracking-wide">主な事業</h2>
+        <ul class="space-y-3 text-sm">
+          <li>
+            <a href="/learningmate" class="text-charcoal hover:text-accent transition-colors">
+              LearningMate <span class="text-mid">— 教育コンテンツ</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://kaoriq.com/" target="_blank" rel="noopener noreferrer" class="text-charcoal hover:text-accent transition-colors">
+              KaoriQ <span class="text-mid">— AI駆動EC自動運用 ↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://mypcrig.com/" target="_blank" rel="noopener noreferrer" class="text-charcoal hover:text-accent transition-colors">
+              mypcrig <span class="text-mid">— AI駆動コンテンツメディア ↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="/yureru" class="text-charcoal hover:text-accent transition-colors">
+              Yureru <span class="text-mid">— 音楽・クリエイティブ</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Layout>

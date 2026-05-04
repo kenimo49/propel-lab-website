@@ -8,6 +8,7 @@ export interface Service {
   platforms?: string[];
   youtube?: string;
   characters?: string[];
+  external_url?: string;
 }
 
 export const services: Service[] = [
@@ -44,6 +45,7 @@ export const services: Service[] = [
     target: 'EC事業者、D2Cブランド運営者',
     tech: ['LLMエージェント', 'Shopify API', 'LLMO', 'harness-ops'],
     platforms: ['kaoriq.com'],
+    external_url: 'https://kaoriq.com/',
   },
   {
     id: 'mypcrig',
@@ -53,6 +55,7 @@ export const services: Service[] = [
     target: 'AI開発者、ゲーマー、クリエイター、PC選定に迷うすべての人',
     tech: ['LLMエージェント', 'GA4 + Search Console', 'harness-ops', 'iris-lab実機ベンチマーク'],
     platforms: ['mypcrig.com'],
+    external_url: 'https://mypcrig.com/',
   },
   {
     id: 'yureru',

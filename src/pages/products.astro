@@ -26,15 +26,25 @@ import { services } from '../data/services';
       <p class="text-gray-600 mb-12">AI・LLM技術を軸にした6つの事業を展開しています。</p>
 
       <div class="space-y-12">
-        {services.map((service) => (
-          <section class={`bg-white rounded-xl p-8 border border-gray-100 shadow-sm ${(service.id === 'yureru' || service.id === 'learningmate') ? 'cursor-pointer hover:shadow-md transition-shadow' : ''}`}
-            data-href={(service.id === 'yureru' || service.id === 'learningmate') ? `${import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : import.meta.env.BASE_URL + '/'}${service.id === 'yureru' ? 'yureru' : 'learningmate'}` : undefined}>
+        {services.map((service) => {
+          const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : import.meta.env.BASE_URL + '/';
+          const internalHref =
+            service.id === 'yureru' ? `${baseUrl}yureru`
+            : service.id === 'learningmate' ? `${baseUrl}learningmate`
+            : null;
+          const externalHref = service.external_url ?? null;
+          const navHref = internalHref ?? externalHref;
+          const isExternal = !internalHref && !!externalHref;
+          return (
+          <section class={`bg-white rounded-xl p-8 border border-gray-100 shadow-sm ${navHref ? 'cursor-pointer hover:shadow-md transition-shadow' : ''}`}
+            data-href={navHref ?? undefined}
+            data-external={isExternal ? 'true' : undefined}>
             <div class="mb-4">
               <h2 class="text-2xl font-bold">
-                {service.id === 'yureru' ? (
-                  <a href={`${import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : import.meta.env.BASE_URL + '/'}yureru`} class="hover:text-accent transition-colors">{service.name} →</a>
-                ) : service.id === 'learningmate' ? (
-                  <a href={`${import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : import.meta.env.BASE_URL + '/'}learningmate`} class="hover:text-accent transition-colors">{service.name} →</a>
+                {navHref ? (
+                  <a href={navHref}
+                     {...(isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                     class="hover:text-accent transition-colors">{service.name} →</a>
                 ) : service.name}
               </h2>
               <p class="text-sm text-accent font-medium">{service.category}</p>
@@ -72,7 +82,8 @@ import { services } from '../data/services';
               ))}
             </div>
           </section>
-        ))}
+          );
+        })}
       </div>
     </div>
   </main>
@@ -82,7 +93,13 @@ import { services } from '../data/services';
       el.addEventListener('click', (e) => {
         const target = e.target as HTMLElement;
         if (target.tagName !== 'A') {
-          window.location.href = (el as HTMLElement).dataset.href!;
+          const href = (el as HTMLElement).dataset.href!;
+          const isExternal = (el as HTMLElement).dataset.external === 'true';
+          if (isExternal) {
+            window.open(href, '_blank', 'noopener,noreferrer');
+          } else {
+            window.location.href = href;
+          }
         }
       });
     });

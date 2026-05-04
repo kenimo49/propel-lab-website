@@ -5,7 +5,7 @@ import Footer from '../components/Footer.astro';
 import { services } from '../data/services';
 ---
 
-<Layout title="事業紹介 — 合同会社 Propel-Lab" description="合同会社Propel-Labの事業紹介。LearningMate、AI-Loop、AutoCrew、KaoriQ、Yureruの5事業を展開。">
+<Layout title="事業紹介 — 合同会社 Propel-Lab" description="合同会社Propel-Labの事業紹介。LearningMate、AI-Loop、AutoCrew、KaoriQ、mypcrig、Yureruの6事業を展開。">
   <script slot="head" type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "ItemList",
@@ -15,14 +15,15 @@ import { services } from '../data/services';
       { "@type": "ListItem", "position": 2, "item": { "@type": "Service", "name": "AI-Loop", "description": "LLMエージェントによるSNS自動化・コンテンツマーケティング支援" }},
       { "@type": "ListItem", "position": 3, "item": { "@type": "Service", "name": "AutoCrew", "description": "マルチエージェントLLMシステム（MCP、CLI Skills）による業務自動化コンサルティング" }},
       { "@type": "ListItem", "position": 4, "item": { "@type": "Service", "name": "KaoriQ", "description": "LLMエージェントによるECサイトの自律運用。コンテンツ生成・SEO・LLMO・商品キュレーションを完全自動化", "url": "https://kaoriq.com" }},
-      { "@type": "ListItem", "position": 5, "item": { "@type": "Service", "name": "Yureru", "description": "バーチャルシンガーYumei・Silk Reignによる音楽・クリエイティブプロジェクト", "url": "https://propel-lab.co.jp/yureru" }}
+      { "@type": "ListItem", "position": 5, "item": { "@type": "Service", "name": "mypcrig", "description": "LLMエージェントによるPC選定メディアの自律運用。GA4・Search Console連携で検索意図ドリブンの記事生成を自動化", "url": "https://mypcrig.com" }},
+      { "@type": "ListItem", "position": 6, "item": { "@type": "Service", "name": "Yureru", "description": "バーチャルシンガーYumei・Silk Reignによる音楽・クリエイティブプロジェクト", "url": "https://propel-lab.co.jp/yureru" }}
     ]
   })} />
   <Header />
   <main class="pt-24 pb-20">
     <div class="mx-auto max-w-4xl px-4">
       <h1 class="text-4xl font-bold mb-4">事業紹介</h1>
-      <p class="text-gray-600 mb-12">AI・LLM技術を軸にした5つの事業を展開しています。</p>
+      <p class="text-gray-600 mb-12">AI・LLM技術を軸にした6つの事業を展開しています。</p>
 
       <div class="space-y-12">
         {services.map((service) => (

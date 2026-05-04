@@ -7,7 +7,7 @@ export const faqItems: FAQItem[] = [
   {
     question: 'Propel-Labはどのような会社ですか？',
     answer:
-      '合同会社Propel-Labは、AI・LLM技術を活用した事業を展開する福岡発のテクノロジー企業です。教育コンテンツ制作、マーケティング自動化、業務自動化コンサルティング、音楽・クリエイティブ事業の4つの柱で活動しています。',
+      '合同会社Propel-Labは、AI・LLM技術を活用した事業を展開する福岡発のテクノロジー企業です。教育コンテンツ制作、マーケティング自動化、業務自動化コンサルティング、AI駆動EC・コンテンツメディア運用、音楽・クリエイティブ事業の6つの柱で活動しています。',
   },
   {
     question: 'LLMOとは何ですか？',
@@ -17,7 +17,7 @@ export const faqItems: FAQItem[] = [
   {
     question: 'どのようなサービスを提供していますか？',
     answer:
-      'LearningMate（教育コンテンツ）、AI-Loop（マーケティング自動化）、AutoCrew（業務自動化コンサルティング）、Yureru（音楽・クリエイティブ）の4事業を展開しています。',
+      'LearningMate（教育コンテンツ）、AI-Loop（マーケティング自動化）、AutoCrew（業務自動化コンサルティング）、KaoriQ（AI駆動EC自動運用）、mypcrig（AI駆動コンテンツメディア）、Yureru（音楽・クリエイティブ）の6事業を展開しています。',
   },
   {
     question: 'お問い合わせ方法を教えてください。',

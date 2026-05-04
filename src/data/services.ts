@@ -46,6 +46,15 @@ export const services: Service[] = [
     platforms: ['kaoriq.com'],
   },
   {
+    id: 'mypcrig',
+    name: 'mypcrig',
+    category: 'AI駆動コンテンツメディア',
+    summary: 'LLMエージェントによるPC選定メディアの自律運用 — 用途別ガイド・実機ベンチマーク・検索意図ドリブンの記事生成を完全自動化',
+    target: 'AI開発者、ゲーマー、クリエイター、PC選定に迷うすべての人',
+    tech: ['LLMエージェント', 'GA4 + Search Console', 'harness-ops', 'iris-lab実機ベンチマーク'],
+    platforms: ['mypcrig.com'],
+  },
+  {
     id: 'yureru',
     name: 'Yureru',
     category: '音楽・クリエイティブ',

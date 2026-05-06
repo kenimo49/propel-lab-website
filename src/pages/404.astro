@@ -7,6 +7,7 @@ import Footer from '../components/Footer.astro';
 <Layout
   title="ページが見つかりません — 合同会社 Propel-Lab"
   description="お探しのページは存在しないか、移動・削除された可能性があります。"
+  noindex
 >
   <Header />
   <main class="pt-24 pb-20 min-h-[60vh]">
@@ -26,13 +27,13 @@ import Footer from '../components/Footer.astro';
           トップへ戻る
         </a>
         <a
-          href="/products"
+          href="/products/"
           class="px-5 py-2.5 rounded-lg border border-gray-200 text-charcoal font-medium hover:border-accent hover:text-accent transition-colors"
         >
           事業紹介
         </a>
         <a
-          href="/company"
+          href="/company/"
           class="px-5 py-2.5 rounded-lg border border-gray-200 text-charcoal font-medium hover:border-accent hover:text-accent transition-colors"
         >
           会社情報
@@ -49,7 +50,7 @@ import Footer from '../components/Footer.astro';
         <h2 class="text-sm font-semibold text-mid mb-4 uppercase tracking-wide">主な事業</h2>
         <ul class="space-y-3 text-sm">
           <li>
-            <a href="/learningmate" class="text-charcoal hover:text-accent transition-colors">
+            <a href="/learningmate/" class="text-charcoal hover:text-accent transition-colors">
               LearningMate <span class="text-mid">— 教育コンテンツ</span>
             </a>
           </li>
@@ -64,7 +65,7 @@ import Footer from '../components/Footer.astro';
             </a>
           </li>
           <li>
-            <a href="/yureru" class="text-charcoal hover:text-accent transition-colors">
+            <a href="/yureru/" class="text-charcoal hover:text-accent transition-colors">
               Yureru <span class="text-mid">— 音楽・クリエイティブ</span>
             </a>
           </li>

@@ -13,7 +13,7 @@ title: 会社概要 — 合同会社 Propel-Lab
 - **設立**: 2025年4月24日
 - **資本金**: 50万円
 - **メール**: info@propel-lab.co.jp
-- **URL**: https://www.propel-lab.co.jp/
+- **URL**: https://propel-lab.co.jp/
 
 ## ミッション
 

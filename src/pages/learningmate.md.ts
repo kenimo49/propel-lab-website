@@ -73,7 +73,7 @@ CLAUDE.md、AGENTS.md、TOOLS.mdなどの設計ファイルを適切に配置す
 ## リンク
 - Amazon著者ページ: https://www.amazon.co.jp/stores/author/B0GQNPRCGF
 - Zenn: https://zenn.dev/kenimo49
-- 運営: 合同会社 Propel-Lab（https://www.propel-lab.co.jp/）
+- 運営: 合同会社 Propel-Lab（https://propel-lab.co.jp/）
 `;
 
   return new Response(content, {

@@ -4,7 +4,7 @@
     "@type": "Organization",
     "name": "合同会社 Propel-Lab",
     "alternateName": "プロペルラボ",
-    "url": "https://www.propel-lab.co.jp/",
+    "url": "https://propel-lab.co.jp/",
     "email": "info@propel-lab.co.jp",
     "address": {
       "@type": "PostalAddress",
@@ -24,7 +24,7 @@
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "合同会社 Propel-Lab",
-    "url": "https://www.propel-lab.co.jp/"
+    "url": "https://propel-lab.co.jp/"
   },
   {
     "@context": "https://schema.org",

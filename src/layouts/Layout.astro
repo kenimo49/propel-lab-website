@@ -6,9 +6,10 @@ interface Props {
   description?: string;
   ogImage?: string;
   lang?: string;
+  noindex?: boolean;
 }
 
-const { title, description = '合同会社Propel-Lab — 仕組みとエンジニアリングの力で、次世代の経営モデルを構築する', ogImage = 'og-image.jpg', lang = 'ja' } = Astro.props;
+const { title, description = '合同会社Propel-Lab — 仕組みとエンジニアリングの力で、次世代の経営モデルを構築する', ogImage = 'og-image.jpg', lang = 'ja', noindex = false } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
 ---
@@ -23,11 +24,13 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
     <meta http-equiv="X-Content-Type-Options" content="nosniff" />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
     <link rel="canonical" href={canonicalURL.href} />
+    {noindex && <meta name="robots" content="noindex" />}
     <link rel="icon" href={`${base}favicon.ico`} />
     <link rel="apple-touch-icon" href={`${base}apple-touch-icon.png`} />
-    <link rel="sitemap" href="/sitemap.xml" />
-    <link rel="alternate" hreflang="ja" href="https://www.propel-lab.co.jp/" />
-    <link rel="alternate" hreflang="en" href="https://www.propel-lab.co.jp/en" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="alternate" hreflang="ja" href="https://propel-lab.co.jp/" />
+    <link rel="alternate" hreflang="en" href="https://propel-lab.co.jp/en/" />
+    <link rel="alternate" hreflang="x-default" href="https://propel-lab.co.jp/" />
 
     <!-- OGP -->
     <meta property="og:title" content={title} />
@@ -54,7 +57,7 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
         "@type": "Organization",
         "name": "合同会社 Propel-Lab",
         "alternateName": "プロペルラボ",
-        "url": "https://www.propel-lab.co.jp/",
+        "url": "https://propel-lab.co.jp/",
         "email": "info@propel-lab.co.jp",
         "address": {
           "@type": "PostalAddress",
@@ -74,7 +77,7 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
         "@context": "https://schema.org",
         "@type": "WebSite",
         "name": "合同会社 Propel-Lab",
-        "url": "https://www.propel-lab.co.jp/"
+        "url": "https://propel-lab.co.jp/"
       },
       {
         "@context": "https://schema.org",

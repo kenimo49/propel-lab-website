@@ -39,7 +39,7 @@ const serviceNumbers = ['01', '02', '03', '04', '05', '06'];
           : 'lg:col-span-5';
         const imgFile = serviceImages[service.name] || '';
         const num = serviceNumbers[i];
-        const internalUrl = service.id === 'yureru' ? `${base}yureru` : service.id === 'learningmate' ? `${base}learningmate` : null;
+        const internalUrl = service.id === 'yureru' ? `${base}yureru/` : service.id === 'learningmate' ? `${base}learningmate/` : null;
         const linkUrl = internalUrl ?? service.external_url ?? null;
         const isExternal = !internalUrl && !!service.external_url;
 

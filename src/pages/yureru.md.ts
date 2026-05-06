@@ -47,7 +47,7 @@ AI技術を活用した次世代の音楽制作ワークフロー:
 - YouTube: https://youtube.com/@Yureru-s4n
 - note: https://note.com/yureru_propel
 - Instagram: https://www.instagram.com/yureru_s4n/
-- 運営: 合同会社 Propel-Lab（https://www.propel-lab.co.jp/）
+- 運営: 合同会社 Propel-Lab（https://propel-lab.co.jp/）
 `;
 
   return new Response(content, {

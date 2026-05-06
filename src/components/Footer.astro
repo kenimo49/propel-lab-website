@@ -23,8 +23,8 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
         <div class="font-mono text-[10px] text-faint/40 tracking-[0.2em] uppercase mb-4">Navigation</div>
         <ul class="space-y-2">
           <li><a href={base} class="text-sm text-dim/70 hover:text-cream transition-colors font-mono">トップ</a></li>
-          <li><a href={`${base}products`} class="text-sm text-dim/70 hover:text-cream transition-colors font-mono">事業紹介</a></li>
-          <li><a href={`${base}company`} class="text-sm text-dim/70 hover:text-cream transition-colors font-mono">会社概要</a></li>
+          <li><a href={`${base}products/`} class="text-sm text-dim/70 hover:text-cream transition-colors font-mono">事業紹介</a></li>
+          <li><a href={`${base}company/`} class="text-sm text-dim/70 hover:text-cream transition-colors font-mono">会社概要</a></li>
           <li><a href={`${base}#contact`} class="text-sm text-dim/70 hover:text-cream transition-colors font-mono">お問い合わせ</a></li>
         </ul>
       </div>
@@ -50,7 +50,7 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
         &copy; {new Date().getFullYear()} {company.name}
       </p>
       <div class="flex items-center gap-4">
-        <a href={`${base}en`} class="text-[11px] font-mono text-dim/40 hover:text-cream/60 transition-colors tracking-wider">English</a>
+        <a href={`${base}en/`} class="text-[11px] font-mono text-dim/40 hover:text-cream/60 transition-colors tracking-wider">English</a>
         <span class="text-dim/20">·</span>
         <span class="text-[11px] font-mono text-dim/30 tracking-wider">Fukuoka, Japan</span>
       </div>

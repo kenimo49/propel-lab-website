@@ -9,6 +9,6 @@ export const company = {
   founded: '2025年4月24日',
   capital: '50万円',
   email: 'info@propel-lab.co.jp',
-  url: 'https://www.propel-lab.co.jp/',
+  url: 'https://propel-lab.co.jp/',
   mission: '仕組みとエンジニアリングの力で、次世代の経営モデルを構築する',
 };

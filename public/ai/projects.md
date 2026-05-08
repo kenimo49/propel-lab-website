@@ -5,14 +5,14 @@
 ### LearningMate 書籍シリーズ
 - **ステータス**: 継続中
 - **概要**: エンジニアのためのAI実践シリーズとして、Claude Code・LLMO・コンテキストエンジニアリングに関する技術書を出版
-- **実績**: Kindle 4冊出版済み（日英2言語）、Zenn Books 3冊
+- **実績**: Kindle 14冊出版済み（日英2言語）、Zenn Books 7冊。フルリストは `/llms.txt` 参照
 - **次の展開**: Udemy講座の準備、新刊の執筆
 - **Amazon著者ページ**: https://www.amazon.co.jp/stores/author/B0GQNPRCGF
 
 ### LLMO最適化サイト構築
 - **ステータス**: 完了・運用中
 - **概要**: LLMOに最適化された企業サイトをAstro + GitHub Pagesで構築
-- **技術**: Astro, Tailwind CSS, JSON-LD (11スキーマ), llms.txt, URL.mdパターン, Playwright
+- **技術**: Astro, Tailwind CSS, JSON-LD（共通: Organization/WebSite/Person、ページ別: FAQPage/Service[]/Book[]/MusicGroup/ItemList）, llms.txt, URL.mdパターン, Playwright
 - **公開リポジトリ**: https://github.com/kenimo49/propel-lab-website
 - **成果**: 5段階AI理解構造の実装、33テストによるLLMO品質保証
 

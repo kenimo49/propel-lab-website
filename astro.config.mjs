@@ -7,6 +7,7 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   site: 'https://propel-lab.co.jp',
   base: '/',
+  compressHTML: false,
   integrations: [sitemap()],
   vite: {
     plugins: [tailwindcss()],

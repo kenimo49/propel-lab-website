@@ -17,15 +17,18 @@ Ken Imoto (井本 賢) is a software engineer with 8+ years of experience and th
 - **Robotics**: Former robotics engineer — Pepper × SLAM co-development with Aldebaran, live deployment at SoftBank events
 - **Multi-cloud expertise**: Managed 5 parallel projects simultaneously across AWS, Azure, and Firebase
 - **Productivity**: Achieved 300% productivity boost in TypeScript development through LLM × Context Engineering
-- **Publishing**: Kindle author of 4 books (bilingual JP/EN) on Claude Code and LLMO
-- **Technical Writing**: 39,000+ PV on Qiita (SSH security article: 18K PV, CLAUDE.md defense: 8K PV)
+- **Publishing**: Kindle author of 14 books (bilingual JP/EN) on Claude Code, LLMO, Harness Engineering, and adjacent topics. See `/llms.txt` for the full catalog.
+- **Technical Writing**: 80,000+ PV on Qiita
 
-## Published Books
+## Published Books (selection)
 
 1. **Practical Claude Code** — Context Engineering for Modern Development (Kindle EN/JP, Zenn ¥1,000)
 2. **LLMO — Three Paths for AI to Discover Your Content** (Kindle EN/JP, Zenn ¥1,980)
-3. **MCP Security in Practice** — Complete Guide for Production Deployment (Zenn, Free)
-4. **Claude Code QuickStart** (Zenn, Free)
+3. **Harness Engineering** — design patterns for AI agent harnesses (Kindle / Zenn)
+4. **MCP Security in Practice** — Complete Guide for Production Deployment (Zenn, Free)
+5. **Claude Code QuickStart** (Zenn, Free)
+
+Full catalog: see [llms.txt](/llms.txt).
 
 ## Technical Expertise
 

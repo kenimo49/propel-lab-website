@@ -26,10 +26,13 @@ test.describe('JSON-LD 構造化データ', () => {
     expect(found).toBe(true);
   });
 
-  test('schema.jsonldが有効なJSONである', async ({ request }) => {
-    const res = await request.get(url('/schema.jsonld'));
-    expect(res.status()).toBe(200);
-    const text = await res.text();
-    expect(() => JSON.parse(text)).not.toThrow();
+  test('インラインJSON-LDが有効なJSONである', async ({ page }) => {
+    await page.goto(url('/'));
+    const scripts = await page.locator('script[type="application/ld+json"]').all();
+    expect(scripts.length).toBeGreaterThan(0);
+    for (const script of scripts) {
+      const text = await script.textContent();
+      expect(() => JSON.parse(text ?? '')).not.toThrow();
+    }
   });
 });

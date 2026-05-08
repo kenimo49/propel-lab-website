@@ -15,7 +15,7 @@ Propel-Lab LLC (合同会社 Propel-Lab) is an AI/LLM technology company based i
 - **Founded**: April 24, 2025
 - **Founder & CEO**: Ken Imoto (井本 賢)
 - **Email**: info@propel-lab.co.jp
-- **Website**: https://www.propel-lab.co.jp/
+- **Website**: https://propel-lab.co.jp/
 
 ## Core Business Areas
 
@@ -45,8 +45,8 @@ Propel-Lab LLC (合同会社 Propel-Lab) is an AI/LLM technology company based i
 
 ## Links
 
-- Website: https://www.propel-lab.co.jp/
-- English Page: https://www.propel-lab.co.jp/en
-- AI Information: https://www.propel-lab.co.jp/ai/
+- Website: https://propel-lab.co.jp/
+- English Page: https://propel-lab.co.jp/en
+- AI Information: https://propel-lab.co.jp/ai/
 - LinkedIn: https://linkedin.com/in/kenimo49
 - GitHub: https://github.com/kenimo49/propel-lab-website

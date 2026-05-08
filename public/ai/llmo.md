@@ -40,15 +40,15 @@ Serve clean, well-structured Markdown files specifically for AI consumption. LLM
 
 Propel-Lab practices what it teaches. This website implements all three LLMO paths:
 
-1. **11 JSON-LD schemas** embedded across pages (Organization, Person, WebSite, Service ×4, MusicGroup, Book ×2, FAQPage)
-2. **llms.txt** with links to detailed Markdown resources
-3. **/ai/ directory** with 6 Markdown files covering company, services, products, projects, founder, and LLMO framework
+1. **JSON-LD schemas scoped per page** — common entities on every page (Organization, WebSite, Person), and page-relevant entities only where they belong: Service ×7 + FAQPage on the home page, Book schemas on `/learningmate/`, MusicGroup on `/yureru/`, ItemList on `/products/`. The home page also exposes BookSeries metadata via `/llms-full.txt`.
+2. **llms.txt** with English / Japanese / full variants, plus links to detailed Markdown resources.
+3. **/ai/ directory** with Markdown files covering company, services, products, projects, founder, LLMO framework, and an English `about.md` overview.
 
 ## Learn More
 
 - Book: "LLMO — Three Paths for AI to Discover Your Content" (Kindle / Zenn)
   - Kindle: https://www.amazon.co.jp/stores/author/B0GQNPRCGF
   - Zenn: https://zenn.dev/kenimo49/books/llmo-ai-search-optimization
-- Company: https://www.propel-lab.co.jp/
-- English Page: https://www.propel-lab.co.jp/en
-- AI Information Hub: https://www.propel-lab.co.jp/ai/
+- Company: https://propel-lab.co.jp/
+- English Page: https://propel-lab.co.jp/en
+- AI Information Hub: https://propel-lab.co.jp/ai/

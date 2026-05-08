@@ -18,7 +18,7 @@
   - Claude Codeクイックスタート（Zenn 無料）
 - **Amazon著者ページ**: https://www.amazon.co.jp/stores/author/B0GQNPRCGF
 - **Zenn**: https://zenn.dev/kenimo49
-- **詳細**: https://www.propel-lab.co.jp/learningmate.md
+- **詳細**: https://propel-lab.co.jp/learningmate.md
 
 ## AI-Loop
 - **カテゴリ**: マーケティング自動化
@@ -71,4 +71,4 @@
 - **YouTube**: https://youtube.com/@Yureru-s4n
 - **note**: https://note.com/yureru_propel
 - **Instagram**: https://www.instagram.com/yureru_s4n/
-- **詳細**: https://www.propel-lab.co.jp/yureru.md
+- **詳細**: https://propel-lab.co.jp/yureru.md

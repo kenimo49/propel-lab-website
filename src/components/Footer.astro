@@ -1,6 +1,54 @@
 ---
 import { company } from '../data/company';
+
+interface Props {
+  lang?: 'ja' | 'en';
+}
+
+const { lang = 'ja' } = Astro.props;
 const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+
+const labels = lang === 'en'
+  ? {
+      navHeading: 'Navigation',
+      home: 'Home',
+      services: 'Services',
+      company: 'About',
+      contact: 'Contact',
+      companyHeading: 'Company',
+      altLang: '日本語',
+      mission: 'Engineering the next generation of business models with AI.',
+      addressDisplay: 'Tenjin First Bldg. 7F, 4-6-28 Tenjin, Chuo-ku, Fukuoka, Japan',
+      companyDisplay: company.nameEn,
+    }
+  : {
+      navHeading: 'Navigation',
+      home: 'トップ',
+      services: '事業紹介',
+      company: '会社概要',
+      contact: 'お問い合わせ',
+      companyHeading: 'Company',
+      altLang: 'English',
+      mission: company.mission,
+      addressDisplay: company.address,
+      companyDisplay: company.name,
+    };
+
+const navHrefs = lang === 'en'
+  ? {
+      home: `${base}en/`,
+      services: `${base}en/#services`,
+      company: `${base}en/#about`,
+      contact: `${base}en/#contact`,
+    }
+  : {
+      home: base,
+      services: `${base}products/`,
+      company: `${base}company/`,
+      contact: `${base}#contact`,
+    };
+
+const altLangHref = lang === 'en' ? base : `${base}en/`;
 ---
 
 <footer class="bg-deep text-dim py-16 relative">
@@ -15,26 +63,26 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
             class="h-7 w-auto opacity-60 brightness-0 invert"
           />
         </div>
-        <p class="text-sm leading-relaxed text-dim/70 max-w-sm">{company.mission}</p>
+        <p class="text-sm leading-relaxed text-dim/70 max-w-sm">{labels.mission}</p>
       </div>
 
       <!-- Navigation -->
       <div class="lg:col-span-3">
-        <div class="font-mono text-[10px] text-faint/40 tracking-[0.2em] uppercase mb-4">Navigation</div>
+        <div class="font-mono text-[10px] text-faint/40 tracking-[0.2em] uppercase mb-4">{labels.navHeading}</div>
         <ul class="space-y-2">
-          <li><a href={base} class="text-sm text-dim/70 hover:text-cream transition-colors font-mono">トップ</a></li>
-          <li><a href={`${base}products/`} class="text-sm text-dim/70 hover:text-cream transition-colors font-mono">事業紹介</a></li>
-          <li><a href={`${base}company/`} class="text-sm text-dim/70 hover:text-cream transition-colors font-mono">会社概要</a></li>
-          <li><a href={`${base}#contact`} class="text-sm text-dim/70 hover:text-cream transition-colors font-mono">お問い合わせ</a></li>
+          <li><a href={navHrefs.home} class="text-sm text-dim/70 hover:text-cream transition-colors font-mono">{labels.home}</a></li>
+          <li><a href={navHrefs.services} class="text-sm text-dim/70 hover:text-cream transition-colors font-mono">{labels.services}</a></li>
+          <li><a href={navHrefs.company} class="text-sm text-dim/70 hover:text-cream transition-colors font-mono">{labels.company}</a></li>
+          <li><a href={navHrefs.contact} class="text-sm text-dim/70 hover:text-cream transition-colors font-mono">{labels.contact}</a></li>
         </ul>
       </div>
 
       <!-- Company info -->
       <div class="lg:col-span-4">
-        <div class="font-mono text-[10px] text-faint/40 tracking-[0.2em] uppercase mb-4">Company</div>
+        <div class="font-mono text-[10px] text-faint/40 tracking-[0.2em] uppercase mb-4">{labels.companyHeading}</div>
         <ul class="text-sm space-y-2 text-dim/70">
-          <li class="font-mono text-xs">{company.name}</li>
-          <li class="font-mono text-xs">{company.address}</li>
+          <li class="font-mono text-xs">{labels.companyDisplay}</li>
+          <li class="font-mono text-xs">{labels.addressDisplay}</li>
           <li>
             <a href={`mailto:${company.email}`} class="font-mono text-xs hover:text-cream transition-colors">
               {company.email}
@@ -50,7 +98,7 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
         &copy; {new Date().getFullYear()} {company.name}
       </p>
       <div class="flex items-center gap-4">
-        <a href={`${base}en/`} class="text-[11px] font-mono text-dim/40 hover:text-cream/60 transition-colors tracking-wider">English</a>
+        <a href={altLangHref} hreflang={lang === 'en' ? 'ja' : 'en'} lang={lang === 'en' ? 'ja' : 'en'} class="text-[11px] font-mono text-dim/40 hover:text-cream/60 transition-colors tracking-wider">{labels.altLang}</a>
         <span class="text-dim/20">·</span>
         <span class="text-[11px] font-mono text-dim/30 tracking-wider">Fukuoka, Japan</span>
       </div>

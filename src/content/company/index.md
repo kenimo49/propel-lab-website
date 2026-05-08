@@ -24,7 +24,10 @@ title: 会社概要 — 合同会社 Propel-Lab
 1. **LearningMate** — LLM活用の教育コンテンツ企画・制作・販売
 2. **AI-Loop** — SNS運用自動化・コンテンツマーケティング支援
 3. **AutoCrew** — LLMによる自動実行エージェント構成・業務最適化
-4. **Yureru** — 感動の構造化と音楽化プロジェクト
+4. **KaoriQ** — AI駆動EC自動運用（[kaoriq.com](https://kaoriq.com/) — 性格診断×香水データベースの自律運用）
+5. **mypcrig** — AI駆動コンテンツメディア（[mypcrig.com](https://mypcrig.com/) — PC選定ガイドの自律運用）
+6. **legacydram** — AI駆動キュレーションメディア（[legacydram.com](https://legacydram.com/) — ウィスキー×エンジニアの人物軸キュレーション）
+7. **Yureru** — 感動の構造化と音楽化プロジェクト（バーチャルシンガー Yumei / Silk Reign）
 
 ## 代表者プロフィール
 

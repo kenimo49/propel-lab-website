@@ -9,31 +9,6 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
 ---
 
 <Layout title="会社概要 — 合同会社 Propel-Lab" description="合同会社Propel-Labの会社概要。福岡市天神を拠点に、AI・LLM技術を活用した事業を展開。">
-  <script slot="head" type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "合同会社 Propel-Lab",
-    "alternateName": "Propel-Lab LLC",
-    "url": "https://propel-lab.co.jp",
-    "email": "info@propel-lab.co.jp",
-    "foundingDate": "2025-04-24",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "福岡市中央区",
-      "addressRegion": "福岡県",
-      "addressCountry": "JP",
-      "streetAddress": "天神4-6-28 天神第一ビル7F"
-    },
-    "founder": {
-      "@type": "Person",
-      "name": "井本 賢",
-      "alternateName": "Ken Imoto",
-      "jobTitle": "代表社員",
-      "url": "https://kenimoto.dev",
-      "knowsAbout": ["Harness Engineering", "AI Agent Design", "CLAUDE.md", "AGENTS.md", "Context Engineering", "Claude Code"],
-      "sameAs": ["https://linkedin.com/in/kenimo49", "https://github.com/kenimo49", "https://x.com/kenimo49"]
-    }
-  })} />
   <Header />
   <main class="pt-24 pb-20">
     <div class="mx-auto max-w-4xl px-4">

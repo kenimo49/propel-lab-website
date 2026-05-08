@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import { faqSchemaJa, faqSchemaEn } from '../lib/faq-schema';
 
 interface Props {
   title: string;
@@ -7,11 +8,25 @@ interface Props {
   ogImage?: string;
   lang?: string;
   noindex?: boolean;
+  /** EN ページ等で /en/ を英語版として宣言したい場合に true */
+  hasEnglishVersion?: boolean;
+  /** 404 等で canonical を出力したくない場合に true */
+  noCanonical?: boolean;
 }
 
-const { title, description = '合同会社Propel-Lab — 仕組みとエンジニアリングの力で、次世代の経営モデルを構築する', ogImage = 'og-image.jpg', lang = 'ja', noindex = false } = Astro.props;
+const {
+  title,
+  description = '合同会社Propel-Lab — 仕組みとエンジニアリングの力で、次世代の経営モデルを構築する',
+  ogImage = 'og-image.jpg',
+  lang = 'ja',
+  noindex = false,
+  hasEnglishVersion = false,
+  noCanonical = false,
+} = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+
+const faqSchema = lang === 'en' ? faqSchemaEn : faqSchemaJa;
 ---
 
 <!doctype html>
@@ -23,14 +38,18 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
     <meta name="generator" content={Astro.generator} />
     <meta http-equiv="X-Content-Type-Options" content="nosniff" />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
-    <link rel="canonical" href={canonicalURL.href} />
-    {noindex && <meta name="robots" content="noindex" />}
+    {!noCanonical && <link rel="canonical" href={canonicalURL.href} />}
+    {noindex && <meta name="robots" content="noindex,nofollow" />}
     <link rel="icon" href={`${base}favicon.ico`} />
     <link rel="apple-touch-icon" href={`${base}apple-touch-icon.png`} />
     <link rel="sitemap" href="/sitemap-index.xml" />
-    <link rel="alternate" hreflang="ja" href="https://propel-lab.co.jp/" />
-    <link rel="alternate" hreflang="en" href="https://propel-lab.co.jp/en/" />
-    <link rel="alternate" hreflang="x-default" href="https://propel-lab.co.jp/" />
+    {hasEnglishVersion && (
+      <>
+        <link rel="alternate" hreflang="ja" href="https://propel-lab.co.jp/" />
+        <link rel="alternate" hreflang="en" href="https://propel-lab.co.jp/en/" />
+        <link rel="alternate" hreflang="x-default" href="https://propel-lab.co.jp/" />
+      </>
+    )}
 
     <!-- OGP -->
     <meta property="og:title" content={title} />
@@ -55,41 +74,45 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
       {
         "@context": "https://schema.org",
         "@type": "Organization",
-        "name": "合同会社 Propel-Lab",
-        "alternateName": "プロペルラボ",
+        "@id": "https://propel-lab.co.jp/#org",
+        "name": lang === 'en' ? "Propel-Lab LLC" : "合同会社 Propel-Lab",
+        "alternateName": lang === 'en' ? ["合同会社 Propel-Lab", "プロペルラボ"] : ["Propel-Lab LLC", "プロペルラボ"],
         "url": "https://propel-lab.co.jp/",
         "email": "info@propel-lab.co.jp",
+        "logo": "https://propel-lab.co.jp/images/og-image.jpg",
         "address": {
           "@type": "PostalAddress",
-          "addressLocality": "福岡市中央区",
-          "addressRegion": "福岡県",
+          "addressLocality": lang === 'en' ? "Fukuoka" : "福岡市中央区",
+          "addressRegion": lang === 'en' ? "Fukuoka" : "福岡県",
           "addressCountry": "JP",
-          "streetAddress": "天神4丁目6-28 天神ファーストビル7階"
+          "streetAddress": lang === 'en' ? "Tenjin First Bldg. 7F, 4-6-28 Tenjin, Chuo-ku" : "天神4丁目6-28 天神ファーストビル7階"
         },
         "foundingDate": "2025-04-24",
-        "founder": {
-          "@type": "Person",
-          "name": "井本 賢"
-        },
-        "description": "仕組みとエンジニアリングの力で、次世代の経営モデルを構築する"
+        "founder": { "@id": "https://propel-lab.co.jp/#founder" },
+        "description": lang === 'en'
+          ? "An AI/LLM technology company based in Fukuoka, Japan. We engineer the next generation of business models through systems thinking and AI."
+          : "仕組みとエンジニアリングの力で、次世代の経営モデルを構築する"
       },
       {
         "@context": "https://schema.org",
         "@type": "WebSite",
-        "name": "合同会社 Propel-Lab",
-        "url": "https://propel-lab.co.jp/"
+        "@id": "https://propel-lab.co.jp/#website",
+        "name": lang === 'en' ? "Propel-Lab LLC" : "合同会社 Propel-Lab",
+        "url": "https://propel-lab.co.jp/",
+        "inLanguage": ["ja", "en"],
+        "publisher": { "@id": "https://propel-lab.co.jp/#org" }
       },
       {
         "@context": "https://schema.org",
         "@type": "Person",
-        "name": "井本 賢",
-        "alternateName": "ken imoto",
-        "jobTitle": "代表社員",
-        "worksFor": {
-          "@type": "Organization",
-          "name": "合同会社 Propel-Lab"
-        },
-        "knowsAbout": ["AIエージェント設計", "コンテキストエンジニアリング", "LLM活用", "LLMO", "Claude Code", "Android開発", "Web開発", "WebRTC", "エッジコンピューティング", "ロボティクス"],
+        "@id": "https://propel-lab.co.jp/#founder",
+        "name": lang === 'en' ? "Ken Imoto" : "井本 賢",
+        "alternateName": lang === 'en' ? ["井本 賢", "ken imoto"] : ["ken imoto", "Ken Imoto"],
+        "jobTitle": lang === 'en' ? "Founder & CEO" : "代表社員",
+        "worksFor": { "@id": "https://propel-lab.co.jp/#org" },
+        "knowsAbout": lang === 'en'
+          ? ["AI Agent Design", "Context Engineering", "LLM Optimization", "Claude Code", "Android Development", "Web Development", "WebRTC", "Edge Computing", "Robotics"]
+          : ["AIエージェント設計", "コンテキストエンジニアリング", "LLM活用", "LLMO", "Claude Code", "Android開発", "Web開発", "WebRTC", "エッジコンピューティング", "ロボティクス"],
         "sameAs": [
           "https://linkedin.com/in/kenimo49",
           "https://qiita.com/kenimo49",
@@ -208,60 +231,7 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
         "inLanguage": ["ja", "en"],
         "isPartOf": { "@type": "BookSeries", "name": "エンジニアのためのAI実践シリーズ" }
       },
-      {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Propel-Labはどのような会社ですか？",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "合同会社Propel-Labは、AI・LLM技術を活用した事業を展開する福岡発のテクノロジー企業です。教育コンテンツ制作、マーケティング自動化、業務自動化コンサルティング、AI駆動EC・コンテンツメディア・キュレーションメディア運用、音楽・クリエイティブ事業の7つの柱で活動しています。"
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "LLMOとは何ですか？",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "LLMO（LLM Optimization）とは、ChatGPTやClaudeなどのLLM（大規模言語モデル）がWebサイトの情報を正確に理解・引用できるよう最適化する手法です。構造化データ、Markdown形式のコンテンツ提供、llms.txtなどを活用します。"
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "どのようなサービスを提供していますか？",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "LearningMate（教育コンテンツ）、AI-Loop（マーケティング自動化）、AutoCrew（業務自動化コンサルティング）、KaoriQ（AI駆動EC自動運用）、mypcrig（AI駆動コンテンツメディア）、legacydram（AI駆動キュレーションメディア）、Yureru（音楽・クリエイティブ）の7事業を展開しています。"
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "お問い合わせ方法を教えてください。",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "メール（info@propel-lab.co.jp）、LinkedIn DM（https://www.linkedin.com/in/kenimo49）、X DM（https://x.com/kenimo49）の3つの方法でお問い合わせいただけます。企業様はメール、カジュアルなご相談はDMでもお気軽にどうぞ。"
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "代表者の経歴を教えてください。",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "ソフトウェアエンジニア歴8年。Android/Web開発、エッジコンピューティング、ロボティクスを経て、現在はAIエージェント設計・コンテキストエンジニアリング・LLM活用に注力。5プロジェクト並列での開発経験があり、AWS/Azure/Firebaseの3大クラウドを同時に扱った実績を持ちます。詳しい経歴はLinkedIn（https://www.linkedin.com/in/kenimo49）をご覧ください。"
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "AutoCrewではどのような業務自動化が可能ですか？",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "LLMを活用したマルチエージェント構成により、定型業務の自動化、データ処理、レポート生成など幅広い業務の効率化が可能です。MCP（Model Context Protocol）やCLI Skillを活用した高度なエージェント設計を提供します。"
-            }
-          }
-        ]
-      }
+      faqSchema
     ])} />
 
     <!-- Google Analytics -->
@@ -277,6 +247,8 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Noto+Serif+JP:wght@400;500;700&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <slot name="head" />
 
     <title>{title}</title>
   </head>

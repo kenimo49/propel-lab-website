@@ -7,19 +7,6 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
 ---
 
 <Layout title="Yureru — 心が揺れる音楽プロジェクト | Propel-Lab" description="Yureruは「心が揺れる」感情の瞬間を音楽・言葉・映像でやさしくすくい上げるプロジェクトです。バーチャルシンガーYumei、Silk Reignが参加。" ogImage="yumei-banner.jpg">
-  <script slot="head" type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "MusicGroup",
-    "name": "Yureru",
-    "description": "心が揺れる感情の瞬間を音楽・言葉・映像でやさしくすくい上げるプロジェクト",
-    "url": "https://propel-lab.co.jp/yureru",
-    "genre": ["J-Pop", "Ballad", "Emotional"],
-    "member": [
-      { "@type": "Person", "name": "Yumei", "description": "メインバーチャルシンガー" },
-      { "@type": "Person", "name": "Silk Reign", "description": "洋楽バラード担当" }
-    ],
-    "sameAs": ["https://www.youtube.com/@Yureru-s4n"]
-  })} />
   <Header />
   <main class="pt-20">
     <!-- Hero -->

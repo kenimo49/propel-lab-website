@@ -10,8 +10,9 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
   title="Propel-Lab — Engineering the Next Generation of Business Models with AI"
   description="Propel-Lab LLC is an AI/LLM technology company based in Fukuoka, Japan. We build next-generation business models through engineering and systems thinking."
   lang="en"
+  hasEnglishVersion
 >
-  <Header />
+  <Header lang="en" />
   <main>
     <!-- Hero -->
     <section class="relative min-h-screen flex items-center justify-center bg-navy text-white overflow-hidden">
@@ -20,11 +21,12 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
       </div>
       <div class="absolute inset-0 bg-navy/80"></div>
       <div class="relative z-10 mx-auto max-w-4xl px-4 text-center py-32">
+        <p class="text-sm md:text-base text-accent uppercase tracking-[0.2em] mb-4 font-mono">Propel-Lab LLC · Fukuoka, Japan</p>
         <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-          Propel-Lab
+          Engineering the Next Generation<br class="hidden md:block" /> of Business Models with AI
         </h1>
         <p class="text-lg md:text-2xl text-gray-300 mb-8 leading-relaxed">
-          Engineering the Next Generation of Business Models with AI
+          An AI/LLM technology studio building seven autonomous business lines — education, marketing automation, agent consulting, AI-driven media and e-commerce, and creative.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
           <a
@@ -300,52 +302,5 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
       </div>
     </section>
   </main>
-  <Footer />
-
-  <!-- JSON-LD: Organization (English) -->
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Propel-Lab LLC",
-    "alternateName": "合同会社 Propel-Lab",
-    "url": "https://propel-lab.co.jp/en/",
-    "email": "info@propel-lab.co.jp",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Fukuoka",
-      "addressRegion": "Fukuoka Prefecture",
-      "addressCountry": "JP",
-      "streetAddress": "Tenjin 4-6-28, Tenjin First Bldg. 7F"
-    },
-    "foundingDate": "2025-04-24",
-    "founder": {
-      "@type": "Person",
-      "name": "Ken Imoto"
-    },
-    "description": "An AI/LLM technology company based in Fukuoka, Japan. Reinventing how companies operate through AI-native systems."
-  })} />
-
-  <!-- JSON-LD: Person (English) -->
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Ken Imoto",
-    "alternateName": "井本 賢",
-    "jobTitle": "Founder & CEO / Real-time AI Agent Engineer",
-    "worksFor": {
-      "@type": "Organization",
-      "name": "Propel-Lab LLC"
-    },
-    "knowsAbout": ["AI Agent Design", "Context Engineering", "LLM Optimization (LLMO)", "Claude Code", "Android Development", "Web Development", "WebRTC", "Edge Computing", "Robotics"],
-    "sameAs": [
-      "https://linkedin.com/in/kenimo49",
-      "https://qiita.com/kenimo49",
-      "https://zenn.dev/kenimo49",
-      "https://note.com/kenimo49",
-      "https://x.com/kenimo49",
-      "https://youtube.com/@Yureru-s4n",
-      "https://www.amazon.co.jp/stores/author/B0GQNPRCGF",
-      "https://dev.to/kenimo49"
-    ]
-  })} />
+  <Footer lang="en" />
 </Layout>

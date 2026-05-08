@@ -32,6 +32,30 @@
 - **対象**: 業務効率化を求める企業
 - **技術**: マルチエージェント, MCP, CLI Skill
 
+## KaoriQ
+- **カテゴリ**: AI駆動EC自動運用
+- **概要**: LLMエージェントによるECサイトの自律運用 — コンテンツ生成・SEO・LLMO・商品キュレーションを完全自動化
+- **第一弾サイト**: kaoriq.com（性格診断 × 59,000本の香水データベース）
+- **対象**: EC事業者、D2Cブランド運営者
+- **技術**: LLMエージェント, Shopify API, LLMO, harness-ops, GA4 Data API
+- **URL**: https://kaoriq.com/
+
+## mypcrig
+- **カテゴリ**: AI駆動コンテンツメディア
+- **概要**: LLMエージェントによるPC選定メディアの自律運用 — 用途別ガイド・実機ベンチマーク・検索意図ドリブンの記事生成を完全自動化
+- **第一弾サイト**: mypcrig.com（AI開発・ゲーミング・クリエイター・ノートPC・Apple Silicon特化）
+- **対象**: AI開発者、ゲーマー、クリエイター、PC選定に迷うすべての人
+- **技術**: LLMエージェント, GA4 + Search Console API, harness-ops, iris-lab実機ベンチマーク, Amazon Creators API + 楽天 OpenAPI
+- **URL**: https://mypcrig.com/
+
+## legacydram
+- **カテゴリ**: AI駆動キュレーションメディア
+- **概要**: LLMエージェントによるウィスキーキュレーションメディアの自律運用 — 人物軸ストーリー・蒸留化学・銘柄選定を完全自動化
+- **第二弾サイト**: legacydram.com（People / Craft / Tasting の3カテゴリを同視点で運用）
+- **対象**: ウィスキー愛好者、エンジニア視点で趣味を深掘りしたい人
+- **技術**: LLMエージェント, harness-ops, context-forge人物・銘柄DB, EN（一次）/ JA バイリンガル, Amazonアソシエイト
+- **URL**: https://legacydram.com/
+
 ## Yureru — 心が揺れる音楽プロジェクト
 - **カテゴリ**: 音楽・クリエイティブ
 - **概要**: 「心が揺れる」感情の瞬間を音楽・言葉・映像でやさしくすくい上げるプロジェクト

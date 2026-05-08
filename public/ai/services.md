@@ -2,7 +2,7 @@
 
 ## 提供サービス一覧
 
-Propel-Labは、AI・LLM技術を軸にした4つのサービスを提供しています。
+Propel-Labは、AI・LLM技術を軸にした7つのサービスを提供しています。
 
 ---
 
@@ -70,7 +70,55 @@ LLMによるマルチエージェントシステムの構築・業務プロセ�
 
 ---
 
-## 4. Yureru（音楽プロジェクト）
+## 4. KaoriQ（AI駆動EC自動運用）
+
+### サービス概要
+LLMエージェントによるECサイトの自律運用プラットフォーム。コンテンツ生成・SEO・LLMO・商品キュレーションを完全自動化し、人手を最小限に抑えたEC運営を実現します。
+
+### 第一弾サイト
+- **kaoriq.com**: 性格診断 × 59,000本の香水データベースによるパーソナライズド推薦と、harness-opsによる自律コンテンツ生成（毎日EN/JAバイリンガル記事を自動投稿）
+
+### 対象ユーザー
+EC事業者、D2Cブランド運営者
+
+### 技術
+LLMエージェント（Claude Code + harness-ops）, Shopify Storefront / Admin API, LLMO, GA4 Data API, Astro + GitHub Pages
+
+---
+
+## 5. mypcrig（AI駆動コンテンツメディア）
+
+### サービス概要
+LLMエージェントによる用途別PC選定メディアの自律運用プラットフォーム。検索意図ドリブンの記事生成・実機ベンチマークの公開・用途別マッチング診断を完全自動化します。
+
+### 第一弾サイト
+- **mypcrig.com**: AI開発・ゲーミング・クリエイター・ノートPC・Apple Silicon・パーツ単体までカバーする日本語特化サイト。GA4 + Search Consoleの双方向フィードバックループで「読者がまだ来ていないクエリ」を捉えて次の記事テーマを自律判定
+
+### 対象ユーザー
+AI開発者、ゲーマー、クリエイター、PC選定に迷うすべての人
+
+### 技術
+LLMエージェント（Claude Code + harness-ops）, GA4 Data API + Search Console API, iris-lab実機ベンチマーク, Astro v6 + Tailwind v4 + GitHub Pages, Amazon Creators API + 楽天 OpenAPI
+
+---
+
+## 6. legacydram（AI駆動キュレーションメディア）
+
+### サービス概要
+LLMエージェントによるウィスキーキュレーションメディアの自律運用プラットフォーム。蒸留所設計者・ブレンダー・所有者の決断を「他人のレガシーコードを読むエンジニアの視点」で読み解く人物軸キュレーションを完全自動化します。
+
+### 第二弾サイト
+- **legacydram.com**: People / Craft / Tasting の3カテゴリを同視点の3つの角度として運用。広告コピー禁止・「ベスト◯選」listicle禁止・スポンサード記事禁止の編集方針で独立メディア性を保つ
+
+### 対象ユーザー
+ウィスキー愛好者、エンジニア視点で趣味を深掘りしたい人
+
+### 技術
+LLMエージェント（Claude Code + harness-ops）, context-forge人物・銘柄ナレッジDB, Astro v6 + Tailwind v4 + GitHub Pages, EN（一次）/ JA バイリンガル + hreflang, Amazonアソシエイト
+
+---
+
+## 7. Yureru（音楽プロジェクト）
 
 ### プロジェクト概要
 「心が揺れる」感情の瞬間を、音楽・言葉・映像でやさしくすくい上げる音楽プロジェクトです。

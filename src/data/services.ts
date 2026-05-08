@@ -58,6 +58,16 @@ export const services: Service[] = [
     external_url: 'https://mypcrig.com/',
   },
   {
+    id: 'legacydram',
+    name: 'legacydram',
+    category: 'AI駆動キュレーションメディア',
+    summary: 'LLMエージェントによるウィスキーキュレーションメディアの自律運用 — 人物軸ストーリー・蒸留化学・銘柄選定を完全自動化',
+    target: 'ウィスキー愛好者、エンジニア視点で趣味を深掘りしたい人',
+    tech: ['LLMエージェント', 'harness-ops', 'context-forge人物・銘柄DB', 'EN/JAバイリンガル'],
+    platforms: ['legacydram.com'],
+    external_url: 'https://legacydram.com/',
+  },
+  {
     id: 'yureru',
     name: 'Yureru',
     category: '音楽・クリエイティブ',

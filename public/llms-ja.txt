@@ -16,7 +16,10 @@
 1. LearningMate — LLM活用の教育コンテンツ企画・制作・販売
 2. AI-Loop — SNS運用自動化・コンテンツマーケティング支援
 3. AutoCrew — LLMによる自動実行エージェント構成・業務最適化
-4. Yureru — 感動の構造化と音楽化プロジェクト（バーチャルシンガー Yumei / Silk Reign）
+4. KaoriQ — LLMエージェントによるECサイトの自律運用（kaoriq.com フレグランス × 性格診断）
+5. mypcrig — LLMエージェントによるPC選定メディアの自律運用（mypcrig.com GA4 + Search Consoleフィードバック）
+6. legacydram — LLMエージェントによるウィスキーキュレーションメディアの自律運用（legacydram.com 人物軸 × エンジニア視点）
+7. Yureru — 感動の構造化と音楽化プロジェクト（バーチャルシンガー Yumei / Silk Reign）
 
 ## LearningMate（教育コンテンツ・出版事業）
 - 著者: ken imoto / シリーズ: エンジニアのためのAI実践シリーズ

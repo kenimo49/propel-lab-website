@@ -16,6 +16,24 @@
 - **公開リポジトリ**: https://github.com/kenimo49/propel-lab-website
 - **成果**: 5段階AI理解構造の実装、33テストによるLLMO品質保証
 
+### KaoriQ — AI駆動EC自律運用
+- **ステータス**: 運用中
+- **概要**: LLMエージェントによるECサイトの自律運用プラットフォーム
+- **第一弾サイト**: kaoriq.com（性格診断 × 59,000本の香水データベース、ShopifyドロップシッピングでEN/JAバイリンガル毎日投稿）
+- **技術**: LLMエージェント, Shopify API, LLMO, harness-ops, GA4 Data API
+
+### mypcrig — AI駆動コンテンツメディア自律運用
+- **ステータス**: 運用中
+- **概要**: LLMエージェントによる用途別PC選定メディアの自律運用プラットフォーム
+- **第一弾サイト**: mypcrig.com（GA4 + Search Console双方向フィードバックループで毎日記事を自律生成、iris-lab実機ベンチマークと連動）
+- **技術**: LLMエージェント, GA4 + Search Console API, harness-ops, Astro v6 + Tailwind v4
+
+### legacydram — AI駆動キュレーションメディア自律運用
+- **ステータス**: 運用中
+- **概要**: LLMエージェントによるウィスキーキュレーションメディアの自律運用プラットフォーム
+- **第二弾サイト**: legacydram.com（People / Craft / Tasting の3カテゴリで人物軸ストーリー × 蒸留化学を扱う、EN/JAバイリンガル毎日投稿）
+- **技術**: LLMエージェント, harness-ops, context-forge人物・銘柄DB, Astro v6 + Tailwind v4
+
 ### Yureru 音楽プロジェクト
 - **ステータス**: 継続中
 - **概要**: AI技術を活用した音楽制作・配信プロジェクト

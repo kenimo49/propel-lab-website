@@ -17,7 +17,10 @@ Engineer the next generation of business models through systems thinking and tec
 1. LearningMate — Educational content and publishing focused on LLM technologies (Claude Code, Context Engineering, LLMO)
 2. AI-Loop — SNS automation and content marketing support powered by LLM agents
 3. AutoCrew — Business automation consulting using multi-agent LLM systems (MCP, CLI Skills)
-4. Yureru — Music and creative project featuring virtual singers Yumei and Silk Reign
+4. KaoriQ — AI-driven autonomous e-commerce operations (kaoriq.com fragrance platform with personality-based recommendations)
+5. mypcrig — AI-driven autonomous content media (mypcrig.com PC-selection guides with GA4 + Search Console feedback loop)
+6. legacydram — AI-driven autonomous curation media (legacydram.com whisky curation read through an engineer's lens)
+7. Yureru — Music and creative project featuring virtual singers Yumei and Silk Reign
 
 ## LearningMate (Publishing)
 - Author: ken imoto / Series: AI Practice Series for Engineers

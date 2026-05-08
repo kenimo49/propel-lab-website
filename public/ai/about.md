@@ -22,7 +22,10 @@ Propel-Lab LLC (合同会社 Propel-Lab) is an AI/LLM technology company based i
 1. **LearningMate** — Educational content and publishing focused on LLM technologies (Claude Code, Context Engineering, LLMO)
 2. **AI-Loop** — SNS automation and content marketing support powered by LLM agents
 3. **AutoCrew** — Business automation consulting using multi-agent LLM systems (MCP, CLI Skills)
-4. **Yureru** — Music and creative project capturing emotional moments through AI-assisted music production
+4. **KaoriQ** — AI-driven autonomous e-commerce operations (kaoriq.com fragrance platform)
+5. **mypcrig** — AI-driven autonomous content media (mypcrig.com PC-selection guides with GA4 + Search Console feedback loop)
+6. **legacydram** — AI-driven autonomous curation media (legacydram.com whisky curation through an engineer's lens)
+7. **Yureru** — Music and creative project capturing emotional moments through AI-assisted music production
 
 ## Technology Expertise
 

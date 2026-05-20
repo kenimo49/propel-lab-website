@@ -147,4 +147,31 @@ export const bookSchemas = [
       name: 'エンジニアのためのAI実践シリーズ',
     },
   },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Book',
+    name: 'エンジニアの心理トリック大全 — コードは正しいのに、なぜ提案が通らないのか',
+    alternateName: 'Engineer Psychology Tricks: Why Your Proposal Doesn\'t Pass',
+    author: { '@type': 'Person', name: 'ken imoto' },
+    publisher: { '@type': 'Organization', name: 'Propel-Lab' },
+    bookFormat: 'EBook',
+    description:
+      '20の認知バイアスと心理テクニックをエンジニア実務に翻訳した一冊。システム1/2、AI時代の新バイアス、見積もり/技術選定/デバッグ/コードレビュー/1on1/会議/交渉/心理的安全性/採用面接まで15章でカバー。',
+    about: [
+      '認知バイアス',
+      'エンジニア心理学',
+      'システム1/2',
+      'コードレビュー',
+      '見積もり',
+      '1on1',
+      '心理的安全性',
+      '採用面接',
+    ],
+    inLanguage: 'ja',
+    url: 'https://zenn.dev/kenimo49/books/engineer-psychology-tricks',
+    isPartOf: {
+      '@type': 'BookSeries',
+      name: 'エンジニアのためのAI実践シリーズ',
+    },
+  },
 ];

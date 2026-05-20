@@ -50,5 +50,5 @@ Propel-Lab practices what it teaches. This website implements all three LLMO pat
   - Kindle: https://www.amazon.co.jp/stores/author/B0GQNPRCGF
   - Zenn: https://zenn.dev/kenimo49/books/llmo-ai-search-optimization
 - Company: https://propel-lab.co.jp/
-- English Page: https://propel-lab.co.jp/en
+- English Page: https://propel-lab.co.jp/en/
 - AI Information Hub: https://propel-lab.co.jp/ai/

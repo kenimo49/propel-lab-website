@@ -46,7 +46,7 @@ Propel-Lab LLC (合同会社 Propel-Lab) is an AI/LLM technology company based i
 ## Links
 
 - Website: https://propel-lab.co.jp/
-- English Page: https://propel-lab.co.jp/en
+- English Page: https://propel-lab.co.jp/en/
 - AI Information: https://propel-lab.co.jp/ai/
 - LinkedIn: https://linkedin.com/in/kenimo49
 - GitHub: https://github.com/kenimo49/propel-lab-website

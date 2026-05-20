@@ -167,8 +167,12 @@ export const bookSchemas = [
       '心理的安全性',
       '採用面接',
     ],
-    inLanguage: 'ja',
-    url: 'https://zenn.dev/kenimo49/books/engineer-psychology-tricks',
+    inLanguage: ['ja', 'pt'],
+    url: 'https://kenimoto.dev/pt/books/engineer-psychology-tricks',
+    sameAs: [
+      'https://zenn.dev/kenimo49/books/engineer-psychology-tricks',
+      'https://www.amazon.com.br/dp/B0GZFBC7SP',
+    ],
     isPartOf: {
       '@type': 'BookSeries',
       name: 'エンジニアのためのAI実践シリーズ',

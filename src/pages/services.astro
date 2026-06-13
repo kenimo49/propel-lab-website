@@ -44,14 +44,9 @@ const tiers = [
 
 const authorityItems = [
   {
-    metric: '62冊',
-    label: '出版技術書',
-    detail: 'Claude Code・LLMO・AIエージェント領域の実践書をKindle/Zennで継続出版',
-  },
-  {
-    metric: '14万PV',
-    label: 'Qiita累計',
-    detail: 'エンジニア向け技術記事の実績。すべて実測・実装ベース',
+    metric: 'LLMO 5冊',
+    label: 'LLMO実践書を継続出版',
+    detail: 'LLMOクイックスタート / AI検索最適化 / 店舗MEO×LLMO 等、LLMO領域の実践書をKindle/Zennで出版',
   },
   {
     metric: 'llmoframework.com',
@@ -166,7 +161,7 @@ const authorityItems = [
             LLMOは当社が書籍・OSS・自社サイト運営で継続的に実装している領域です。語るだけのコンサルティングではなく、自分のサイトで実測してきた手法をお客様のドメインに適用します。
           </p>
         </div>
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {authorityItems.map((item, i) => (
             <div class={`bg-parchment border border-charcoal/8 p-7 fade-in-up stagger-${i + 1}`}>
               <div class="text-2xl font-bold text-charcoal mb-1 break-words">{item.metric}</div>

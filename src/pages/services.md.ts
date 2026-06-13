@@ -29,8 +29,7 @@ Propel-Lab のサービスはすべて、範囲と価格を先に明示した「
 
 ## 実績・信頼性
 
-- 出版技術書62冊（Claude Code・LLMO・AIエージェント領域、Kindle/Zenn）
-- Qiita累計14万PV
+- LLMO実践書5冊を継続出版（LLMOクイックスタート / AI検索最適化 / 店舗MEO×LLMO 等、Kindle/Zenn）
 - LLMOフレームワーク（llmoframework.com）の策定・運営
 - 全数値実測主義 — 診断レポートの数値はすべて実測値。propel-lab.co.jp 自体が JSON-LD・llms.txt・URL.md を実装した LLMO 実装リファレンス
 `;

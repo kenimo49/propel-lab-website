@@ -10,7 +10,7 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
 const samplePdf = `${base}files/llmo-audit-sample-legacydram.pdf`;
 
 // Stripe Payment Link 発行後にここへURLを設定すると決済ボタンが出る（現在はフォーム申込のみ）
-const stripePaymentLink: string | null = null;
+const stripePaymentLink: string | null = 'https://buy.stripe.com/eVq00l7LMbJN8CL3M9fMA00';
 
 const applySubject = encodeURIComponent('【LLMO診断 申込】対象ドメイン: ');
 const applyBody = encodeURIComponent(

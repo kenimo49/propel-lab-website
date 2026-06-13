@@ -1,0 +1,416 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { company } from '../data/company';
+import { llmoAuditServiceSchema } from '../lib/schemas';
+
+const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+
+const samplePdf = `${base}files/llmo-audit-sample-legacydram.pdf`;
+
+// Stripe Payment Link 発行後にここへURLを設定すると決済ボタンが出る（現在はフォーム申込のみ）
+const stripePaymentLink: string | null = null;
+
+const applySubject = encodeURIComponent('【LLMO診断 申込】対象ドメイン: ');
+const applyBody = encodeURIComponent(
+  `以下をご記入のうえ、そのまま送信してください。1営業日以内に着手日と請求書をご案内します。
+
+1. 対象ドメイン（1ドメイン）:
+2. 会社名 / お名前:
+3. AI検索で狙いたい検索語・質問（最大10個、わかる範囲で）:
+4. GA4 / Search Console の閲覧権限付与（任意・精密診断へ無料アップグレード）: 検討できる / 難しい / 相談したい
+5. その他、気になっている点（任意）:
+`,
+);
+const applyMailto = `mailto:${company.email}?subject=${applySubject}&body=${applyBody}`;
+
+const scopeItems = [
+  {
+    name: 'llmo-checker 全ページスキャン',
+    detail: 'LLMO Score（0-100）とチェック項目別の内訳をページ単位で算出。どのページの、どのシグナルが欠けているかを特定します。',
+  },
+  {
+    name: '構造監査',
+    detail: 'llms.txt / robots.txt のAIクローラー姿勢 / JSON-LD構造化データ / canonical / hreflang を実ファイルベースで監査します。',
+  },
+  {
+    name: 'AI引用実測（中核診断）',
+    detail: 'Perplexity / Claude / Gemini / ChatGPT の4エンジンに実クエリを投入し、クエリ×エンジン×5試行で「引用率」を算出。競合3社との引用シェア（Share of Voice）も1枚に可視化します。',
+  },
+  {
+    name: '外部実測データ',
+    detail: 'CrUX API による Core Web Vitals 実ユーザーデータ、インデックス状況・検索順位の外部確認。権限なしで取得できる実データを揃えます。',
+  },
+  {
+    name: 'GA4 / Search Console 実データ分析（精密診断）',
+    detail: '閲覧権限をご提供いただいた場合のみ。実クエリ・CTR・順位・流入チャネルまで踏み込みます。権限付与は任意で、3分で終わる手順書をお渡しします。',
+  },
+  {
+    name: 'P0 / P1 / P2 改善ロードマップ',
+    detail: 'すべての発見事項を「今すぐ直す / 次に直す / 余力があれば」の3段階に優先度付けし、PDFレポート + 改善チェックリストとして納品します。',
+  },
+];
+
+const faqItems = [
+  {
+    question: 'GA4 や Search Console の権限付与は必須ですか？',
+    answer:
+      '不要です。標準診断（構造監査・AI引用実測・競合比較・Core Web Vitals）は権限ゼロで完結します。閲覧権限をご提供いただける場合は、実クエリ・CTR・流入分析まで踏み込む精密診断へ無料でアップグレードします。付与手順は3分で終わる手順書をお渡しします（SEO業界で標準的な、閲覧者ロールの追加のみです）。',
+  },
+  {
+    question: '改善の実装まで代行してもらえますか？',
+    answer:
+      '診断には実装代行は含まれません。納品物は「何を・どの順で・なぜ直すか」を特定したロードマップとチェックリストで、社内エンジニアや既存の制作会社がそのまま着手できる粒度で書きます。実装まで支援が必要な場合は、診断ご購入者様向けの実装伴走（月額制）をご案内します。',
+  },
+  {
+    question: '複数ドメインをまとめて診断できますか？',
+    answer:
+      '1申込 = 1ドメインの範囲固定です。サブドメインや複数サイトをお持ちの場合は、優先度の高い1ドメインから始めることをおすすめします。複数ドメインの一括診断はお問い合わせください。',
+  },
+  {
+    question: '納期はどのくらいですか？',
+    answer: '申込内容の確定から2週間以内に納品します。対象クエリのすり合わせ等はメールで非同期に行うため、お打ち合わせの調整は不要です。',
+  },
+  {
+    question: '支払い方法は？',
+    answer: '請求書発行による銀行振込に対応しています。クレジットカード決済（Stripe）は準備中です。',
+  },
+  {
+    question: 'AI引用実測とは何ですか？',
+    answer:
+      'お客様のサイトが狙う検索語・質問を Perplexity / Claude / Gemini / ChatGPT に実際に投入し、AIの回答がどのサイトを引用したかを記録する実測です。単発の結果は確率的に揺れるため、クエリ×エンジン×5試行を重ねて「引用率」として統計的に算出します。ツールによる静的チェックでは決して分からない「AIに実際に選ばれているか」を数字にします。',
+  },
+  {
+    question: '診断を受ければAIに引用されるようになりますか？',
+    answer:
+      '診断は現状の実測と、優先度付きの改善計画を提供するものです。検索順位やAI引用の獲得そのものを保証するものではありません。引用の獲得には改善の実装と、ドメイン権威性の積み上げ（数ヶ月単位）が必要です。だからこそ、効果の薄い施策に時間を使わないための優先度付けに価値があると考えています。',
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  '@id': 'https://propel-lab.co.jp/llmo-audit/#faq',
+  mainEntity: faqItems.map((item) => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: { '@type': 'Answer', text: item.answer },
+  })),
+};
+---
+
+<Layout
+  title="LLMO診断レポート ¥98,000 — AI検索にあなたのサイトは引用されているか | Propel-Lab"
+  description="1ドメイン・¥98,000・納期2週間の範囲固定LLMO診断。llmo-checker全ページスキャン、llms.txt/JSON-LD構造監査、Perplexity/Claude/Gemini/ChatGPT 4エンジンでのAI引用実測、P0/P1/P2改善ロードマップをPDFで納品。サンプルレポート公開中。"
+>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify([llmoAuditServiceSchema, faqSchema])} />
+  <Header />
+  <main>
+    <!-- Hero -->
+    <section class="relative pt-36 pb-24 lg:pt-44 lg:pb-32 bg-charcoal grain-overlay grain-overlay-dark overflow-hidden">
+      <div class="absolute inset-0 opacity-[0.03]" style="background-image: linear-gradient(rgba(139, 105, 20, 0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(139, 105, 20, 0.5) 1px, transparent 1px); background-size: 48px 48px;"></div>
+      <div class="mx-auto max-w-7xl px-6 lg:px-12 relative z-10">
+        <div class="grid lg:grid-cols-12 gap-12 items-center">
+          <div class="lg:col-span-6">
+            <div class="flex items-center gap-3 mb-5 fade-in-up">
+              <div class="w-8 h-px bg-gold"></div>
+              <span class="font-mono text-xs text-gold tracking-[0.2em] uppercase">LLMO Audit</span>
+            </div>
+            <h1 class="text-3xl lg:text-5xl font-bold text-cream leading-tight mb-6 fade-in-up stagger-1">
+              AI検索に、<br />あなたのサイトは<br />引用されているか。
+            </h1>
+            <p class="text-dim text-base leading-relaxed mb-8 fade-in-up stagger-2">
+              LLMO診断レポートは、サイトの構造監査とAI検索エンジンでの引用実測を組み合わせ、「なぜ引用されないか」「何をどの順で直すか」を実測データで特定する範囲固定の診断サービスです。
+            </p>
+            <div class="flex flex-wrap items-center gap-x-8 gap-y-3 mb-10 fade-in-up stagger-3">
+              <div>
+                <div class="font-mono text-[10px] text-faint/50 tracking-[0.2em] uppercase mb-1">Price</div>
+                <div class="text-cream text-2xl font-bold">¥98,000<span class="text-dim text-sm font-normal ml-1">（税別）</span></div>
+              </div>
+              <div>
+                <div class="font-mono text-[10px] text-faint/50 tracking-[0.2em] uppercase mb-1">Delivery</div>
+                <div class="text-cream text-2xl font-bold">2週間<span class="text-dim text-sm font-normal ml-1">以内</span></div>
+              </div>
+              <div>
+                <div class="font-mono text-[10px] text-faint/50 tracking-[0.2em] uppercase mb-1">Scope</div>
+                <div class="text-cream text-2xl font-bold">1<span class="text-dim text-sm font-normal ml-1">ドメイン</span></div>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-4 fade-in-up stagger-4">
+              <a
+                href="#apply"
+                class="inline-flex items-center gap-3 px-8 py-4 bg-gold hover:bg-gold-light text-charcoal text-sm font-bold tracking-wide transition-colors duration-300"
+              >
+                診断を申し込む <span>→</span>
+              </a>
+              <a
+                href={samplePdf}
+                target="_blank"
+                class="inline-flex items-center gap-3 px-8 py-4 border border-cream/20 hover:border-gold/50 text-cream text-sm font-mono tracking-wide transition-colors duration-300"
+              >
+                サンプルレポートを見る（PDF・14ページ）
+              </a>
+            </div>
+          </div>
+
+          <!-- Right: checker output sample (実測値) -->
+          <div class="lg:col-span-6 fade-in-up stagger-3">
+            <div class="bg-deep border border-cream/10 p-6 lg:p-8 font-mono text-sm leading-relaxed shadow-2xl">
+              <div class="flex items-center gap-2 mb-5 pb-4 border-b border-cream/10">
+                <span class="w-2.5 h-2.5 rounded-full bg-cream/15"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-cream/15"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-cream/15"></span>
+                <span class="text-dim/60 text-xs ml-2">llmo-checker</span>
+              </div>
+              <div class="text-dim/80 mb-4">$ llmo-checker https://your-site.com/blog/</div>
+              <div class="mb-4">
+                <span class="text-cream font-bold">LLMO Score</span>
+                <span class="text-amber font-bold ml-3 text-lg">72/100</span>
+                <span class="text-dim/60 ml-2 text-xs">needs work</span>
+              </div>
+              <div class="space-y-1.5 text-xs lg:text-sm">
+                <div><span class="text-green-500/90">PASS</span> <span class="text-cream/80">llms.txt presence and structure</span> <span class="text-dim/50">100/100</span></div>
+                <div><span class="text-green-500/90">PASS</span> <span class="text-cream/80">AI crawler posture (robots.txt)</span> <span class="text-dim/50">100/100</span></div>
+                <div><span class="text-red-400">FAIL</span> <span class="text-cream/80">JSON-LD structured data</span> <span class="text-dim/50">0/100</span></div>
+                <div><span class="text-green-500/90">PASS</span> <span class="text-cream/80">Canonical URL and hreflang</span> <span class="text-dim/50">100/100</span></div>
+                <div><span class="text-amber">WARN</span> <span class="text-cream/80">Semantic metadata and headings</span> <span class="text-dim/50">78/100</span></div>
+              </div>
+              <div class="mt-5 pt-4 border-t border-cream/10 text-xs text-dim/60">
+                スコアは入口にすぎません。診断ではこの先 —— AIが実際にあなたを引用しているか —— を実測します。
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 問題提起 -->
+    <section class="py-24 lg:py-32 bg-cream grain-overlay relative">
+      <div class="mx-auto max-w-7xl px-6 lg:px-12 relative z-10">
+        <div class="max-w-3xl">
+          <div class="flex items-center gap-3 mb-4 fade-in-up">
+            <div class="w-8 h-px bg-gold"></div>
+            <span class="font-mono text-xs text-gold tracking-[0.2em] uppercase">Problem</span>
+          </div>
+          <h2 class="text-3xl lg:text-4xl font-bold text-charcoal mb-8 fade-in-up stagger-1">
+            専用記事を持っていても、<br class="hidden lg:block" />AIはあなたを引用しない。
+          </h2>
+          <div class="space-y-5 text-mid text-base leading-[1.9] fade-in-up stagger-2">
+            <p>
+              検索の入口は、Google の検索結果ページから AI の回答へ移りつつあります。ChatGPT や Perplexity が質問に直接答えるとき、引用されたサイトだけが読者に届き、引用されなかったサイトは——どれだけ内容が正確でも——存在しないのと同じです。
+            </p>
+            <p>
+              これは仮説ではなく、実測できる現象です。当社が運営するメディアサイトの診断では、<strong class="text-charcoal">対象トピックの専用記事を持っているにもかかわらず、AIの回答が競合メディアだけを引用し、自サイトを一度も参照しない</strong>状態を確認しました。原因は記事の質ではなく、構造化データの欠落とドメイン権威性のシグナル不足でした。
+            </p>
+            <p>
+              厄介なのは、この「引用されていない」という事実が、GA4 にも Search Console にも表示されないことです。アクセス解析は来た人しか数えられません。<strong class="text-charcoal">AI の回答であなたの代わりに競合が紹介されている機会損失は、実際に AI へクエリを投入して測るしかない</strong>のです。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 診断内容 -->
+    <section class="py-24 lg:py-32 bg-sand grain-overlay blueprint-grid relative">
+      <div class="mx-auto max-w-7xl px-6 lg:px-12 relative z-10">
+        <div class="mb-16 max-w-2xl">
+          <div class="flex items-center gap-3 mb-4 fade-in-up">
+            <div class="w-8 h-px bg-gold"></div>
+            <span class="font-mono text-xs text-gold tracking-[0.2em] uppercase">What You Get</span>
+          </div>
+          <h2 class="text-3xl lg:text-4xl font-bold text-charcoal mb-4 fade-in-up stagger-1">診断内容（範囲固定）</h2>
+          <p class="text-mid text-base leading-relaxed fade-in-up stagger-2">
+            診断は権限不要の<strong class="text-charcoal">標準診断</strong>で完結します。GA4 / Search Console の閲覧権限をご提供いただいた場合は、追加費用なしで<strong class="text-charcoal">精密診断</strong>にアップグレードします。
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          {scopeItems.map((item, i) => (
+            <div class={`bg-parchment border border-charcoal/8 p-7 lg:p-8 card-lift fade-in-up stagger-${Math.min(i + 1, 6)}`}>
+              <div class="flex items-start gap-4 mb-3">
+                <span class="font-mono text-xs text-gold/70 mt-1.5 shrink-0">{String(i + 1).padStart(2, '0')}</span>
+                <h3 class="text-lg font-bold text-charcoal">{item.name}</h3>
+              </div>
+              <p class="text-mid text-sm leading-[1.8] pl-9">{item.detail}</p>
+            </div>
+          ))}
+        </div>
+
+        <!-- AI引用実測の強調 -->
+        <div class="mt-12 bg-charcoal text-cream p-8 lg:p-12 relative overflow-hidden fade-in-up">
+          <div class="absolute top-6 right-6 w-12 h-12 border-t border-r border-gold/20 hidden lg:block"></div>
+          <div class="font-mono text-xs text-gold tracking-[0.2em] uppercase mb-4">Core Differentiator</div>
+          <h3 class="text-2xl font-bold mb-4">なぜ「引用実測」が中核なのか</h3>
+          <p class="text-dim text-sm leading-[1.9] max-w-3xl">
+            llms.txt や JSON-LD のチェックは、ツールを動かせば誰でもできます。しかし「Perplexity / Claude / Gemini / ChatGPT がこのクエリで実際に誰を引用したか」は、4エンジンの API を直接叩き、試行を重ねて統計化しなければ分かりません。当診断はクエリ×エンジン×5試行の引用率と、競合3社との Share of Voice 比較までを標準スコープに含みます。静的チェックの先にある「AI に選ばれているか」という本丸を、数字でお渡しします。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- サンプルレポート -->
+    <section class="py-24 lg:py-32 bg-cream grain-overlay relative">
+      <div class="mx-auto max-w-7xl px-6 lg:px-12 relative z-10">
+        <div class="grid lg:grid-cols-12 gap-12 items-start">
+          <div class="lg:col-span-5">
+            <div class="flex items-center gap-3 mb-4 fade-in-up">
+              <div class="w-8 h-px bg-gold"></div>
+              <span class="font-mono text-xs text-gold tracking-[0.2em] uppercase">Sample Report</span>
+            </div>
+            <h2 class="text-3xl lg:text-4xl font-bold text-charcoal mb-6 fade-in-up stagger-1">納品物を、先に見てください。</h2>
+            <p class="text-mid text-base leading-[1.9] mb-8 fade-in-up stagger-2">
+              当社が運営する公開メディアサイト legacydram.com を実際に診断したレポート全文（14ページ・A4）を公開しています。掲載している数値はすべて実測値です。お申し込み前に、納品物の粒度と書きぶりをそのままご確認いただけます。
+            </p>
+            <a
+              href={samplePdf}
+              target="_blank"
+              class="inline-flex items-center gap-3 px-7 py-3.5 border border-charcoal/15 hover:border-gold/50 text-charcoal text-sm font-mono tracking-wide transition-colors duration-300 fade-in-up stagger-3"
+            >
+              サンプルレポートPDFを開く <span class="text-gold">→</span>
+            </a>
+          </div>
+          <div class="lg:col-span-7">
+            <div class="bg-parchment border border-charcoal/8 p-8 lg:p-10 fade-in-up stagger-2">
+              <div class="font-mono text-[10px] text-dim tracking-[0.2em] uppercase mb-6">レポート構成（全11セクション + 付録）</div>
+              <ol class="space-y-3 text-sm text-mid leading-relaxed">
+                <li class="flex gap-3"><span class="font-mono text-xs text-gold/60 shrink-0 mt-0.5">01</span>エグゼクティブサマリー — 総合評価と最優先の3アクション</li>
+                <li class="flex gap-3"><span class="font-mono text-xs text-gold/60 shrink-0 mt-0.5">02</span>診断のスコープと方法論 — 5コアコンポーネント・標準/精密の二段構え</li>
+                <li class="flex gap-3"><span class="font-mono text-xs text-gold/60 shrink-0 mt-0.5">03</span>LLMOスコア — ページ別実測とチェック項目別内訳</li>
+                <li class="flex gap-3"><span class="font-mono text-xs text-gold/60 shrink-0 mt-0.5">04</span><span><strong class="text-charcoal">AI引用実測</strong> — 対象クエリでの被引用状況と、引用されない構造要因の分析</span></li>
+                <li class="flex gap-3"><span class="font-mono text-xs text-gold/60 shrink-0 mt-0.5">05</span>構造監査 — llms.txt / robots / JSON-LD / canonical / hreflang</li>
+                <li class="flex gap-3"><span class="font-mono text-xs text-gold/60 shrink-0 mt-0.5">06</span>検索パフォーマンス実データ — インデックス状況・順位の近接機会（精密診断）</li>
+                <li class="flex gap-3"><span class="font-mono text-xs text-gold/60 shrink-0 mt-0.5">07</span>5コアコンポーネント別評価</li>
+                <li class="flex gap-3"><span class="font-mono text-xs text-gold/60 shrink-0 mt-0.5">08</span>P0 / P1 / P2 改善ロードマップ + 付録（スコア定義・再現方法・範囲外事項）</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 価格・範囲外 -->
+    <section class="py-24 lg:py-32 bg-sand grain-overlay blueprint-grid relative">
+      <div class="mx-auto max-w-7xl px-6 lg:px-12 relative z-10">
+        <div class="grid lg:grid-cols-2 gap-10">
+          <!-- 価格 -->
+          <div class="bg-parchment border border-charcoal/8 p-8 lg:p-12 fade-in-up">
+            <div class="font-mono text-xs text-gold tracking-[0.2em] uppercase mb-6">Pricing</div>
+            <div class="flex items-baseline gap-2 mb-2">
+              <span class="text-5xl font-bold text-charcoal">¥98,000</span>
+              <span class="text-dim text-sm">（税別）</span>
+            </div>
+            <p class="text-mid text-sm mb-8">1ドメイン・範囲固定・追加費用なし</p>
+            <ul class="space-y-3 text-sm text-mid">
+              <li class="flex gap-3"><span class="text-gold shrink-0">✓</span>納期: 申込内容確定から2週間以内</li>
+              <li class="flex gap-3"><span class="text-gold shrink-0">✓</span>納品物: PDFレポート + 改善チェックリスト</li>
+              <li class="flex gap-3"><span class="text-gold shrink-0">✓</span>お支払い: 請求書発行・銀行振込</li>
+              <li class="flex gap-3"><span class="text-gold shrink-0">✓</span>お打ち合わせ不要（メールで完結）</li>
+              <li class="flex gap-3"><span class="text-gold shrink-0">✓</span>GA4/GSC権限付与で精密診断へ無料アップグレード</li>
+            </ul>
+          </div>
+          <!-- 範囲外 -->
+          <div class="bg-parchment border border-charcoal/8 p-8 lg:p-12 fade-in-up stagger-1">
+            <div class="font-mono text-xs text-gold tracking-[0.2em] uppercase mb-6">Out of Scope</div>
+            <h3 class="text-xl font-bold text-charcoal mb-6">診断に含まれないもの</h3>
+            <ul class="space-y-4 text-sm text-mid leading-relaxed">
+              <li class="flex gap-3">
+                <span class="text-dim shrink-0 font-mono text-xs mt-1">—</span>
+                <span><strong class="text-charcoal">改善の実装代行</strong> — レポートは社内や既存の制作会社がそのまま着手できる粒度で書きます</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="text-dim shrink-0 font-mono text-xs mt-1">—</span>
+                <span><strong class="text-charcoal">継続的なモニタリング</strong> — 診断は単発のスナップショットです</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="text-dim shrink-0 font-mono text-xs mt-1">—</span>
+                <span><strong class="text-charcoal">複数ドメイン</strong> — 1申込につき1ドメインです</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="text-dim shrink-0 font-mono text-xs mt-1">—</span>
+                <span><strong class="text-charcoal">順位・引用の成果保証</strong> — 提供するのは実測と優先度付き改善計画です</span>
+              </li>
+            </ul>
+            <p class="mt-8 pt-6 border-t border-charcoal/8 text-xs text-dim leading-relaxed">
+              改善の実装まで支援が必要な場合は、診断ご購入者様向けに実装伴走（月額¥300,000・月次再診断 + 実装支援 + 非同期の質問対応）をご用意しています。診断レポート納品時にご案内します。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 申込 -->
+    <section id="apply" class="py-24 lg:py-32 bg-charcoal grain-overlay grain-overlay-dark relative overflow-hidden">
+      <div class="absolute inset-0 opacity-[0.03]" style="background-image: linear-gradient(rgba(139, 105, 20, 0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(139, 105, 20, 0.5) 1px, transparent 1px); background-size: 48px 48px;"></div>
+      <div class="mx-auto max-w-4xl px-6 lg:px-12 relative z-10 text-center">
+        <div class="flex items-center justify-center gap-3 mb-4 fade-in-up">
+          <div class="w-8 h-px bg-gold"></div>
+          <span class="font-mono text-xs text-gold tracking-[0.2em] uppercase">Apply</span>
+          <div class="w-8 h-px bg-gold"></div>
+        </div>
+        <h2 class="text-3xl lg:text-4xl font-bold text-cream mb-6 fade-in-up stagger-1">お申し込み</h2>
+        <p class="text-dim text-base leading-relaxed mb-10 max-w-2xl mx-auto fade-in-up stagger-2">
+          下のボタンから申込メールのテンプレートが開きます。対象ドメインと狙いたい検索語をご記入のうえ送信してください。1営業日以内に、着手日・対象クエリの確認・請求書をご案内します。商談や打ち合わせはありません。
+        </p>
+        <div class="flex flex-wrap justify-center gap-4 fade-in-up stagger-3">
+          <a
+            href={applyMailto}
+            data-audit-apply="email"
+            class="inline-flex items-center gap-3 px-10 py-4 bg-gold hover:bg-gold-light text-charcoal text-sm font-bold tracking-wide transition-colors duration-300"
+          >
+            申込メールを作成する <span>→</span>
+          </a>
+          {stripePaymentLink && (
+            <a
+              href={stripePaymentLink}
+              data-audit-apply="stripe"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-3 px-10 py-4 border border-gold/50 hover:bg-gold/10 text-gold text-sm font-bold tracking-wide transition-colors duration-300"
+            >
+              カードで決済して申し込む
+            </a>
+          )}
+        </div>
+        <p class="mt-8 text-xs text-faint/40 font-mono tracking-wider fade-in-up stagger-4">
+          申込フロー: メール送信 → 内容確認のご返信（1営業日以内）→ 着手 → 2週間以内に納品
+        </p>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-24 lg:py-32 bg-sand grain-overlay blueprint-grid relative">
+      <div class="mx-auto max-w-7xl px-6 lg:px-12 relative z-10">
+        <div class="grid lg:grid-cols-12 gap-12">
+          <div class="lg:col-span-4">
+            <div class="lg:sticky lg:top-28">
+              <div class="flex items-center gap-3 mb-4 fade-in-up">
+                <div class="w-8 h-px bg-gold"></div>
+                <span class="font-mono text-xs text-gold tracking-[0.2em] uppercase">FAQ</span>
+              </div>
+              <h2 class="text-3xl lg:text-4xl font-bold text-charcoal mb-4 fade-in-up stagger-1">よくある質問</h2>
+              <p class="text-mid text-sm leading-relaxed fade-in-up stagger-2">
+                診断の範囲・前提条件に関する<br />よくあるご質問にお答えします。
+              </p>
+            </div>
+          </div>
+          <div class="lg:col-span-8 space-y-3">
+            {faqItems.map((item, i) => (
+              <details class={`group border-b border-charcoal/8 fade-in-up stagger-${Math.min(i + 1, 6)}`}>
+                <summary class="py-5 cursor-pointer flex items-start justify-between gap-4 list-none">
+                  <div class="flex items-start gap-4">
+                    <span class="font-mono text-xs text-gold/60 mt-1 shrink-0">{String(i + 1).padStart(2, '0')}</span>
+                    <span class="text-charcoal font-medium text-sm lg:text-base leading-relaxed group-hover:text-gold transition-colors duration-300">{item.question}</span>
+                  </div>
+                  <span class="text-dim text-xs mt-1 shrink-0 group-open:rotate-45 transition-transform duration-300 font-mono">+</span>
+                </summary>
+                <div class="pb-5 pl-10 text-mid text-sm leading-[1.8]">{item.answer}</div>
+              </details>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>

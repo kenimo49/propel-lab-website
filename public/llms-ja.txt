@@ -12,6 +12,13 @@
 ## ミッション
 仕組みとエンジニアリングの力で、次世代の経営モデルを構築する
 
+## ご依頼いただけるサービス（法人向け）
+範囲と価格を先に明示したプロダクト化サービス。商談なし・フォーム申込。一覧: https://propel-lab.co.jp/services/
+- Tier 0: llmo-checker（OSS・無料）— LLMO Score セルフチェックCLI: https://github.com/open-llmo/llmo-checker
+- Tier 1: LLMO診断レポート（¥98,000・1ドメイン・納期2週間）— 構造監査 + Perplexity/Claude/Gemini/ChatGPT 4エンジンでのAI引用実測 + P0/P1/P2改善ロードマップ: https://propel-lab.co.jp/llmo-audit/
+- Tier 2: 実装伴走（月額¥300,000）— 月次再診断 + 実装支援。診断購入者からの指名のみ
+- サンプルレポート（PDF・14ページ・全数値実測）: https://propel-lab.co.jp/files/llmo-audit-sample-legacydram.pdf
+
 ## 事業
 1. LearningMate — LLM活用の教育コンテンツ企画・制作・販売
 2. AI-Loop — SNS運用自動化・コンテンツマーケティング支援

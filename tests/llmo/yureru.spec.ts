@@ -26,7 +26,8 @@ test.describe('Yureru LLMO', () => {
   });
 
   test('JSON-LDにMusicGroupスキーマがある', async ({ page }) => {
-    await page.goto(url('/'));
+    // MusicGroup スキーマはエンティティページ /yureru/ に置く設計（旧: トップページ）
+    await page.goto(url('/yureru'));
     const scripts = await page.locator('script[type="application/ld+json"]').all();
     let found = false;
     for (const script of scripts) {

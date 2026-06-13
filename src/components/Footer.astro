@@ -34,6 +34,9 @@ const labels = lang === 'en'
       companyDisplay: company.name,
     };
 
+// JA のみ: ご依頼 (サービスハブ) への導線。EN は需要が立ってから
+const workWithUsHref = lang === 'en' ? null : `${base}services/`;
+
 const navHrefs = lang === 'en'
   ? {
       home: `${base}en/`,
@@ -71,6 +74,9 @@ const altLangHref = lang === 'en' ? base : `${base}en/`;
         <div class="font-mono text-[10px] text-faint/40 tracking-[0.2em] uppercase mb-4">{labels.navHeading}</div>
         <ul class="space-y-2">
           <li><a href={navHrefs.home} class="text-sm text-dim/70 hover:text-cream transition-colors font-mono">{labels.home}</a></li>
+          {workWithUsHref && (
+            <li><a href={workWithUsHref} class="text-sm text-dim/70 hover:text-cream transition-colors font-mono">ご依頼</a></li>
+          )}
           <li><a href={navHrefs.services} class="text-sm text-dim/70 hover:text-cream transition-colors font-mono">{labels.services}</a></li>
           <li><a href={navHrefs.company} class="text-sm text-dim/70 hover:text-cream transition-colors font-mono">{labels.company}</a></li>
           <li><a href={navHrefs.contact} class="text-sm text-dim/70 hover:text-cream transition-colors font-mono">{labels.contact}</a></li>

@@ -1,5 +1,19 @@
 # 合同会社 Propel-Lab — サービス詳細
 
+## ご依頼いただけるプロダクト化サービス（法人向け）
+
+範囲と価格を先に明示したプロダクト化サービスを3段階で提供しています。詳細: https://propel-lab.co.jp/services/
+
+| Tier | サービス | 価格 | 内容 |
+|------|---------|------|------|
+| 0 | llmo-checker（OSS） | 無料 | LLMO Score によるAI検索対応度セルフチェックCLI（https://github.com/open-llmo/llmo-checker） |
+| 1 | LLMO診断レポート | ¥98,000（税別） | 構造監査 + 4エンジンAI引用実測 + P0/P1/P2改善ロードマップ。1ドメイン・納期2週間。詳細: https://propel-lab.co.jp/llmo-audit/ |
+| 2 | 実装伴走 | ¥300,000/月（税別） | 月次再診断 + 実装支援 + 非同期質問対応。診断購入者からの指名のみ |
+
+サンプルレポート（PDF・14ページ・全数値実測）: https://propel-lab.co.jp/files/llmo-audit-sample-legacydram.pdf
+
+---
+
 ## 提供サービス一覧
 
 Propel-Labは、AI・LLM技術を軸にした7つのサービスを提供しています。

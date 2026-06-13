@@ -159,6 +159,29 @@ export const serviceSchemasEn = [
   },
 ];
 
+/** LLMO診断レポート (Tier 1 プロダクト化サービス)。/llmo-audit/ と /services/ が参照する。 */
+export const llmoAuditServiceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  '@id': 'https://propel-lab.co.jp/#service-llmo-audit',
+  name: 'LLMO診断レポート',
+  serviceType: 'LLMO監査・AI検索可視性診断',
+  provider: { '@id': 'https://propel-lab.co.jp/#org' },
+  description:
+    '1ドメインを対象に、llmo-checker全ページスキャン・llms.txt/robots/JSON-LD/canonical/hreflang構造監査・AI検索エンジンでの引用実測・P0/P1/P2優先度付き改善ロードマップを2週間で納品する範囲固定の診断サービス。',
+  url: 'https://propel-lab.co.jp/llmo-audit/',
+  areaServed: 'JP',
+  inLanguage: 'ja',
+  offers: {
+    '@type': 'Offer',
+    price: '98000',
+    priceCurrency: 'JPY',
+    url: 'https://propel-lab.co.jp/llmo-audit/',
+    availability: 'https://schema.org/InStock',
+    businessFunction: 'http://purl.org/goodrelations/v1#ProvideService',
+  },
+};
+
 export const musicGroupSchema = {
   '@context': 'https://schema.org',
   '@type': 'MusicGroup',

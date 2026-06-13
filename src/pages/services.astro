@@ -1,0 +1,199 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { company } from '../data/company';
+import { llmoAuditServiceSchema } from '../lib/schemas';
+
+const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+
+const samplePdf = `${base}files/llmo-audit-sample-legacydram.pdf`;
+
+const tiers = [
+  {
+    tier: 'Tier 0',
+    name: 'llmo-checker',
+    price: '無料',
+    priceNote: 'OSS・MIT License',
+    description:
+      'サイトのAI検索対応度をLLMO Score（0-100）でセルフチェックできるオープンソースCLI。llms.txt・robots.txt・JSON-LD・canonical/hreflang・メタ情報の5項目を数十秒でスキャンします。まずは現在地を知るところから。',
+    cta: { label: 'GitHubで使う', href: 'https://github.com/open-llmo/llmo-checker', external: true },
+    highlight: false,
+  },
+  {
+    tier: 'Tier 1',
+    name: 'LLMO診断レポート',
+    price: '¥98,000',
+    priceNote: '税別・1ドメイン・納期2週間',
+    description:
+      '構造監査に加えて、Perplexity / Claude / Gemini / ChatGPT の4エンジンへ実クエリを投入する「AI引用実測」と競合 Share of Voice 比較を行い、P0/P1/P2 の優先度付き改善ロードマップをPDFで納品します。範囲固定・フォーム申込・商談なし。',
+    cta: { label: '診断の詳細を見る', href: `${base}llmo-audit/`, external: false },
+    highlight: true,
+  },
+  {
+    tier: 'Tier 2',
+    name: '実装伴走',
+    price: '¥300,000',
+    priceNote: '税別・月額',
+    description:
+      '月次再診断 + 改善実装の支援 + 非同期の質問対応。診断レポートをご購入いただいたお客様からのご指名のみお受けしています（こちらから営業することはありません）。診断納品時にご案内します。',
+    cta: null,
+    highlight: false,
+  },
+];
+
+const authorityItems = [
+  {
+    metric: '62冊',
+    label: '出版技術書',
+    detail: 'Claude Code・LLMO・AIエージェント領域の実践書をKindle/Zennで継続出版',
+  },
+  {
+    metric: '14万PV',
+    label: 'Qiita累計',
+    detail: 'エンジニア向け技術記事の実績。すべて実測・実装ベース',
+  },
+  {
+    metric: 'llmoframework.com',
+    label: 'LLMO標準の策定・運営',
+    detail: '5コアコンポーネントからなるLLMOフレームワークをOSSとして公開・運営',
+  },
+  {
+    metric: '全数値実測',
+    label: '実測主義',
+    detail: '診断レポートの数値はすべて実測値。このサイト自体がJSON-LD・llms.txt・URL.mdを実装したLLMO実装リファレンスで、Playwrightテストで品質を継続検証しています',
+  },
+];
+---
+
+<Layout
+  title="ご依頼いただけるサービス — LLMO診断・実装伴走 | Propel-Lab"
+  description="Propel-Labにご依頼いただけるプロダクト化サービスの一覧。無料のllmo-checker（OSS）、LLMO診断レポート（¥98,000・納期2週間）、実装伴走（月額）の3段階。価格・範囲を明示し、フォーム申込で完結します。"
+>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify([llmoAuditServiceSchema])} />
+  <Header />
+  <main>
+    <!-- Hero -->
+    <section class="relative pt-36 pb-20 lg:pt-44 lg:pb-24 bg-cream grain-overlay overflow-hidden">
+      <div class="mx-auto max-w-7xl px-6 lg:px-12 relative z-10">
+        <div class="max-w-3xl">
+          <div class="flex items-center gap-3 mb-5 fade-in-up">
+            <div class="w-8 h-px bg-gold"></div>
+            <span class="font-mono text-xs text-gold tracking-[0.2em] uppercase">Work With Us</span>
+          </div>
+          <h1 class="text-3xl lg:text-5xl font-bold text-charcoal leading-tight mb-6 fade-in-up stagger-1">
+            ご依頼いただけるサービス
+          </h1>
+          <p class="text-mid text-base leading-[1.9] fade-in-up stagger-2">
+            Propel-Lab のサービスはすべて、範囲と価格を先に明示した「プロダクト化サービス」です。見積もりのための商談はありません。無料のセルフチェックから始めて、必要になった段階だけご利用ください。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tier ladder -->
+    <section class="py-20 lg:py-28 bg-sand grain-overlay blueprint-grid relative">
+      <div class="mx-auto max-w-7xl px-6 lg:px-12 relative z-10">
+        <div class="grid lg:grid-cols-3 gap-6">
+          {tiers.map((t, i) => (
+            <div
+              class={`flex flex-col bg-parchment border p-8 lg:p-10 card-lift fade-in-up stagger-${i + 1} ${
+                t.highlight ? 'border-gold/40 relative' : 'border-charcoal/8'
+              }`}
+            >
+              {t.highlight && (
+                <div class="absolute -top-3 left-8 bg-gold text-charcoal font-mono text-[10px] tracking-[0.2em] uppercase px-3 py-1">
+                  Main Service
+                </div>
+              )}
+              <div class="font-mono text-xs text-gold/70 tracking-[0.2em] uppercase mb-3">{t.tier}</div>
+              <h2 class="text-xl font-bold text-charcoal mb-4">{t.name}</h2>
+              <div class="mb-1">
+                <span class="text-3xl font-bold text-charcoal">{t.price}</span>
+              </div>
+              <div class="font-mono text-[11px] text-dim tracking-wide mb-6">{t.priceNote}</div>
+              <p class="text-mid text-sm leading-[1.8] mb-8 flex-1">{t.description}</p>
+              {t.cta ? (
+                <a
+                  href={t.cta.href}
+                  {...(t.cta.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                  class={`inline-flex items-center justify-center gap-3 px-6 py-3.5 text-sm tracking-wide transition-colors duration-300 ${
+                    t.highlight
+                      ? 'bg-gold hover:bg-gold-light text-charcoal font-bold'
+                      : 'border border-charcoal/15 hover:border-gold/50 text-charcoal font-mono'
+                  }`}
+                >
+                  {t.cta.label} <span class={t.highlight ? '' : 'text-gold'}>{t.cta.external ? '↗' : '→'}</span>
+                </a>
+              ) : (
+                <div class="font-mono text-[11px] text-dim tracking-wide text-center px-6 py-3.5 border border-dashed border-charcoal/15">
+                  診断ご購入者様からのご指名のみ
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+
+        <!-- Sample report strip -->
+        <div class="mt-10 bg-charcoal text-cream p-8 lg:p-10 flex flex-col lg:flex-row items-start lg:items-center gap-6 lg:gap-10 fade-in-up">
+          <div class="flex-1">
+            <div class="font-mono text-xs text-gold tracking-[0.2em] uppercase mb-3">Sample Report</div>
+            <p class="text-dim text-sm leading-relaxed">
+              診断レポートの実物（当社運営メディア legacydram.com を診断した14ページPDF・全数値実測）を公開しています。納品物の粒度を先にご確認ください。
+            </p>
+          </div>
+          <a
+            href={samplePdf}
+            target="_blank"
+            class="shrink-0 inline-flex items-center gap-3 px-7 py-3.5 border border-cream/20 hover:border-gold/50 text-cream text-sm font-mono tracking-wide transition-colors duration-300"
+          >
+            サンプルPDFを開く <span class="text-gold">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Authority -->
+    <section class="py-20 lg:py-28 bg-cream grain-overlay relative">
+      <div class="mx-auto max-w-7xl px-6 lg:px-12 relative z-10">
+        <div class="mb-14 max-w-2xl">
+          <div class="flex items-center gap-3 mb-4 fade-in-up">
+            <div class="w-8 h-px bg-gold"></div>
+            <span class="font-mono text-xs text-gold tracking-[0.2em] uppercase">Why Propel-Lab</span>
+          </div>
+          <h2 class="text-3xl lg:text-4xl font-bold text-charcoal mb-4 fade-in-up stagger-1">診断する側の、実装実績</h2>
+          <p class="text-mid text-base leading-relaxed fade-in-up stagger-2">
+            LLMOは当社が書籍・OSS・自社サイト運営で継続的に実装している領域です。語るだけのコンサルティングではなく、自分のサイトで実測してきた手法をお客様のドメインに適用します。
+          </p>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {authorityItems.map((item, i) => (
+            <div class={`bg-parchment border border-charcoal/8 p-7 fade-in-up stagger-${i + 1}`}>
+              <div class="text-2xl font-bold text-charcoal mb-1 break-words">{item.metric}</div>
+              <div class="font-mono text-[11px] text-gold-muted tracking-wide uppercase mb-4">{item.label}</div>
+              <p class="text-mid text-xs leading-[1.8]">{item.detail}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section class="py-20 lg:py-28 bg-charcoal grain-overlay grain-overlay-dark relative overflow-hidden">
+      <div class="absolute inset-0 opacity-[0.03]" style="background-image: linear-gradient(rgba(139, 105, 20, 0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(139, 105, 20, 0.5) 1px, transparent 1px); background-size: 48px 48px;"></div>
+      <div class="mx-auto max-w-4xl px-6 lg:px-12 relative z-10 text-center">
+        <h2 class="text-2xl lg:text-3xl font-bold text-cream mb-6 fade-in-up">どのサービスが合うか分からない場合</h2>
+        <p class="text-dim text-sm leading-relaxed mb-8 max-w-xl mx-auto fade-in-up stagger-1">
+          まずは無料の llmo-checker で現在地を測ることをおすすめします。判断に迷う場合はメールでお気軽にどうぞ。
+        </p>
+        <a
+          href={`mailto:${company.email}`}
+          class="inline-flex items-center gap-3 px-8 py-4 border border-cream/20 hover:border-gold/50 text-cream text-sm font-mono tracking-wide transition-colors duration-300 fade-in-up stagger-2"
+        >
+          {company.email} <span class="text-gold">→</span>
+        </a>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>

@@ -13,6 +13,13 @@
 ## Mission
 Engineer the next generation of business models through systems thinking and technology.
 
+## Professional Services (Work With Us)
+Productized services with fixed scope and upfront pricing — no sales meetings. Overview: https://propel-lab.co.jp/services/
+- Tier 0: llmo-checker (OSS, free) — LLMO Score self-check CLI: https://github.com/open-llmo/llmo-checker
+- Tier 1: LLMO Audit Report (¥98,000, 1 domain, 2-week delivery) — structural audit + measured AI-citation rates across Perplexity/Claude/Gemini/ChatGPT + prioritized P0/P1/P2 roadmap: https://propel-lab.co.jp/llmo-audit/
+- Tier 2: Implementation Support (¥300,000/month) — monthly re-audit + implementation help, available to audit customers only
+- Sample report (PDF, 14 pages, all figures measured): https://propel-lab.co.jp/files/llmo-audit-sample-legacydram.pdf
+
 ## Services
 1. LearningMate — Educational content and publishing focused on LLM technologies (Claude Code, Context Engineering, LLMO)
 2. AI-Loop — SNS automation and content marketing support powered by LLM agents
@@ -47,6 +54,7 @@ Engineer the next generation of business models through systems thinking and tec
 - Artists: Yumei (main vocal), Silk Reign (ballads)
 - Stats: 409+ published tracks / 3,815+ YouTube subscribers
 - YouTube: https://youtube.com/@Yureru-s4n
+- Yureru detail (Markdown): https://propel-lab.co.jp/yureru.md
 
 ## Detailed Resources
 - AI LearningMate (Books): https://propel-lab.co.jp/ai/learningmate.md

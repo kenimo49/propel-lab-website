@@ -159,17 +159,17 @@ export const serviceSchemasEn = [
   },
 ];
 
-/** LLMO診断レポート (Tier 1 プロダクト化サービス)。/llmo-audit/ と /services/ が参照する。 */
+/** LLMO診断・実装伴走 (LLM最適化コンサルティング、3 Tier)。事業#1の実体として home/products/services/llmo-audit が参照する。代表オファーは Tier 1 診断レポート(¥98,000・offers.url=/llmo-audit/)。 */
 export const llmoAuditServiceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   '@id': 'https://propel-lab.co.jp/#service-llmo-audit',
-  name: 'LLMO診断レポート',
+  name: 'LLMO診断・実装伴走',
   serviceType: 'LLMO監査・AI検索可視性診断',
   provider: { '@id': 'https://propel-lab.co.jp/#org' },
   description:
-    '1ドメインを対象に、llmo-checker全ページスキャン・llms.txt/robots/JSON-LD/canonical/hreflang構造監査・AI検索エンジンでの引用実測・P0/P1/P2優先度付き改善ロードマップを2週間で納品する範囲固定の診断サービス。',
-  url: 'https://propel-lab.co.jp/llmo-audit/',
+    '無料OSSのllmo-checkerから、AI検索（Perplexity/Claude/Gemini/ChatGPT）での引用実測とP0/P1/P2優先度付き改善ロードマップを2週間で納品するLLMO診断レポート（¥98,000）、月次の実装伴走までを範囲固定・商談なしで提供するLLM最適化コンサルティング。',
+  url: 'https://propel-lab.co.jp/services/',
   areaServed: 'JP',
   inLanguage: 'ja',
   offers: {
@@ -191,7 +191,7 @@ export const llmoAuditServiceSchemaEn = {
   serviceType: 'LLM optimization / AI search visibility audit',
   provider: { '@id': 'https://propel-lab.co.jp/#org' },
   description:
-    'A fixed-scope diagnostic for one domain: full llmo-checker scan, structural audit of llms.txt/robots/JSON-LD/canonical/hreflang, measured AI-citation rates across Perplexity/Claude/Gemini/ChatGPT, and a prioritized P0/P1/P2 roadmap delivered in two weeks.',
+    'An LLM optimization consulting line: from the free open-source llmo-checker to a fixed-scope LLMO audit report (¥98,000, measured AI-citation rates across Perplexity/Claude/Gemini/ChatGPT with a prioritized P0/P1/P2 roadmap delivered in two weeks) and monthly implementation support — fixed scope, no sales meetings.',
   url: 'https://propel-lab.co.jp/services/',
   areaServed: 'JP',
   inLanguage: 'en',

@@ -39,6 +39,10 @@ const scopeItems = [
     detail: 'Perplexity / Claude / Gemini / ChatGPT の4エンジンに実クエリを投入し、クエリ×エンジン×5試行で「引用率」を算出。競合3社との引用シェア（Share of Voice）も1枚に可視化します。',
   },
   {
+    name: '競合ベンチマーク',
+    detail: '同テーマで上位に立つ競合サイトの LLMO 基板スコアを実測し、相対的な立ち位置を可視化。「技術は競合より上なのに引用されない」のか「技術自体に遅れがあるのか」を切り分け、改善の力点を間違えないようにします。',
+  },
+  {
     name: '外部実測データ',
     detail: 'CrUX API による Core Web Vitals 実ユーザーデータ、インデックス状況・検索順位の外部確認。権限なしで取得できる実データを揃えます。',
   },
@@ -102,7 +106,7 @@ const faqSchema = {
 
 <Layout
   title="LLMO診断レポート ¥98,000 — AI検索にあなたのサイトは引用されているか | Propel-Lab"
-  description="1ドメイン・¥98,000・納期2週間の範囲固定LLMO診断。llmo-checker全ページスキャン、llms.txt/JSON-LD構造監査、Perplexity/Claude/Gemini/ChatGPT 4エンジンでのAI引用実測、P0/P1/P2改善ロードマップをPDFで納品。サンプルレポート公開中。"
+  description="1ドメイン・¥98,000・納期2週間の範囲固定LLMO診断。llmo-checker全ページスキャン、llms.txt/JSON-LD構造監査、Perplexity/Claude/Gemini/ChatGPT 4エンジンでのAI引用実測、競合ベンチマーク、機会損失の可視化、P0/P1/P2改善ロードマップをPDFで納品。KPIサマリー付きのサンプルレポート（14ページ）公開中。"
 >
   <script slot="head" type="application/ld+json" set:html={JSON.stringify([llmoAuditServiceSchema, faqSchema])} />
   <Header />
@@ -121,7 +125,7 @@ const faqSchema = {
               AI検索に、<br />あなたのサイトは<br />引用されているか。
             </h1>
             <p class="text-dim text-base leading-relaxed mb-8 fade-in-up stagger-2">
-              LLMO診断レポートは、サイトの構造監査とAI検索エンジンでの引用実測を組み合わせ、「なぜ引用されないか」「何をどの順で直すか」を実測データで特定する範囲固定の診断サービスです。
+              LLMO診断レポートは、サイトの構造監査とAI検索エンジンでの引用実測、競合ベンチマークを組み合わせ、「なぜ引用されないか」「何をどの順で直すか」を実測データで特定する範囲固定の診断サービスです。
             </p>
             <div class="flex flex-wrap items-center gap-x-8 gap-y-3 mb-10 fade-in-up stagger-3">
               <div>
@@ -260,7 +264,7 @@ const faqSchema = {
             </div>
             <h2 class="text-3xl lg:text-4xl font-bold text-charcoal mb-6 fade-in-up stagger-1">納品物を、先に見てください。</h2>
             <p class="text-mid text-base leading-[1.9] mb-8 fade-in-up stagger-2">
-              当社が運営する公開メディアサイト legacydram.com を実際に診断したレポート全文（14ページ・A4）を公開しています。掲載している数値はすべて実測値です。お申し込み前に、納品物の粒度と書きぶりをそのままご確認いただけます。
+              当社が運営する公開メディアサイト legacydram.com を実際に診断したレポート全文（14ページ・A4）を公開しています。掲載している legacydram の数値はすべて実測値です。冒頭のKPIサマリー1枚、AI引用実測、競合4サイトとのLLMO基板スコア・ベンチマークまで、納品物の粒度と書きぶりをそのままご確認いただけます。
             </p>
             <a
               href={samplePdf}
@@ -272,16 +276,18 @@ const faqSchema = {
           </div>
           <div class="lg:col-span-7">
             <div class="bg-parchment border border-charcoal/8 p-8 lg:p-10 fade-in-up stagger-2">
-              <div class="font-mono text-[10px] text-dim tracking-[0.2em] uppercase mb-6">レポート構成（全11セクション + 付録）</div>
+              <div class="font-mono text-[10px] text-dim tracking-[0.2em] uppercase mb-6">レポート構成（全10セクション + 付録）</div>
               <ol class="space-y-3 text-sm text-mid leading-relaxed">
-                <li class="flex gap-3"><span class="font-mono text-xs text-gold/60 shrink-0 mt-0.5">01</span>エグゼクティブサマリー — 総合評価と最優先の3アクション</li>
-                <li class="flex gap-3"><span class="font-mono text-xs text-gold/60 shrink-0 mt-0.5">02</span>診断のスコープと方法論 — 5コアコンポーネント・標準/精密の二段構え</li>
-                <li class="flex gap-3"><span class="font-mono text-xs text-gold/60 shrink-0 mt-0.5">03</span>LLMOスコア — ページ別実測とチェック項目別内訳</li>
-                <li class="flex gap-3"><span class="font-mono text-xs text-gold/60 shrink-0 mt-0.5">04</span><span><strong class="text-charcoal">AI引用実測</strong> — 対象クエリでの被引用状況と、引用されない構造要因の分析</span></li>
-                <li class="flex gap-3"><span class="font-mono text-xs text-gold/60 shrink-0 mt-0.5">05</span>構造監査 — llms.txt / robots / JSON-LD / canonical / hreflang</li>
-                <li class="flex gap-3"><span class="font-mono text-xs text-gold/60 shrink-0 mt-0.5">06</span>検索パフォーマンス実データ — インデックス状況・順位の近接機会（精密診断）</li>
-                <li class="flex gap-3"><span class="font-mono text-xs text-gold/60 shrink-0 mt-0.5">07</span>5コアコンポーネント別評価</li>
-                <li class="flex gap-3"><span class="font-mono text-xs text-gold/60 shrink-0 mt-0.5">08</span>P0 / P1 / P2 改善ロードマップ + 付録（スコア定義・再現方法・範囲外事項）</li>
+                <li class="flex gap-3"><span class="font-mono text-xs text-gold/60 shrink-0 mt-0.5">01</span>エグゼクティブサマリー — 総合評価と中核課題の切り分け</li>
+                <li class="flex gap-3"><span class="font-mono text-xs text-gold/60 shrink-0 mt-0.5">02</span><span><strong class="text-charcoal">KPIサマリー</strong> — 総合評価・AI引用率・競合差・想定工数を1ページで</span></li>
+                <li class="flex gap-3"><span class="font-mono text-xs text-gold/60 shrink-0 mt-0.5">03</span><span><strong class="text-charcoal">AI引用実測（中核）</strong> — 4エンジンでの被引用状況と、引用されない構造要因の分析</span></li>
+                <li class="flex gap-3"><span class="font-mono text-xs text-gold/60 shrink-0 mt-0.5">04</span><span><strong class="text-charcoal">競合比較</strong> — LLMO基板スコアの競合ベンチマークと「技術で上なのに負ける」構造</span></li>
+                <li class="flex gap-3"><span class="font-mono text-xs text-gold/60 shrink-0 mt-0.5">05</span>LLMOスコア — ページ別実測とチェック項目別内訳</li>
+                <li class="flex gap-3"><span class="font-mono text-xs text-gold/60 shrink-0 mt-0.5">06</span>構造監査 — llms.txt / robots / JSON-LD / canonical / hreflang</li>
+                <li class="flex gap-3"><span class="font-mono text-xs text-gold/60 shrink-0 mt-0.5">07</span>検索パフォーマンス実データ — インデックス状況・順位の近接機会（精密診断）</li>
+                <li class="flex gap-3"><span class="font-mono text-xs text-gold/60 shrink-0 mt-0.5">08</span><span><strong class="text-charcoal">失われている機会</strong> — 引用ゼロのビジネス影響を機会損失として可視化</span></li>
+                <li class="flex gap-3"><span class="font-mono text-xs text-gold/60 shrink-0 mt-0.5">09</span>P0 / P1 / P2 改善ロードマップ</li>
+                <li class="flex gap-3"><span class="font-mono text-xs text-gold/60 shrink-0 mt-0.5">10</span>実施後の期待効果 — Before / After のAI引用率予測 ＋ 付録（方法論・スコア定義・再現方法）</li>
               </ol>
             </div>
           </div>

@@ -1,0 +1,177 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { pilotMeta, series, roadmap } from '../data/legacydram-pilot';
+
+const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+const samplePdf = `${base}files/llmo-audit-sample-legacydram.pdf`;
+
+const metrics = [series.llmoScore, series.gscIndexed, series.gscImpressions, series.aiCitationRate];
+
+const statusLabel: Record<string, string> = {
+  pending: '実装前',
+  in_progress: '実装中',
+  done: '実装済み',
+};
+---
+
+<Layout
+  title="LLMO診断パイロット — legacydram.com の先行指標を公開追跡 | Propel-Lab"
+  description="Propel-Lab が自社運営メディア legacydram.com を題材に、LLMO診断→改善→効果を公開で追跡するパイロット観測。LLMO基板スコア・インデックス・AI引用率などの先行指標を実測値で時系列公開します。数値はすべて実測、改善は実装しながら更新。"
+>
+  <Header />
+  <main>
+    <!-- Hero -->
+    <section class="relative pt-36 pb-20 lg:pt-44 lg:pb-24 bg-charcoal grain-overlay grain-overlay-dark overflow-hidden">
+      <div class="absolute inset-0 opacity-[0.03]" style="background-image: linear-gradient(rgba(139, 105, 20, 0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(139, 105, 20, 0.5) 1px, transparent 1px); background-size: 48px 48px;"></div>
+      <div class="mx-auto max-w-5xl px-6 lg:px-12 relative z-10">
+        <div class="flex items-center gap-3 mb-5 fade-in-up">
+          <div class="w-8 h-px bg-gold"></div>
+          <span class="font-mono text-xs text-gold tracking-[0.2em] uppercase">Pilot · Public Tracking</span>
+        </div>
+        <h1 class="text-3xl lg:text-5xl font-bold text-cream leading-tight mb-6 fade-in-up stagger-1">
+          診断する側が、<br />自分のサイトで証明する。
+        </h1>
+        <p class="text-dim text-base leading-[1.9] max-w-3xl fade-in-up stagger-2">
+          私たちは自社運営メディア <strong class="text-cream">legacydram.com</strong> を診断し、提示した改善を実装しながら、その先行指標を実測値で公開追跡しています。AI引用率 0% という不都合な数字も含めて、すべて実データです。「語るだけ」ではないことを、自分のサイトで証明するためのパイロットです。
+        </p>
+        <div class="mt-6 font-mono text-xs text-faint/50 fade-in-up stagger-3">
+          baseline: {pilotMeta.baselineDate}　/　last updated: {pilotMeta.lastUpdated}　/　現在フェーズ: 改善実装前（baseline記録）
+        </div>
+      </div>
+    </section>
+
+    <!-- 先行指標の時系列 -->
+    <section class="py-20 lg:py-28 bg-cream grain-overlay relative">
+      <div class="mx-auto max-w-5xl px-6 lg:px-12 relative z-10">
+        <div class="mb-12 max-w-2xl">
+          <div class="flex items-center gap-3 mb-4 fade-in-up">
+            <div class="w-8 h-px bg-gold"></div>
+            <span class="font-mono text-xs text-gold tracking-[0.2em] uppercase">Leading Indicators</span>
+          </div>
+          <h2 class="text-3xl lg:text-4xl font-bold text-charcoal mb-4 fade-in-up stagger-1">追跡している先行指標</h2>
+          <p class="text-mid text-base leading-relaxed fade-in-up stagger-2">
+            AI引用率は最終的にドメイン権威性（被リンク）に依存し、動くまで数ヶ月かかります。そこで、改善実装で早く動く<strong class="text-charcoal">先行指標</strong>を主役に置き、AI引用率は長期の本丸として継続観測します。
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          {metrics.map((m) => {
+            const pts = m.points;
+            const latest = pts[pts.length - 1];
+            const first = pts[0];
+            const pct = Math.min(100, Math.round((latest.value / m.max) * 100));
+            const delta = pts.length > 1 ? latest.value - first.value : null;
+            return (
+              <div class="bg-parchment border border-charcoal/8 p-7 lg:p-8 fade-in-up">
+                <div class="text-sm font-bold text-charcoal mb-1">{m.label}</div>
+                <div class="flex items-baseline gap-3 mb-4">
+                  <span class="text-4xl font-bold text-charcoal">{latest.value}{m.unit}</span>
+                  {delta !== null && delta !== 0 && (
+                    <span class={`font-mono text-xs ${delta > 0 ? 'text-emerald-700' : 'text-red-600'}`}>
+                      {delta > 0 ? '▲' : '▼'} {Math.abs(delta)}{m.unit}（{first.date}比）
+                    </span>
+                  )}
+                  {delta === 0 && <span class="font-mono text-xs text-dim">横ばい（{first.date}比）</span>}
+                </div>
+                <div class="h-2 bg-charcoal/8 rounded-sm overflow-hidden mb-4">
+                  <div class="h-full bg-gold" style={`width:${pct}%`}></div>
+                </div>
+                <ul class="space-y-1.5">
+                  {pts.map((p) => (
+                    <li class="flex gap-3 text-xs text-mid">
+                      <span class="font-mono text-dim shrink-0 w-20">{p.date}</span>
+                      <span class="font-bold text-charcoal shrink-0 w-14">{p.value}{m.unit}</span>
+                      {p.note && <span class="text-dim leading-relaxed">{p.note}</span>}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            );
+          })}
+        </div>
+
+        <p class="mt-8 text-xs text-dim leading-relaxed fade-in-up">
+          ※ インデックス数・表示回数の初期の伸び（6月初旬→6/12）は、ローンチ直後の自然なインデックス進行によるものです。<strong class="text-charcoal">診断改善の効果は baseline（{pilotMeta.baselineDate}）以降の変化として、ここに追記していきます。</strong>
+        </p>
+      </div>
+    </section>
+
+    <!-- baseline 構造 -->
+    <section class="py-20 lg:py-28 bg-charcoal grain-overlay grain-overlay-dark relative">
+      <div class="mx-auto max-w-5xl px-6 lg:px-12 relative z-10">
+        <h2 class="text-2xl lg:text-3xl font-bold text-cream mb-3 fade-in-up">baseline が示す構造</h2>
+        <p class="text-dim text-sm leading-[1.9] max-w-3xl mb-10 fade-in-up stagger-1">
+          技術基板は競合を上回るのに、AIには引用されていない——legacydram の baseline は、LLMOの本質を一言で表しています。
+        </p>
+        <div class="grid sm:grid-cols-3 border border-cream/10 fade-in-up stagger-2">
+          <div class="text-center px-5 py-8 border-b sm:border-b-0 sm:border-r border-cream/10">
+            <div class="text-5xl font-bold text-emerald-300 mb-2">93</div>
+            <div class="text-cream text-sm font-bold mb-1">LLMO基板スコア</div>
+            <div class="text-dim text-xs">競合4サイト中1位（競合平均50）</div>
+          </div>
+          <div class="text-center px-5 py-8 border-b sm:border-b-0 sm:border-r border-cream/10">
+            <div class="text-5xl font-bold text-red-300 mb-2">0%</div>
+            <div class="text-cream text-sm font-bold mb-1">AI引用率</div>
+            <div class="text-dim text-xs">専用記事を持つクエリで被引用ゼロ</div>
+          </div>
+          <div class="text-center px-5 py-8">
+            <div class="text-5xl font-bold text-red-300 mb-2">2</div>
+            <div class="text-cream text-sm font-bold mb-1">外部被リンク（90日）</div>
+            <div class="text-dim text-xs">権威性の天井・改善の主戦場</div>
+          </div>
+        </div>
+        <p class="mt-6 text-dim text-sm leading-relaxed fade-in-up stagger-3">
+          診断の全文（16ページ）は
+          <a href={samplePdf} target="_blank" class="text-gold border-b border-gold/40 hover:border-gold pb-0.5">サンプルレポートPDF</a>
+          で公開しています。
+        </p>
+      </div>
+    </section>
+
+    <!-- 改善ロードマップ実装状況 -->
+    <section class="py-20 lg:py-28 bg-sand grain-overlay blueprint-grid relative">
+      <div class="mx-auto max-w-5xl px-6 lg:px-12 relative z-10">
+        <div class="flex items-center gap-3 mb-8 fade-in-up">
+          <div class="w-8 h-px bg-gold"></div>
+          <span class="font-mono text-xs text-gold tracking-[0.2em] uppercase">Roadmap Status</span>
+          <span class="text-charcoal text-sm font-bold ml-1">改善の実装状況</span>
+        </div>
+        <div class="space-y-4">
+          {roadmap.map((r) => (
+            <div class="flex items-start gap-4 bg-parchment border border-charcoal/8 p-5 lg:p-6 fade-in-up">
+              <span class="font-mono text-xs font-bold text-gold shrink-0 mt-1 w-7">{r.phase}</span>
+              <span class="text-mid text-sm leading-relaxed flex-1">{r.title}</span>
+              <span class="font-mono text-[10px] tracking-wide uppercase shrink-0 px-2.5 py-1 border border-charcoal/15 text-dim">
+                {statusLabel[r.status]}
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- 再現・CTA -->
+    <section class="py-20 lg:py-28 bg-cream grain-overlay relative">
+      <div class="mx-auto max-w-5xl px-6 lg:px-12 relative z-10">
+        <h2 class="text-2xl lg:text-3xl font-bold text-charcoal mb-4 fade-in-up">数字は、誰でも再現できます。</h2>
+        <p class="text-mid text-base leading-[1.9] max-w-3xl mb-6 fade-in-up stagger-1">
+          このページの LLMO基板スコアは、次のコマンドで今すぐ手元から再現できます（OSS・無料）。私たちが出している数字がブラックボックスでないことの担保です。
+        </p>
+        <div class="bg-deep text-cream font-mono text-sm p-5 lg:p-6 mb-10 overflow-x-auto fade-in-up stagger-2">
+          <span class="text-dim/70">$ </span>npx llmo-checker https://legacydram.com --json
+        </div>
+        <div class="flex flex-wrap gap-4 fade-in-up stagger-3">
+          <a href={`${base}llmo-audit/`} class="inline-flex items-center gap-3 px-8 py-4 bg-gold hover:bg-gold-light text-charcoal text-sm font-bold tracking-wide transition-colors duration-300">
+            自社サイトの診断を申し込む <span>→</span>
+          </a>
+          <a href={samplePdf} target="_blank" class="inline-flex items-center gap-3 px-8 py-4 border border-charcoal/15 hover:border-gold/50 text-charcoal text-sm font-mono tracking-wide transition-colors duration-300">
+            16ページのサンプルを見る <span class="text-gold">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>

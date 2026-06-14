@@ -31,7 +31,7 @@
 - 内容: llmo-checker全ページスキャン、構造監査、AI引用実測（Perplexity/Claude/Gemini/ChatGPT 4エンジン × 5試行の引用率 + 競合Share of Voice）、CrUX実測、P0/P1/P2改善ロードマップ
 - GA4/Search Console閲覧権限の提供（任意）で精密診断へ無料アップグレード
 - 詳細・申込: https://propel-lab.co.jp/llmo-audit/
-- サンプルレポート（PDF・14ページ・全数値実測）: https://propel-lab.co.jp/files/llmo-audit-sample-legacydram.pdf
+- サンプルレポート（PDF・16ページ・全数値実測）: https://propel-lab.co.jp/files/llmo-audit-sample-legacydram.pdf
 
 ### Tier 2: 実装伴走（月額¥300,000・税別）
 - 月次再診断 + 改善実装支援 + 非同期の質問対応

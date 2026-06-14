@@ -7,7 +7,7 @@ import { caseMeta, changelog, series, projection, actionResults } from '../data/
 const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
 const samplePdf = `${base}files/llmo-audit-sample-legacydram.pdf`;
 
-const metrics = [series.llmoScore, series.gscIndexed, series.gscImpressions, series.aiCitationRate];
+const metrics = [series.llmoScore, series.blogListScore, series.gscIndexed, series.gscImpressions, series.aiCitationRate];
 
 const changelogDot: Record<string, string> = {
   diagnosis: 'bg-gold',
@@ -24,6 +24,7 @@ const changelogTag: Record<string, string> = {
 
 const verdictStyle: Record<string, { label: string; cls: string }> = {
   pending: { label: '結果待ち', cls: 'border-charcoal/15 text-dim' },
+  done: { label: '実施済み', cls: 'border-sky-600/40 text-sky-700 bg-sky-50' },
   positive: { label: '効果あり', cls: 'border-emerald-600/40 text-emerald-700 bg-emerald-50' },
   slight: { label: '微増', cls: 'border-amber-600/40 text-amber-700 bg-amber-50' },
   none: { label: '効果なし', cls: 'border-red-500/40 text-red-600 bg-red-50' },

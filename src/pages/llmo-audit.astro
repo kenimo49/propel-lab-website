@@ -106,7 +106,7 @@ const faqSchema = {
 
 <Layout
   title="LLMO診断レポート ¥98,000 — AI検索にあなたのサイトは引用されているか | Propel-Lab"
-  description="1ドメイン・¥98,000・納期2週間の範囲固定LLMO診断。llmo-checker全ページスキャン、llms.txt/JSON-LD構造監査、Perplexity/Claude/Gemini/ChatGPT 4エンジンでのAI引用実測、競合ベンチマーク、機会損失の可視化、P0/P1/P2改善ロードマップをPDFで納品。KPIサマリー付きのサンプルレポート（14ページ）公開中。"
+  description="1ドメイン・¥98,000・納期2週間の範囲固定LLMO診断。llmo-checker全ページスキャン、llms.txt/JSON-LD構造監査、Perplexity/Claude/Gemini/ChatGPT 4エンジンでのAI引用実測、競合ベンチマーク、機会損失の可視化、P0/P1/P2改善ロードマップをPDFで納品。KPIサマリー付きのサンプルレポート（16ページ）公開中。"
 >
   <script slot="head" type="application/ld+json" set:html={JSON.stringify([llmoAuditServiceSchema, faqSchema])} />
   <Header />
@@ -122,10 +122,10 @@ const faqSchema = {
               <span class="font-mono text-xs text-gold tracking-[0.2em] uppercase">LLMO Audit</span>
             </div>
             <h1 class="text-3xl lg:text-5xl font-bold text-cream leading-tight mb-6 fade-in-up stagger-1">
-              AI検索に、<br />あなたのサイトは<br />引用されているか。
+              AIに、<br />引用される<br />会社になる。
             </h1>
             <p class="text-dim text-base leading-relaxed mb-8 fade-in-up stagger-2">
-              LLMO診断レポートは、サイトの構造監査とAI検索エンジンでの引用実測、競合ベンチマークを組み合わせ、「なぜ引用されないか」「何をどの順で直すか」を実測データで特定する範囲固定の診断サービスです。
+              ChatGPT・Claude・Gemini・Perplexity であなたのサイトの可視性と引用率を実測し、競合と比べて「なぜ引用されないのか」「何をどの順で直すか」を改善ロードマップとして提示する、範囲固定のLLMO診断サービスです。
             </p>
             <div class="flex flex-wrap items-center gap-x-8 gap-y-3 mb-10 fade-in-up stagger-3">
               <div>
@@ -153,7 +153,7 @@ const faqSchema = {
                 target="_blank"
                 class="inline-flex items-center gap-3 px-8 py-4 border border-cream/20 hover:border-gold/50 text-cream text-sm font-mono tracking-wide transition-colors duration-300"
               >
-                サンプルレポートを見る（PDF・14ページ）
+                サンプルレポートを見る（PDF・16ページ）
               </a>
             </div>
           </div>
@@ -185,6 +185,34 @@ const faqSchema = {
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- この診断で分かること -->
+    <section class="py-16 lg:py-20 bg-deep grain-overlay grain-overlay-dark relative">
+      <div class="mx-auto max-w-7xl px-6 lg:px-12 relative z-10">
+        <div class="flex items-center gap-3 mb-8 fade-in-up">
+          <div class="w-8 h-px bg-gold"></div>
+          <span class="font-mono text-xs text-gold tracking-[0.2em] uppercase">What You'll Learn</span>
+          <span class="text-cream/90 text-sm font-bold ml-1">この診断で分かること</span>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+          {[
+            { t: 'AI引用率', d: '4エンジンで実際に引用されているか' },
+            { t: '競合比較', d: '競合に対する立ち位置を実測ベンチマーク' },
+            { t: '機会損失', d: '引用を競合に明け渡している露出機会' },
+            { t: '優先度付き改善案', d: 'P0 / P1 / P2 で効果順に整理' },
+            { t: '実装ロードマップ', d: 'そのまま着手できる粒度で納品' },
+          ].map((item, i) => (
+            <div class={`bg-charcoal/60 border border-cream/10 p-5 fade-in-up stagger-${Math.min(i + 1, 6)}`}>
+              <div class="flex items-center gap-2 mb-2">
+                <span class="text-gold text-base font-bold">✓</span>
+                <span class="text-cream text-sm font-bold">{item.t}</span>
+              </div>
+              <p class="text-dim text-xs leading-relaxed">{item.d}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
@@ -264,7 +292,7 @@ const faqSchema = {
             </div>
             <h2 class="text-3xl lg:text-4xl font-bold text-charcoal mb-6 fade-in-up stagger-1">納品物を、先に見てください。</h2>
             <p class="text-mid text-base leading-[1.9] mb-8 fade-in-up stagger-2">
-              当社が運営する公開メディアサイト legacydram.com を実際に診断したレポート全文（14ページ・A4）を公開しています。掲載している legacydram の数値はすべて実測値です。冒頭のKPIサマリー1枚、AI引用実測、競合4サイトとのLLMO基板スコア・ベンチマークまで、納品物の粒度と書きぶりをそのままご確認いただけます。
+              当社が運営する公開メディアサイト legacydram.com を実際に診断したレポート全文（16ページ・A4）を公開しています。掲載している legacydram の数値はすべて実測値です。冒頭のKPIサマリー1枚、AI引用実測、競合4サイトとのLLMO基板スコア・ベンチマークまで、納品物の粒度と書きぶりをそのままご確認いただけます。
             </p>
             <a
               href={samplePdf}
@@ -292,6 +320,67 @@ const faqSchema = {
             </div>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- 対象顧客 -->
+    <section class="py-24 lg:py-32 bg-cream grain-overlay relative">
+      <div class="mx-auto max-w-7xl px-6 lg:px-12 relative z-10">
+        <div class="mb-14 max-w-2xl">
+          <div class="flex items-center gap-3 mb-4 fade-in-up">
+            <div class="w-8 h-px bg-gold"></div>
+            <span class="font-mono text-xs text-gold tracking-[0.2em] uppercase">Who It's For</span>
+          </div>
+          <h2 class="text-3xl lg:text-4xl font-bold text-charcoal mb-4 fade-in-up stagger-1">こんな企業におすすめ</h2>
+          <p class="text-mid text-base leading-relaxed fade-in-up stagger-2">
+            検索からの流入を事業の柱にしていて、その入口がAIに移りつつあることに気づいている——そんな組織ほど、診断の効果が大きくなります。
+          </p>
+        </div>
+        <div class="grid md:grid-cols-2 gap-6">
+          {[
+            { t: 'オウンドメディア運営企業', d: '記事への投資をしているのに、AIの回答で競合だけが引用されている可能性を実測で確かめたい。' },
+            { t: 'SaaS企業', d: '比較・検討フェーズのユーザーがAIに質問する時代に、自社プロダクトが回答に登場しているかを把握したい。' },
+            { t: 'BtoB企業', d: '専門性は高いがドメインの権威性が育ちきっておらず、何から手を付ければAIに引用されるか優先度が知りたい。' },
+            { t: '専門コンテンツを持つ企業', d: '専用記事や独自データを持つのに検索・AIで埋もれている。構造と権威のどちらが効いていないかを切り分けたい。' },
+          ].map((item, i) => (
+            <div class={`bg-parchment border border-charcoal/8 p-7 lg:p-8 card-lift fade-in-up stagger-${Math.min(i + 1, 6)}`}>
+              <h3 class="text-lg font-bold text-charcoal mb-2">{item.t}</h3>
+              <p class="text-mid text-sm leading-[1.8]">{item.d}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- 信頼の根拠 -->
+    <section class="py-20 lg:py-28 bg-charcoal grain-overlay grain-overlay-dark relative">
+      <div class="mx-auto max-w-7xl px-6 lg:px-12 relative z-10">
+        <div class="mb-12 max-w-2xl">
+          <div class="flex items-center gap-3 mb-4 fade-in-up">
+            <div class="w-8 h-px bg-gold"></div>
+            <span class="font-mono text-xs text-gold tracking-[0.2em] uppercase">Why Trust Us</span>
+          </div>
+          <h2 class="text-2xl lg:text-3xl font-bold text-cream mb-4 fade-in-up stagger-1">診断する側が、LLMOを実装している。</h2>
+          <p class="text-dim text-sm leading-[1.9] fade-in-up stagger-2">
+            語るだけのコンサルティングではありません。診断手法は、標準フレームワークの策定・OSS開発・自社サイトでの実測を通じて、私たち自身が日々運用しているものです。
+          </p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6">
+          {[
+            { t: 'llmoframework.com', l: 'LLMO標準の策定・運営', d: '5コアコンポーネントからなるLLMOフレームワークを策定・公開。診断の評価軸そのものを設計しています。' },
+            { t: 'llmo-checker', l: 'OSSとして公開', d: '審査基準をブラックボックスにせず、誰でも使えるオープンソースCLIとして公開（GitHub / npm）。' },
+            { t: '自社7サイト', l: '全数値を実測で検証', d: '自分たちのサイト群でGA4/GSC・AI引用を実測しながら手法を磨いています。診断の数値はすべて実測ベース。' },
+          ].map((item, i) => (
+            <div class={`bg-charcoal/60 border border-cream/10 p-7 fade-in-up stagger-${i + 1}`}>
+              <div class="text-cream text-lg font-bold mb-1 break-words">{item.t}</div>
+              <div class="font-mono text-[11px] text-gold/80 tracking-wide uppercase mb-4">{item.l}</div>
+              <p class="text-dim text-xs leading-[1.8]">{item.d}</p>
+            </div>
+          ))}
+        </div>
+        <p class="mt-8 text-xs text-faint/40 font-mono tracking-wide fade-in-up">
+          ※ 診断実施数・AI引用改善事例は、実績の蓄積に応じてこのセクションに追記していきます。
+        </p>
       </div>
     </section>
 
@@ -341,6 +430,28 @@ const faqSchema = {
               改善の実装まで支援が必要な場合は、診断ご購入者様向けに実装伴走（月額¥300,000・月次再診断 + 実装支援 + 非同期の質問対応）をご用意しています。診断レポート納品時にご案内します。
             </p>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 診断→伴走ブリッジ -->
+    <section class="py-20 lg:py-28 bg-sand grain-overlay relative">
+      <div class="mx-auto max-w-4xl px-6 lg:px-12 relative z-10">
+        <div class="bg-parchment border border-charcoal/8 border-l-4 border-l-gold p-8 lg:p-12 fade-in-up">
+          <div class="font-mono text-xs text-gold tracking-[0.2em] uppercase mb-4">After the Audit</div>
+          <h2 class="text-2xl lg:text-3xl font-bold text-charcoal mb-5">診断は、問題発見まで。</h2>
+          <p class="text-mid text-base leading-[1.9] mb-4">
+            診断レポートは「何を・どの順で・なぜ直すか」を特定します。ただし、AI引用の最大の壁である<strong class="text-charcoal">ドメインの権威性（被リンク）は、改善計画を立てただけでは自動で増えません</strong>。実装と、AI引用率の継続観測には時間と手が要ります。
+          </p>
+          <p class="text-mid text-base leading-[1.9] mb-8">
+            自走が難しい場合は、改善実装の支援・月次の再診断・非同期の質問対応をまとめた<strong class="text-charcoal">実装伴走プラン（Tier 2・月額¥300,000）</strong>をご利用いただけます。診断ご購入者様からのご指名のみでお受けし、こちらから営業することはありません。
+          </p>
+          <a
+            href={`${base}services/`}
+            class="inline-flex items-center gap-3 text-sm font-mono text-charcoal border-b border-gold/50 hover:border-gold pb-1 transition-colors"
+          >
+            3段階のサービス全体を見る <span class="text-gold">→</span>
+          </a>
         </div>
       </div>
     </section>

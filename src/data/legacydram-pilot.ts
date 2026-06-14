@@ -25,6 +25,7 @@ export const changelog = [
   { date: '2026-06-14', type: 'measurement', event: '再計測（実測）: 一覧ページ総合 72→89（jsonld 0→62）、トップ総合 93→96（llms.txt 90→100・linkCount 0→80）。' },
   { date: '2026-06-14', type: 'improvement', event: 'P1実施: WebSite に @id を付与してエンティティ参照を解決、founder(Ken Imoto)に sameAs を追加（ブランド認識の強化）。一覧ページの description を sweet-spot に拡充。' },
   { date: '2026-06-14', type: 'measurement', event: '再計測（実測）: 一覧ページ総合 89→91（meta description 改善）。エンティティ強化のAI認識への効果は lagging のため継続観測。' },
+  { date: '2026-06-14', type: 'improvement', event: 'P1-2 実施: striking-distance の charles-doig 記事へ、既にDoigに言及していた3記事から内部リンクを集約（"charles doig" #10 の押し上げ狙い）。順位効果は lagging のため継続観測。' },
 ];
 
 // 先行指標の時系列（すべて実測）
@@ -97,6 +98,6 @@ export const actionResults = [
   { phase: 'P0', action: 'llms.txt に主要記事のリンク列を追加', verdict: 'done', result: '実施済み（2026-06-14）。llms.txt linkCount 0→80、llms-txtスコア 90→100、トップ総合 93→96。' },
   { phase: 'P0', action: '記事タイトルの最適化', verdict: 'pending', result: '保留: 長い記述的タイトルは本サイトの編集ボイス。一律短縮はせず方針検討中。' },
   { phase: 'P1', action: 'Organization の sameAs を拡充（エンティティ確立）', verdict: 'done', result: '実施済み（2026-06-14）。WebSite @id でエンティティ参照を解決、founder に sameAs（github/qiita）追加。AIのブランド認識への効果は lagging のため継続観測。' },
-  { phase: 'P1', action: 'striking-distance 記事への内部リンク集約', verdict: 'pending', result: '本文への文脈リンク追加は編集ボイスに関わるため方針検討中。' },
+  { phase: 'P1', action: 'striking-distance 記事への内部リンク集約', verdict: 'done', result: '実施済み（2026-06-14）。charles-doig（"charles doig" #10）へ、既にDoigに言及していた3記事から文脈リンクを追加。順位への効果は継続観測。' },
   { phase: 'P2', action: '外部被リンクの獲得（権威性の蓄積）', verdict: 'pending', result: null },
 ];

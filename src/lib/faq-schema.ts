@@ -9,7 +9,7 @@ const ja: QA[] = [
   {
     question: 'Propel-Labはどのような会社ですか？',
     answer:
-      '合同会社Propel-Labは、AI・LLM技術を活用した事業を展開する福岡発のテクノロジー企業です。教育コンテンツ制作、マーケティング自動化、業務自動化コンサルティング、AI駆動EC・コンテンツメディア・キュレーションメディア運用、音楽・クリエイティブ事業の7つの柱で活動しています。',
+      '合同会社Propel-Labは、AI・LLM技術を活用した事業を展開する福岡発のテクノロジー企業です。LLM最適化コンサルティング（LLMO診断・実装伴走）、教育コンテンツ制作、マーケティング自動化、業務自動化コンサルティング、AI駆動EC・コンテンツメディア・キュレーションメディア運用、音楽・クリエイティブ事業の8つの柱で活動しています。',
   },
   {
     question: 'LLMOとは何ですか？',
@@ -52,7 +52,7 @@ const en: QA[] = [
   {
     question: 'What services do you offer?',
     answer:
-      'LearningMate (educational content), AI-Loop (marketing automation), AutoCrew (business automation consulting), KaoriQ (AI-driven autonomous e-commerce), mypcrig (AI-driven content media), legacydram (AI-driven curation media), and Yureru (music & creative).',
+      'LLMO audit & implementation support (LLM optimization consulting), LearningMate (educational content), AI-Loop (marketing automation), AutoCrew (business automation consulting), KaoriQ (AI-driven autonomous e-commerce), mypcrig (AI-driven content media), legacydram (AI-driven curation media), and Yureru (music & creative).',
   },
   {
     question: 'How do I get in touch?',

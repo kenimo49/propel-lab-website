@@ -182,6 +182,29 @@ export const llmoAuditServiceSchema = {
   },
 };
 
+/** English Service entity for /en/. Same @id as the JA set (one entity, language-tagged). */
+export const llmoAuditServiceSchemaEn = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  '@id': 'https://propel-lab.co.jp/#service-llmo-audit',
+  name: 'LLMO Audit & Implementation Support',
+  serviceType: 'LLM optimization / AI search visibility audit',
+  provider: { '@id': 'https://propel-lab.co.jp/#org' },
+  description:
+    'A fixed-scope diagnostic for one domain: full llmo-checker scan, structural audit of llms.txt/robots/JSON-LD/canonical/hreflang, measured AI-citation rates across Perplexity/Claude/Gemini/ChatGPT, and a prioritized P0/P1/P2 roadmap delivered in two weeks.',
+  url: 'https://propel-lab.co.jp/services/',
+  areaServed: 'JP',
+  inLanguage: 'en',
+  offers: {
+    '@type': 'Offer',
+    price: '98000',
+    priceCurrency: 'JPY',
+    url: 'https://propel-lab.co.jp/llmo-audit/',
+    availability: 'https://schema.org/InStock',
+    businessFunction: 'http://purl.org/goodrelations/v1#ProvideService',
+  },
+};
+
 export const musicGroupSchema = {
   '@context': 'https://schema.org',
   '@type': 'MusicGroup',

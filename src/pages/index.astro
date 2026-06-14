@@ -8,7 +8,7 @@ import Profile from '../components/Profile.astro';
 import FAQ from '../components/FAQ.astro';
 import Contact from '../components/Contact.astro';
 import Footer from '../components/Footer.astro';
-import { serviceSchemas } from '../lib/schemas';
+import { serviceSchemas, llmoAuditServiceSchema } from '../lib/schemas';
 import { faqSchemaJa } from '../lib/faq-schema';
 
 const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
@@ -16,6 +16,7 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
 
 <Layout title="合同会社 Propel-Lab — 仕組みとエンジニアリングの力で、次世代の経営モデルを構築する" hasEnglishVersion>
   <script slot="head" type="application/ld+json" set:html={JSON.stringify([
+    llmoAuditServiceSchema,
     ...serviceSchemas,
     faqSchemaJa,
   ])} />

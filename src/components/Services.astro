@@ -4,6 +4,7 @@ import { services } from '../data/services';
 const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
 
 const serviceImages: Record<string, string> = {
+  'LLMO診断・実装伴走': 'llmo-audit-diagnostic.jpg',
   'LearningMate': 'learningmate-education.jpg',
   'AI-Loop': 'ai-loop-concept.jpg',
   'AutoCrew': 'autocrew-agent-system.jpg',
@@ -13,7 +14,6 @@ const serviceImages: Record<string, string> = {
   'legacydram': 'legacydram-curation-media.jpg',
 };
 
-const serviceNumbers = ['01', '02', '03', '04', '05', '06', '07'];
 ---
 
 <section id="services" class="py-24 lg:py-32 bg-sand grain-overlay blueprint-grid relative">
@@ -25,23 +25,17 @@ const serviceNumbers = ['01', '02', '03', '04', '05', '06', '07'];
         <span class="font-mono text-xs text-gold tracking-[0.2em] uppercase">Services</span>
       </div>
       <h2 class="text-3xl lg:text-4xl font-bold text-charcoal mb-4 fade-in-up stagger-1">事業紹介</h2>
-      <p class="text-mid text-base leading-relaxed fade-in-up stagger-2">AI・LLM技術を軸にした7つの事業を展開</p>
+      <p class="text-mid text-base leading-relaxed fade-in-up stagger-2">AI・LLM技術を軸にした8つの事業を展開</p>
     </div>
 
     <!-- Service cards: varied layout -->
     <div class="space-y-6 lg:space-y-0 lg:grid lg:grid-cols-12 lg:gap-6">
       {services.map((service, i) => {
-        // Alternating card sizes for 7 services: 7-5 / 5-7 / 7-5 / 12
-        const colSpan = i === 0 ? 'lg:col-span-7'
-          : i === 1 ? 'lg:col-span-5'
-          : i === 2 ? 'lg:col-span-5'
-          : i === 3 ? 'lg:col-span-7'
-          : i === 4 ? 'lg:col-span-7'
-          : i === 5 ? 'lg:col-span-5'
-          : 'lg:col-span-12';
+        // Alternating card sizes for 8 services: each row sums to 12 (7-5 / 5-7 …)
+        const colSpan = i % 4 === 0 || i % 4 === 3 ? 'lg:col-span-7' : 'lg:col-span-5';
         const imgFile = serviceImages[service.name] || '';
-        const num = serviceNumbers[i];
-        const internalUrl = service.id === 'yureru' ? `${base}yureru/` : service.id === 'learningmate' ? `${base}learningmate/` : null;
+        const num = String(i + 1).padStart(2, '0');
+        const internalUrl = service.id === 'yureru' ? `${base}yureru/` : service.id === 'learningmate' ? `${base}learningmate/` : service.id === 'llmo-audit' ? `${base}services/` : null;
         const linkUrl = internalUrl ?? service.external_url ?? null;
         const isExternal = !internalUrl && !!service.external_url;
 
@@ -103,7 +97,7 @@ const serviceNumbers = ['01', '02', '03', '04', '05', '06', '07'];
         href={`${base}products/`}
         class="group inline-flex items-center gap-3 px-7 py-3.5 border border-charcoal/15 hover:border-gold/50 text-charcoal text-sm font-mono tracking-wide transition-colors duration-300"
       >
-        7事業の詳細を見る
+        8事業の詳細を見る
         <span class="text-gold group-hover:translate-x-1 transition-transform duration-300">→</span>
       </a>
     </div>

@@ -21,13 +21,14 @@
 - パイロット観測（legacydram.com の先行指標を公開時系列）: https://propel-lab.co.jp/llmo-audit-pilot/
 
 ## 事業
-1. LearningMate — LLM活用の教育コンテンツ企画・制作・販売
-2. AI-Loop — SNS運用自動化・コンテンツマーケティング支援
-3. AutoCrew — LLMによる自動実行エージェント構成・業務最適化
-4. KaoriQ — LLMエージェントによるECサイトの自律運用（kaoriq.com フレグランス × 性格診断）
-5. mypcrig — LLMエージェントによるPC選定メディアの自律運用（mypcrig.com GA4 + Search Consoleフィードバック）
-6. legacydram — LLMエージェントによるウィスキーキュレーションメディアの自律運用（legacydram.com 人物軸 × エンジニア視点）
-7. Yureru — 感動の構造化と音楽化プロジェクト（バーチャルシンガー Yumei / Silk Reign）
+1. LLMO診断・実装伴走 — AI検索（Perplexity/Claude/Gemini/ChatGPT）での被引用を実測し優先度付き改善ロードマップを納品するLLM最適化コンサルティング（範囲固定・商談なし。上記「ご依頼いただけるサービス」参照）
+2. LearningMate — LLM活用の教育コンテンツ企画・制作・販売
+3. AI-Loop — SNS運用自動化・コンテンツマーケティング支援
+4. AutoCrew — LLMによる自動実行エージェント構成・業務最適化
+5. KaoriQ — LLMエージェントによるECサイトの自律運用（kaoriq.com フレグランス × 性格診断）
+6. mypcrig — LLMエージェントによるPC選定メディアの自律運用（mypcrig.com GA4 + Search Consoleフィードバック）
+7. legacydram — LLMエージェントによるウィスキーキュレーションメディアの自律運用（legacydram.com 人物軸 × エンジニア視点）
+8. Yureru — 感動の構造化と音楽化プロジェクト（バーチャルシンガー Yumei / Silk Reign）
 
 ## LearningMate（教育コンテンツ・出版事業）
 - 著者: ken imoto / シリーズ: エンジニアのためのAI実践シリーズ

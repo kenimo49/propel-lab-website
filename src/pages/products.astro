@@ -3,28 +3,30 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { services } from '../data/services';
-import { serviceSchemas } from '../lib/schemas';
+import { serviceSchemas, llmoAuditServiceSchema } from '../lib/schemas';
+
+const allServiceSchemas = [llmoAuditServiceSchema, ...serviceSchemas];
 ---
 
-<Layout title="事業紹介 — 合同会社 Propel-Lab" description="合同会社Propel-Labの事業紹介。LearningMate、AI-Loop、AutoCrew、KaoriQ、mypcrig、legacydram、Yureruの7事業を展開。">
+<Layout title="事業紹介 — 合同会社 Propel-Lab" description="合同会社Propel-Labの事業紹介。LLMO診断・実装伴走、LearningMate、AI-Loop、AutoCrew、KaoriQ、mypcrig、legacydram、Yureruの8事業を展開。">
   <script slot="head" type="application/ld+json" set:html={JSON.stringify([
     {
       "@context": "https://schema.org",
       "@type": "ItemList",
       "name": "Propel-Lab サービス一覧",
-      "itemListElement": serviceSchemas.map((s, i) => ({
+      "itemListElement": allServiceSchemas.map((s, i) => ({
         "@type": "ListItem",
         "position": i + 1,
         "item": { "@id": s["@id"] },
       })),
     },
-    ...serviceSchemas,
+    ...allServiceSchemas,
   ])} />
   <Header />
   <main class="pt-24 pb-20">
     <div class="mx-auto max-w-4xl px-4">
       <h1 class="text-4xl font-bold mb-4">事業紹介</h1>
-      <p class="text-gray-600 mb-12">AI・LLM技術を軸にした7つの事業を展開しています。</p>
+      <p class="text-gray-600 mb-12">AI・LLM技術を軸にした8つの事業を展開しています。</p>
 
       <div class="space-y-12">
         {services.map((service) => {
@@ -32,6 +34,7 @@ import { serviceSchemas } from '../lib/schemas';
           const internalHref =
             service.id === 'yureru' ? `${baseUrl}yureru/`
             : service.id === 'learningmate' ? `${baseUrl}learningmate/`
+            : service.id === 'llmo-audit' ? `${baseUrl}services/`
             : null;
           const externalHref = service.external_url ?? null;
           const navHref = internalHref ?? externalHref;

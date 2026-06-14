@@ -13,6 +13,14 @@ export interface Service {
 
 export const services: Service[] = [
   {
+    id: 'llmo-audit',
+    name: 'LLMO診断・実装伴走',
+    category: 'LLM最適化コンサルティング',
+    summary: 'AI検索（Perplexity / Claude / Gemini / ChatGPT）での被引用を実測し、P0/P1/P2の優先度付き改善ロードマップを納品 — 無料OSSのllmo-checkerから診断レポート、実装伴走まで範囲固定・商談なしの3段階',
+    target: 'AI検索経由の流入を増やしたい事業者・メディア運営者',
+    tech: ['LLMO', 'JSON-LD', 'llms.txt', 'AI引用実測', 'harness-ops'],
+  },
+  {
     id: 'learningmate',
     name: 'LearningMate',
     category: '教育コンテンツ',

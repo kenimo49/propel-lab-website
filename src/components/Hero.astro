@@ -1,5 +1,6 @@
 ---
 import { company } from '../data/company';
+import { services } from '../data/services';
 const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
 ---
 
@@ -36,7 +37,7 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
         </h1>
 
         <p class="text-base md:text-lg text-mid leading-relaxed max-w-xl fade-in-up stagger-2">
-          AI・LLM技術を活用した4つの事業を展開する、福岡発のテクノロジー企業。
+          AI・LLM技術を活用した8つの事業を展開する、福岡発のテクノロジー企業。
         </p>
 
         <div class="flex flex-col sm:flex-row gap-4 pt-2 fade-in-up stagger-3">
@@ -60,32 +61,32 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
       <div class="lg:col-span-5 lg:pl-12 fade-in-up stagger-4">
         <div class="border-l border-charcoal/10 pl-8 space-y-8 hidden lg:block">
           <div>
-            <div class="font-mono text-4xl font-bold text-charcoal">4</div>
+            <div class="font-mono text-4xl font-bold text-charcoal">{services.length}</div>
             <div class="text-xs text-dim font-mono tracking-wider mt-1">BUSINESS UNITS</div>
           </div>
           <div>
-            <div class="font-mono text-4xl font-bold text-charcoal">80K<span class="text-lg text-mid ml-1">+</span></div>
-            <div class="text-xs text-dim font-mono tracking-wider mt-1">QIITA PAGEVIEWS</div>
+            <div class="font-mono text-4xl font-bold text-charcoal">14<span class="text-lg text-mid ml-1">冊</span></div>
+            <div class="text-xs text-dim font-mono tracking-wider mt-1">KINDLE BOOKS</div>
           </div>
           <div>
-            <div class="font-mono text-4xl font-bold text-charcoal">10<span class="text-lg text-mid ml-1">冊</span></div>
-            <div class="text-xs text-dim font-mono tracking-wider mt-1">KINDLE BOOKS</div>
+            <div class="font-mono text-4xl font-bold text-charcoal">5<span class="text-lg text-mid ml-1">冊</span></div>
+            <div class="text-xs text-dim font-mono tracking-wider mt-1">LLMO BOOKS</div>
           </div>
         </div>
 
         <!-- Mobile stats -->
-        <div class="grid grid-cols-2 gap-6 lg:hidden mt-8 border-t border-charcoal/10 pt-8">
+        <div class="grid grid-cols-3 gap-6 lg:hidden mt-8 border-t border-charcoal/10 pt-8">
           <div>
-            <div class="font-mono text-2xl font-bold text-charcoal">4</div>
+            <div class="font-mono text-2xl font-bold text-charcoal">{services.length}</div>
             <div class="text-xs text-dim font-mono">事業展開</div>
-          </div>
-          <div>
-            <div class="font-mono text-2xl font-bold text-charcoal">80K+</div>
-            <div class="text-xs text-dim font-mono">Qiita PV</div>
           </div>
           <div>
             <div class="font-mono text-2xl font-bold text-charcoal">14冊</div>
             <div class="text-xs text-dim font-mono">Kindle</div>
+          </div>
+          <div>
+            <div class="font-mono text-2xl font-bold text-charcoal">5冊</div>
+            <div class="text-xs text-dim font-mono">LLMO実践書</div>
           </div>
         </div>
       </div>

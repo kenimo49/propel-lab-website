@@ -19,7 +19,7 @@ const ja: QA[] = [
   {
     question: 'どのようなサービスを提供していますか？',
     answer:
-      'LearningMate（教育コンテンツ）、AI-Loop（マーケティング自動化）、AutoCrew（業務自動化コンサルティング）、KaoriQ（AI駆動EC自動運用）、mypcrig（AI駆動コンテンツメディア）、legacydram（AI駆動キュレーションメディア）、Yureru（音楽・クリエイティブ）の7事業を展開しています。',
+      'LLMO診断・実装伴走（LLM最適化コンサルティング）、LearningMate（教育コンテンツ）、AI-Loop（マーケティング自動化）、AutoCrew（業務自動化コンサルティング）、KaoriQ（AI駆動EC自動運用）、mypcrig（AI駆動コンテンツメディア）、legacydram（AI駆動キュレーションメディア）、Yureru（音楽・クリエイティブ）の8事業を展開しています。',
   },
   {
     question: 'お問い合わせ方法を教えてください。',
@@ -42,7 +42,7 @@ const en: QA[] = [
   {
     question: 'What kind of company is Propel-Lab?',
     answer:
-      'Propel-Lab LLC is an AI/LLM technology company based in Fukuoka, Japan. We run seven business lines: educational content (LearningMate), marketing automation (AI-Loop), business automation consulting (AutoCrew), AI-driven e-commerce (KaoriQ), AI-driven content media (mypcrig), AI-driven curation media (legacydram), and music & creative (Yureru).',
+      'Propel-Lab LLC is an AI/LLM technology company based in Fukuoka, Japan. We run eight business lines: LLMO audit & implementation support (LLM optimization consulting), educational content (LearningMate), marketing automation (AI-Loop), business automation consulting (AutoCrew), AI-driven e-commerce (KaoriQ), AI-driven content media (mypcrig), AI-driven curation media (legacydram), and music & creative (Yureru).',
   },
   {
     question: 'What is LLMO?',

@@ -14,7 +14,7 @@ LLMO（LLM Optimization）とは、ChatGPTやClaudeなどのLLM（大規模言�
 
 ## どのようなサービスを提供していますか？
 
-LearningMate（教育コンテンツ）、AI-Loop（マーケティング自動化）、AutoCrew（業務自動化コンサルティング）、KaoriQ（AI駆動EC自動運用）、mypcrig（AI駆動コンテンツメディア）、legacydram（AI駆動キュレーションメディア）、Yureru（音楽・クリエイティブ）の7事業を展開しています。
+LLMO診断・実装伴走（LLM最適化コンサルティング）、LearningMate（教育コンテンツ）、AI-Loop（マーケティング自動化）、AutoCrew（業務自動化コンサルティング）、KaoriQ（AI駆動EC自動運用）、mypcrig（AI駆動コンテンツメディア）、legacydram（AI駆動キュレーションメディア）、Yureru（音楽・クリエイティブ）の8事業を展開しています。
 
 ## お問い合わせ方法を教えてください。
 

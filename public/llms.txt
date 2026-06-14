@@ -22,13 +22,14 @@ Productized services with fixed scope and upfront pricing — no sales meetings.
 - Pilot tracking (legacydram.com leading indicators, public time-series): https://propel-lab.co.jp/llmo-audit-pilot/
 
 ## Services
-1. LearningMate — Educational content and publishing focused on LLM technologies (Claude Code, Context Engineering, LLMO)
-2. AI-Loop — SNS automation and content marketing support powered by LLM agents
-3. AutoCrew — Business automation consulting using multi-agent LLM systems (MCP, CLI Skills)
-4. KaoriQ — AI-driven autonomous e-commerce operations (kaoriq.com fragrance platform with personality-based recommendations)
-5. mypcrig — AI-driven autonomous content media (mypcrig.com PC-selection guides with GA4 + Search Console feedback loop)
-6. legacydram — AI-driven autonomous curation media (legacydram.com whisky curation read through an engineer's lens)
-7. Yureru — Music and creative project featuring virtual singers Yumei and Silk Reign
+1. LLMO Audit & Implementation Support — LLM optimization consulting: measured AI-citation diagnostics across Perplexity/Claude/Gemini/ChatGPT with prioritized P0/P1/P2 roadmaps (fixed scope, no sales meetings; see "Professional Services" above)
+2. LearningMate — Educational content and publishing focused on LLM technologies (Claude Code, Context Engineering, LLMO)
+3. AI-Loop — SNS automation and content marketing support powered by LLM agents
+4. AutoCrew — Business automation consulting using multi-agent LLM systems (MCP, CLI Skills)
+5. KaoriQ — AI-driven autonomous e-commerce operations (kaoriq.com fragrance platform with personality-based recommendations)
+6. mypcrig — AI-driven autonomous content media (mypcrig.com PC-selection guides with GA4 + Search Console feedback loop)
+7. legacydram — AI-driven autonomous curation media (legacydram.com whisky curation read through an engineer's lens)
+8. Yureru — Music and creative project featuring virtual singers Yumei and Silk Reign
 
 ## LearningMate (Publishing)
 - Author: ken imoto / Series: AI Practice Series for Engineers

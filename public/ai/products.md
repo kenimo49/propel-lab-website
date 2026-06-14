@@ -1,5 +1,17 @@
 # 合同会社 Propel-Lab — 事業情報
 
+## LLMO診断・実装伴走
+- **カテゴリ**: LLM最適化コンサルティング
+- **概要**: AI検索（Perplexity / Claude / Gemini / ChatGPT）での被引用を実測し、P0/P1/P2の優先度付き改善ロードマップを納品する範囲固定のLLM最適化コンサルティング
+- **対象**: AI検索経由の流入を増やしたい事業者・メディア運営者
+- **技術**: LLMO, JSON-LD, llms.txt, AI引用実測, harness-ops
+- **提供形態**:
+  - Tier 0: llmo-checker（無料・OSS・MIT License）
+  - Tier 1: LLMO診断レポート（¥98,000・税別・1ドメイン・納期2週間）
+  - Tier 2: 実装伴走（¥300,000・税別・月額・診断購入者からの指名のみ）
+- **サンプルレポート**: https://propel-lab.co.jp/files/llmo-audit-sample-legacydram.pdf
+- **詳細**: https://propel-lab.co.jp/services/
+
 ## LearningMate
 - **カテゴリ**: 教育コンテンツ・出版事業
 - **概要**: LLM活用の教育コンテンツ企画・制作・販売

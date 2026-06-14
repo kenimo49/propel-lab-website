@@ -13,7 +13,7 @@ export const caseMeta = {
   title: 'Case #001 — legacydram.com',
   baselineDate: '2026-06-13',
   lastUpdated: '2026-06-14',
-  phase: 'p0', // 'baseline' | 'p0' | 'p1' | 'p2'
+  phase: 'p1', // 'baseline' | 'p0' | 'p1' | 'p2'
 };
 
 // 更新履歴（GitHubのコミット履歴のように改善の足跡を残す）
@@ -23,6 +23,8 @@ export const changelog = [
   { date: '2026-06-14', type: 'milestone', event: 'パイロット観測ページを公開。npx llmo-checker で基板スコアの再現性を確認（93）。' },
   { date: '2026-06-14', type: 'improvement', event: 'P0実施: 一覧ページに CollectionPage + ItemList + BreadcrumbList を付与。llms.txt を markdown リンク列形式（80記事）に修正。本番デプロイ。' },
   { date: '2026-06-14', type: 'measurement', event: '再計測（実測）: 一覧ページ総合 72→89（jsonld 0→62）、トップ総合 93→96（llms.txt 90→100・linkCount 0→80）。' },
+  { date: '2026-06-14', type: 'improvement', event: 'P1実施: WebSite に @id を付与してエンティティ参照を解決、founder(Ken Imoto)に sameAs を追加（ブランド認識の強化）。一覧ページの description を sweet-spot に拡充。' },
+  { date: '2026-06-14', type: 'measurement', event: '再計測（実測）: 一覧ページ総合 89→91（meta description 改善）。エンティティ強化のAI認識への効果は lagging のため継続観測。' },
 ];
 
 // 先行指標の時系列（すべて実測）
@@ -42,7 +44,7 @@ export const series = {
     max: 100,
     points: [
       { date: '2026-06-12', value: 72, note: 'JSON-LD皆無（0点）で減点' },
-      { date: '2026-06-14', value: 89, note: 'P0実施。CollectionPage/ItemList付与でjsonld 0→62' },
+      { date: '2026-06-14', value: 91, note: 'P0(JSON-LD 0→62)+P1(description拡充でmeta 100)。72→89→91' },
     ],
   },
   gscIndexed: {
@@ -94,7 +96,7 @@ export const actionResults = [
   { phase: 'P0', action: '実装済みFAQ + FAQPage構造化データを本番反映', verdict: 'done', result: '実装済み（FAQPage構造化データ、17記事）。' },
   { phase: 'P0', action: 'llms.txt に主要記事のリンク列を追加', verdict: 'done', result: '実施済み（2026-06-14）。llms.txt linkCount 0→80、llms-txtスコア 90→100、トップ総合 93→96。' },
   { phase: 'P0', action: '記事タイトルの最適化', verdict: 'pending', result: '保留: 長い記述的タイトルは本サイトの編集ボイス。一律短縮はせず方針検討中。' },
-  { phase: 'P1', action: 'Organization の sameAs を拡充（エンティティ確立）', verdict: 'pending', result: null },
-  { phase: 'P1', action: 'striking-distance 記事への内部リンク集約', verdict: 'pending', result: null },
+  { phase: 'P1', action: 'Organization の sameAs を拡充（エンティティ確立）', verdict: 'done', result: '実施済み（2026-06-14）。WebSite @id でエンティティ参照を解決、founder に sameAs（github/qiita）追加。AIのブランド認識への効果は lagging のため継続観測。' },
+  { phase: 'P1', action: 'striking-distance 記事への内部リンク集約', verdict: 'pending', result: '本文への文脈リンク追加は編集ボイスに関わるため方針検討中。' },
   { phase: 'P2', action: '外部被リンクの獲得（権威性の蓄積）', verdict: 'pending', result: null },
 ];

@@ -5,7 +5,7 @@ export const profile = {
   title: '代表社員',
   specializationLabel: 'Harness Engineering · AI Agent Design · Technical Publishing',
   /** Profile セクションに表示する bio。Layout/JSON-LD と整合を取って一元管理する */
-  bio: 'ロボットのSLAM制御から始まり、WebRTC×リアルタイム通信、Android/Webアプリ開発を経て、現在はAIエージェントの制御設計を専門とする。OpenAI・Anthropic・LangChainのハーネス設計を体系化し、AGENTS.md/CLAUDE.mdの実践設計、hooks/lifecycle/フィードバックループの構築に取り組む。Kindle 14冊・Qiita 80,000+ PV。技術の実践知を書籍・記事で体系化して届ける。',
+  bio: 'ロボットのSLAM制御から始まり、WebRTC×リアルタイム通信、Android/Webアプリ開発を経て、現在はAIエージェントの制御設計を専門とする。OpenAI・Anthropic・LangChainのハーネス設計を体系化し、AGENTS.md/CLAUDE.mdの実践設計、hooks/lifecycle/フィードバックループの構築に取り組む。Kindle 14冊。技術の実践知を書籍・記事で体系化して届ける。',
   techStack: [
     'Harness Engineering',
     'CLAUDE.md',
@@ -21,7 +21,6 @@ export const profile = {
   highlights: [
     'LLMOフレームワーク提唱者（AI検索最適化）',
     'Kindle著者: 14冊（実践Claude Code / LLMO実践ガイド / ハーネスエンジニアリング 等）',
-    'Qiita: 80,000+ PV',
   ],
   links: {
     linkedin: 'https://linkedin.com/in/kenimo49',

@@ -100,7 +100,6 @@
 ### 実績
 - 元ロボットエンジニア: Pepper × SLAM（Aldebaran共同開発 / SoftBankイベント実稼働）
 - Kindle著者: 14冊（実践Claude Code / LLMO実践ガイド / ハーネスエンジニアリング 等。フルリストは llms.txt 参照）
-- Qiita: 80,000+ PV
 
 ### SNS・リンク
 - LinkedIn: https://linkedin.com/in/kenimo49
@@ -128,7 +127,7 @@ LLMO診断・実装伴走（LLM最適化コンサルティング）、LearningMa
 info@propel-lab.co.jp までメールでお問い合わせください。
 
 ### 代表者の経歴を教えてください。
-代表の井本賢はエンジニア歴8年。Android/Web開発、ロボティクス、AIエージェントを専門とし、元ロボットエンジニアとしてPepper × SLAMの共同開発に携わりました。Kindle著者として14冊を出版し、Qiitaでは80,000以上のPVを獲得しています。
+代表の井本賢はエンジニア歴8年。Android/Web開発、ロボティクス、AIエージェントを専門とし、元ロボットエンジニアとしてPepper × SLAMの共同開発に携わりました。Kindle著者として14冊を出版しています。
 
 ### AutoCrewではどのような業務自動化が可能ですか？
 LLMを活用したマルチエージェント構成により、定型業務の自動化、データ処理、レポート生成など幅広い業務の効率化が可能です。MCP（Model Context Protocol）やCLI Skillを活用した高度なエージェント設計を提供します。

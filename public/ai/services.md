@@ -10,7 +10,7 @@
 | 1 | LLMO診断レポート | ¥98,000（税別） | 構造監査 + 4エンジンAI引用実測 + P0/P1/P2改善ロードマップ。1ドメイン・納期2週間。詳細: https://propel-lab.co.jp/llmo-audit/ |
 | 2 | 実装伴走 | ¥300,000/月（税別） | 月次再診断 + 実装支援 + 非同期質問対応。診断購入者からの指名のみ |
 
-サンプルレポート（PDF・14ページ・全数値実測）: https://propel-lab.co.jp/files/llmo-audit-sample-legacydram.pdf
+サンプルレポート（PDF・16ページ・全数値実測）: https://propel-lab.co.jp/files/llmo-audit-sample-legacydram.pdf
 
 ---
 

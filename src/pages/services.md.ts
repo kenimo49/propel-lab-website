@@ -21,7 +21,7 @@ Propel-Lab のサービスはすべて、範囲と価格を先に明示した「
 構造監査 + Perplexity / Claude / Gemini / ChatGPT 4エンジンへの実クエリ投入による「AI引用実測」+ 競合 Share of Voice 比較 + P0/P1/P2 優先度付き改善ロードマップ。PDFレポートと改善チェックリストを納品。範囲固定・フォーム申込・商談なし。
 
 - 詳細・申込: https://propel-lab.co.jp/llmo-audit/
-- サンプルレポート（PDF・14ページ・全数値実測）: https://propel-lab.co.jp/files/llmo-audit-sample-legacydram.pdf
+- サンプルレポート（PDF・16ページ・全数値実測）: https://propel-lab.co.jp/files/llmo-audit-sample-legacydram.pdf
 
 ### Tier 2: 実装伴走 — ¥300,000（税別・月額）
 

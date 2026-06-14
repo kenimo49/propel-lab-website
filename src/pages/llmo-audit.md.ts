@@ -6,7 +6,7 @@ export const GET: APIRoute = () => {
 AI検索における可視性・引用性の構造監査。1ドメイン・¥98,000（税別）・納期2週間の範囲固定診断サービス。
 
 - 申込ページ: https://propel-lab.co.jp/llmo-audit/
-- サンプルレポート（PDF・14ページ）: https://propel-lab.co.jp/files/llmo-audit-sample-legacydram.pdf
+- サンプルレポート（PDF・16ページ）: https://propel-lab.co.jp/files/llmo-audit-sample-legacydram.pdf
 - 提供: 合同会社 Propel-Lab（info@propel-lab.co.jp）
 
 ## 診断内容（範囲固定）

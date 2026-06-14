@@ -18,7 +18,6 @@ Ken Imoto (井本 賢) is a software engineer with 8+ years of experience and th
 - **Multi-cloud expertise**: Managed 5 parallel projects simultaneously across AWS, Azure, and Firebase
 - **Productivity**: Achieved 300% productivity boost in TypeScript development through LLM × Context Engineering
 - **Publishing**: Kindle author of 14 books (bilingual JP/EN) on Claude Code, LLMO, Harness Engineering, and adjacent topics. See `/llms.txt` for the full catalog.
-- **Technical Writing**: 80,000+ PV on Qiita
 
 ## Published Books (selection)
 

@@ -1,0 +1,238 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { company } from '../../data/company';
+
+const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+
+// SMP Payment Link (2026-06-30 発行済)
+const stripePaymentLink = 'https://buy.stripe.com/eVqfZj2rsdRV9GP1E1fMA01';
+
+// SendOwl checkout URL (発行されたら差し替え。当面は Stripe Payment Link 経由 → サンキューページ手動メール運用)
+const sendowlCheckoutUrl: string | null = null;
+
+// 最終的にユーザが踏むボタンのリンク先(Stripe優先、SendOwl接続後は SendOwl)
+const buyUrl = sendowlCheckoutUrl ?? stripePaymentLink;
+
+const productName = 'LLMOに最適化されたホームページをゼロから作る';
+const productSubtitle = 'AIに見つけてもらえるサイトを、GitHub Pagesで無料公開する';
+const priceJpy = 1000;
+const pages = 54;
+const fileFormat = 'PDF (A4縦, navy統一テーマ)';
+const fileSize = '1.5MB';
+const author = 'ken imoto';
+
+const chapters = [
+  { num: '第1章', title: 'なぜ今LLMOか' },
+  { num: '第2章', title: '技術選定 — Astro + GitHub Pages' },
+  { num: '第3章', title: 'サイト構成の設計' },
+  { num: '第4章', title: 'サイト構築' },
+  { num: '第5章', title: 'LLMO最適化の実装' },
+  { num: '第6章', title: 'JSON-LD構造化データ' },
+  { num: '第7章', title: 'URL.mdパターン' },
+  { num: '第8章', title: 'Playwrightでテスト' },
+  { num: '第9章', title: 'カスタムドメイン + HTTPS' },
+  { num: '第10章', title: '検証 — AIは見つけてくれるか' },
+  { num: '付録', title: 'LLMO最適化チェックリスト' },
+];
+
+const targetReaders = [
+  'AIに引用されるサイトを作りたいエンジニア',
+  '自社サイトの LLMO 最適化を一気通貫で学びたい人',
+  'Astro / GitHub Pages の実装例を求めている人',
+  'llms.txt / JSON-LD / Playwright を実コードで理解したい人',
+];
+
+const whatYouGet = [
+  'llms.txt・JSON-LD・URL.md パターンの完全実装',
+  'Playwrightで33テストの自動検証コード',
+  'Before/After 実測データで LLMO 効果を証明',
+  '全ソースコードを GitHub で公開中、本書はその解説書',
+];
+
+// 商品スキーマ(JSON-LD)
+const productSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Product',
+  '@id': 'https://propel-lab.co.jp/products/llmo-website-builder',
+  name: productName,
+  description: 'AIに見つけてもらえるWebサイトの作り方。Astro + GitHub Pages で無料構築、llms.txt・JSON-LD・URL.mdパターン・Playwrightテストまで、LLMO最適化の全工程を実物のコードとともに解説。',
+  image: `https://propel-lab.co.jp/products/llmo-website-builder-cover.png`,
+  brand: { '@type': 'Brand', name: 'Propel-Lab Books' },
+  author: { '@type': 'Person', name: 'ken imoto' },
+  numberOfPages: pages,
+  bookFormat: 'https://schema.org/EBook',
+  inLanguage: 'ja',
+  offers: {
+    '@type': 'Offer',
+    price: priceJpy,
+    priceCurrency: 'JPY',
+    availability: 'https://schema.org/InStock',
+    seller: { '@type': 'Organization', name: company.name },
+    url: buyUrl,
+  },
+};
+---
+
+<Layout
+  title={`${productName} — Propel-Lab Books`}
+  description="AIに見つけてもらえるサイトの作り方。Astro + GitHub Pagesで無料構築、llms.txt・JSON-LD・URL.mdパターン・Playwrightテストまで。54ページPDF ¥1,000。"
+  ogImage="products/llmo-website-builder-cover.png"
+>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(productSchema)} />
+  <Header />
+  <main class="pt-24 pb-20 bg-cream">
+
+    <!-- Hero -->
+    <section class="mx-auto max-w-5xl px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 gap-10 items-start">
+        <!-- 表紙 -->
+        <div class="flex justify-center md:justify-end">
+          <img
+            src={`${base}products/llmo-website-builder-cover.png`}
+            alt={`${productName} 表紙`}
+            class="w-full max-w-sm shadow-2xl rounded-lg border border-gray-200"
+            loading="eager"
+            width="500"
+            height="700"
+          />
+        </div>
+
+        <!-- タイトル + Buy -->
+        <div>
+          <p class="text-xs font-mono text-accent tracking-widest uppercase mb-3">Propel-Lab Books · PDF</p>
+          <h1 class="text-2xl md:text-3xl font-bold text-navy leading-tight mb-4">{productName}</h1>
+          <p class="text-base text-gray-700 mb-6">{productSubtitle}</p>
+
+          <div class="border-l-4 border-accent pl-4 mb-6">
+            <p class="text-3xl font-bold text-navy">¥{priceJpy.toLocaleString()}</p>
+            <p class="text-xs text-gray-500 mt-1">税込 / {fileFormat} / {pages}ページ / {fileSize}</p>
+          </div>
+
+          <a
+            href={buyUrl}
+            class="inline-block bg-navy hover:bg-navy-light text-cream font-semibold py-3 px-8 rounded-lg transition-colors w-full sm:w-auto text-center"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            PDFを購入する →
+          </a>
+          <p class="text-xs text-gray-500 mt-3">
+            決済は Stripe (安全な暗号化通信)。<br />
+            決済完了後、ダウンロードURLをメールでお送りします。
+          </p>
+
+          <ul class="mt-6 space-y-2 text-sm text-gray-700">
+            <li>✓ 著作権は購入者個人で利用するためのものです</li>
+            <li>✓ ダウンロード後の返金は原則承れません</li>
+            <li>✓ 領収書/請求書はメールで発行可能(別途ご依頼ください)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 本書の特徴 -->
+    <section class="mx-auto max-w-5xl px-6 lg:px-8 mt-20">
+      <h2 class="text-2xl font-bold text-navy mb-8">この本で得られること</h2>
+      <div class="grid sm:grid-cols-2 gap-4">
+        {whatYouGet.map((item) => (
+          <div class="bg-white rounded-lg p-5 border border-gray-200 shadow-sm">
+            <p class="text-gray-800">{item}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- 対象読者 -->
+    <section class="mx-auto max-w-5xl px-6 lg:px-8 mt-16">
+      <h2 class="text-2xl font-bold text-navy mb-8">こんな方におすすめ</h2>
+      <ul class="space-y-3">
+        {targetReaders.map((r) => (
+          <li class="flex items-start gap-3 bg-white rounded-lg p-4 border border-gray-200">
+            <span class="text-accent font-bold flex-shrink-0">→</span>
+            <span class="text-gray-800">{r}</span>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <!-- 章構成 -->
+    <section class="mx-auto max-w-5xl px-6 lg:px-8 mt-16">
+      <h2 class="text-2xl font-bold text-navy mb-8">本書の構成</h2>
+      <div class="bg-white rounded-lg border border-gray-200 overflow-hidden">
+        <table class="w-full">
+          <tbody>
+            {chapters.map((ch, i) => (
+              <tr class={i % 2 === 0 ? 'bg-white' : 'bg-cream/40'}>
+                <td class="px-6 py-3 text-sm font-mono text-accent w-32">{ch.num}</td>
+                <td class="px-6 py-3 text-gray-800">{ch.title}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="text-xs text-gray-500 mt-3">前書き / あとがき / 参考文献 / 著者紹介 を含む全54ページ</p>
+    </section>
+
+    <!-- 著者 -->
+    <section class="mx-auto max-w-5xl px-6 lg:px-8 mt-16">
+      <h2 class="text-2xl font-bold text-navy mb-6">著者について</h2>
+      <div class="bg-white rounded-lg p-6 border border-gray-200">
+        <p class="font-semibold text-navy mb-2">{author}</p>
+        <p class="text-gray-700 leading-relaxed">
+          合同会社 Propel-Lab 代表社員。LLMO(Large Language Model Optimization)フレームワークを公開・運用。
+          「AIに引用されるサイトをゼロから作る」一連の実装ノウハウを、Zenn / Dev.to / Kindle 等で公開している。
+        </p>
+        <p class="mt-3 text-sm">
+          <a href="https://kenimoto.dev" class="text-accent hover:underline" target="_blank" rel="noopener noreferrer">
+            kenimoto.dev →
+          </a>
+        </p>
+      </div>
+    </section>
+
+    <!-- 関連情報 -->
+    <section class="mx-auto max-w-5xl px-6 lg:px-8 mt-16">
+      <h2 class="text-2xl font-bold text-navy mb-6">関連情報</h2>
+      <ul class="space-y-2 text-gray-700">
+        <li>
+          <a href={`${base}legal/specified-commercial/`} class="text-accent hover:underline">
+            特定商取引法に基づく表記
+          </a>
+        </li>
+        <li>
+          サポート連絡先:
+          <a href={`mailto:${company.email}`} class="text-accent hover:underline ml-1">
+            {company.email}
+          </a>
+        </li>
+        <li>
+          Zenn版(¥500、本書の原型):
+          <a href="https://zenn.dev/kenimo49/books/llmo-website-builder" class="text-accent hover:underline ml-1" target="_blank" rel="noopener noreferrer">
+            Zennで読む →
+          </a>
+          <span class="text-xs text-gray-500 ml-2">※本PDF版は編集強化版</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- 最終CTA -->
+    <section class="mx-auto max-w-5xl px-6 lg:px-8 mt-20">
+      <div class="bg-navy text-cream rounded-lg p-10 text-center">
+        <h2 class="text-2xl font-bold mb-3">LLMOに最適化されたサイトを、今日から作る</h2>
+        <p class="text-cream/80 mb-6">¥1,000で54ページの実装ガイド。GitHub の実コードと並行して読み進められます。</p>
+        <a
+          href={buyUrl}
+          class="inline-block bg-accent hover:bg-accent-dark text-cream font-semibold py-3 px-10 rounded-lg transition-colors"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          PDFを購入する →
+        </a>
+      </div>
+    </section>
+
+  </main>
+  <Footer />
+</Layout>

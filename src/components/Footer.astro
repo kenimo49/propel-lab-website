@@ -103,7 +103,13 @@ const altLangHref = lang === 'en' ? base : `${base}en/`;
       <p class="text-[11px] font-mono text-dim/40 tracking-wider">
         &copy; {new Date().getFullYear()} {company.name}
       </p>
-      <div class="flex items-center gap-4">
+      <div class="flex items-center gap-4 flex-wrap justify-center">
+        {lang === 'ja' && (
+          <>
+            <a href={`${base}legal/specified-commercial/`} class="text-[11px] font-mono text-dim/40 hover:text-cream/60 transition-colors tracking-wider">特定商取引法に基づく表記</a>
+            <span class="text-dim/20">·</span>
+          </>
+        )}
         <a href={altLangHref} hreflang={lang === 'en' ? 'ja' : 'en'} lang={lang === 'en' ? 'ja' : 'en'} class="text-[11px] font-mono text-dim/40 hover:text-cream/60 transition-colors tracking-wider">{labels.altLang}</a>
         <span class="text-dim/20">·</span>
         <span class="text-[11px] font-mono text-dim/30 tracking-wider">Fukuoka, Japan</span>

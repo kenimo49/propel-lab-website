@@ -1,0 +1,181 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { company } from '../../data/company';
+
+const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+
+const products = [
+  {
+    name: 'LLMOに最適化されたホームページをゼロから作る (PDF)',
+    slug: 'llmo-website-builder',
+    price: '¥1,000 (税込)',
+    delivery: '購入完了後、即時ダウンロードURLをメール送付',
+    type: 'デジタルコンテンツ(PDF) — ダウンロード販売',
+  },
+  {
+    name: 'LLMO診断レポート',
+    slug: 'llmo-audit',
+    price: '¥98,000 (税別) ※請求書発行時は税込¥107,800',
+    delivery: '申込確定から2週間以内にPDFレポート納品',
+    type: 'コンサルティングサービス',
+  },
+];
+---
+
+<Layout
+  title="特定商取引法に基づく表記 — 合同会社 Propel-Lab"
+  description="合同会社Propel-Labが販売するデジタルコンテンツ・コンサルティングサービスに関する特定商取引法に基づく表記。"
+  noindex={false}
+>
+  <Header />
+  <main class="pt-24 pb-20 bg-cream">
+    <div class="mx-auto max-w-3xl px-6 lg:px-8">
+      <h1 class="text-3xl md:text-4xl font-bold text-navy mb-2">特定商取引法に基づく表記</h1>
+      <p class="text-sm text-gray-500 mb-12">最終更新: 2026年6月30日</p>
+
+      <dl class="space-y-6 text-gray-800">
+        <div class="grid sm:grid-cols-3 gap-2 border-b border-gray-200 pb-5">
+          <dt class="font-semibold text-navy">販売事業者</dt>
+          <dd class="sm:col-span-2">{company.name}</dd>
+        </div>
+
+        <div class="grid sm:grid-cols-3 gap-2 border-b border-gray-200 pb-5">
+          <dt class="font-semibold text-navy">運営統括責任者</dt>
+          <dd class="sm:col-span-2">{company.representative}</dd>
+        </div>
+
+        <div class="grid sm:grid-cols-3 gap-2 border-b border-gray-200 pb-5">
+          <dt class="font-semibold text-navy">所在地</dt>
+          <dd class="sm:col-span-2">{company.address}</dd>
+        </div>
+
+        <div class="grid sm:grid-cols-3 gap-2 border-b border-gray-200 pb-5">
+          <dt class="font-semibold text-navy">電話番号</dt>
+          <dd class="sm:col-span-2">
+            請求があった場合は遅滞なく開示します。<br />
+            <span class="text-sm text-gray-600">
+              迅速な対応のため、まずは下記メールアドレスへご連絡ください。
+            </span>
+          </dd>
+        </div>
+
+        <div class="grid sm:grid-cols-3 gap-2 border-b border-gray-200 pb-5">
+          <dt class="font-semibold text-navy">メールアドレス</dt>
+          <dd class="sm:col-span-2">
+            <a class="text-accent hover:underline" href={`mailto:${company.email}`}>{company.email}</a>
+          </dd>
+        </div>
+
+        <div class="grid sm:grid-cols-3 gap-2 border-b border-gray-200 pb-5">
+          <dt class="font-semibold text-navy">適格請求書発行事業者登録</dt>
+          <dd class="sm:col-span-2">
+            <strong>未登録</strong> (2026年6月時点)
+            <span class="block text-sm text-gray-500 mt-1">
+              現時点では適格請求書(インボイス)の発行に対応していません。
+              法人番号 8290003016692 を伴う領収書はメールにて発行可能です。
+            </span>
+          </dd>
+        </div>
+
+        <div class="grid sm:grid-cols-3 gap-2 border-b border-gray-200 pb-5">
+          <dt class="font-semibold text-navy">販売価格</dt>
+          <dd class="sm:col-span-2">
+            <ul class="space-y-3">
+              {products.map((p) => (
+                <li class="border-l-4 border-accent/40 pl-3">
+                  <span class="block font-medium">{p.name}</span>
+                  <span class="block text-sm text-gray-600">{p.price}</span>
+                </li>
+              ))}
+              <li class="text-sm text-gray-500 pt-2">
+                上記以外の商品は各商品ページに記載しています。
+              </li>
+            </ul>
+          </dd>
+        </div>
+
+        <div class="grid sm:grid-cols-3 gap-2 border-b border-gray-200 pb-5">
+          <dt class="font-semibold text-navy">商品代金以外の必要料金</dt>
+          <dd class="sm:col-span-2">
+            なし。お支払い時の決済手数料・通信料・消費税(税込表記の商品を除く)はお客様のご負担となります。
+          </dd>
+        </div>
+
+        <div class="grid sm:grid-cols-3 gap-2 border-b border-gray-200 pb-5">
+          <dt class="font-semibold text-navy">お支払い方法</dt>
+          <dd class="sm:col-span-2">
+            クレジットカード(Visa / Mastercard / American Express / JCB / Diners)、
+            Apple Pay、Google Pay、Link。
+            <br />
+            <span class="text-sm text-gray-600">
+              決済は Stripe (Stripe Payments Japan株式会社) が処理します。
+              当社はカード情報を保持しません。
+            </span>
+          </dd>
+        </div>
+
+        <div class="grid sm:grid-cols-3 gap-2 border-b border-gray-200 pb-5">
+          <dt class="font-semibold text-navy">お支払い時期</dt>
+          <dd class="sm:col-span-2">
+            ご注文確定時に即時決済。クレジットカードの請求はカード会社の規定に従います。
+          </dd>
+        </div>
+
+        <div class="grid sm:grid-cols-3 gap-2 border-b border-gray-200 pb-5">
+          <dt class="font-semibold text-navy">商品の引渡し時期</dt>
+          <dd class="sm:col-span-2">
+            <ul class="space-y-2">
+              {products.map((p) => (
+                <li>
+                  <span class="font-medium">{p.name}: </span>
+                  <span class="text-sm text-gray-700">{p.delivery}</span>
+                </li>
+              ))}
+            </ul>
+          </dd>
+        </div>
+
+        <div class="grid sm:grid-cols-3 gap-2 border-b border-gray-200 pb-5">
+          <dt class="font-semibold text-navy">返品・キャンセル</dt>
+          <dd class="sm:col-span-2">
+            <p class="mb-2">
+              <strong>デジタルコンテンツ(PDF等)</strong>: 商品の性質上、ご購入後の返品・返金は原則お受けできません。
+              ダウンロード前であっても、決済完了時点で返金不可となります。
+              ご購入前に商品ページ・サンプルをよくご確認ください。
+            </p>
+            <p class="mb-2">
+              <strong>コンサルティングサービス</strong>: 着手前にキャンセルのご連絡をいただいた場合は全額返金します。
+              着手後のキャンセルについては個別にご相談ください。
+            </p>
+            <p class="text-sm text-gray-600">
+              商品自体に重大な瑕疵がある場合(ファイル破損・記載内容の重大な誤り等)は、
+              {company.email} までご連絡ください。
+              個別に対応します。
+            </p>
+          </dd>
+        </div>
+
+        <div class="grid sm:grid-cols-3 gap-2 border-b border-gray-200 pb-5">
+          <dt class="font-semibold text-navy">動作環境(デジタルコンテンツ)</dt>
+          <dd class="sm:col-span-2">
+            PDF: Adobe Acrobat Reader / 各種ブラウザ内蔵PDFビューア / Kindle for PC等で閲覧可能。
+            画面解像度・OS環境による表示崩れの責任は負いかねます。
+          </dd>
+        </div>
+      </dl>
+
+      <div class="mt-12 p-6 bg-white border border-gray-200 rounded-lg">
+        <h2 class="text-lg font-semibold text-navy mb-3">ご質問・お問い合わせ</h2>
+        <p class="text-gray-700 leading-relaxed">
+          本表記に関するご質問、ご注文内容のお問い合わせ、その他ご相談は下記までご連絡ください。
+        </p>
+        <p class="mt-3">
+          <a class="text-accent hover:underline font-medium" href={`mailto:${company.email}`}>{company.email}</a>
+        </p>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Layout>

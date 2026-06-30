@@ -25,8 +25,6 @@
 ### 商品ラインナップ（その他）
 - LLMOウェブサイト構築ガイド（PDF教材・¥1,000・54ページ）— AI検索に引用されるサイトの構築手順をAstro+JSON-LD+llms.txt+URL.mdベースで解説: https://propel-lab.co.jp/products/llmo-website-builder/
 - LearningMate — LLM活用の教育コンテンツ企画・制作・販売（Udemy / Zenn）
-- AI-Loop — SNS運用自動化・コンテンツマーケティング支援
-- AutoCrew — LLMによる自動実行エージェント構成・業務最適化
 
 ## 自社プロジェクト（LLMO実証ラボ）
 自社で運用しLLMOフレームワーク・harness-ops を実証している事業群。一覧: https://propel-lab.co.jp/products/

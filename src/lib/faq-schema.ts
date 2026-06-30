@@ -9,7 +9,7 @@ const ja: QA[] = [
   {
     question: 'Propel-Labはどのような会社ですか？',
     answer:
-      '合同会社Propel-Labは、AI・LLM技術を活用した事業を展開する福岡発のテクノロジー企業です。LLM最適化コンサルティング（LLMO診断・実装伴走）、教育コンテンツ制作、マーケティング自動化、業務自動化コンサルティング、AI駆動EC・コンテンツメディア・キュレーションメディア運用、音楽・クリエイティブ事業の8つの柱で活動しています。',
+      '合同会社Propel-Labは、AI・LLM技術を活用した事業を展開する福岡発のテクノロジー企業です。LLM最適化コンサルティング（LLMO診断・実装伴走）、教育コンテンツ制作、AI駆動EC・コンテンツメディア・キュレーションメディア運用、音楽・クリエイティブ事業を柱に活動しています。',
   },
   {
     question: 'LLMOとは何ですか？',
@@ -19,7 +19,7 @@ const ja: QA[] = [
   {
     question: 'どのようなサービスを提供していますか？',
     answer:
-      'LLMO診断・実装伴走（LLM最適化コンサルティング）、LearningMate（教育コンテンツ）、AI-Loop（マーケティング自動化）、AutoCrew（業務自動化コンサルティング）、KaoriQ（AI駆動EC自動運用）、mypcrig（AI駆動コンテンツメディア）、legacydram（AI駆動キュレーションメディア）、Yureru（音楽・クリエイティブ）の8事業を展開しています。',
+      'LLMO診断・実装伴走（LLM最適化コンサルティング・¥98,000〜）、LearningMate（教育コンテンツ）、LLMOウェブサイト構築ガイド（PDF教材・¥1,000）を中心に、サービス・教材として提供しています。自社プロジェクトとしてKaoriQ（AI駆動EC自動運用）、mypcrig（AI駆動コンテンツメディア）、legacydram（AI駆動キュレーションメディア）、Yureru（音楽・クリエイティブ）を運用し、LLMO実証ラボとして機能しています。',
   },
   {
     question: 'お問い合わせ方法を教えてください。',
@@ -31,18 +31,13 @@ const ja: QA[] = [
     answer:
       'ソフトウェアエンジニア歴8年。Android/Web開発、エッジコンピューティング、ロボティクスを経て、現在はAIエージェント設計・コンテキストエンジニアリング・LLM活用に注力。5プロジェクト並列での開発経験があり、AWS/Azure/Firebaseの3大クラウドを同時に扱った実績を持ちます。詳しい経歴はLinkedIn（https://www.linkedin.com/in/kenimo49）をご覧ください。',
   },
-  {
-    question: 'AutoCrewではどのような業務自動化が可能ですか？',
-    answer:
-      'LLMを活用したマルチエージェント構成により、定型業務の自動化、データ処理、レポート生成など幅広い業務の効率化が可能です。MCP（Model Context Protocol）やCLI Skillを活用した高度なエージェント設計を提供します。',
-  },
 ];
 
 const en: QA[] = [
   {
     question: 'What kind of company is Propel-Lab?',
     answer:
-      'Propel-Lab LLC is an AI/LLM technology company based in Fukuoka, Japan. We run eight business lines: LLMO audit & implementation support (LLM optimization consulting), educational content (LearningMate), marketing automation (AI-Loop), business automation consulting (AutoCrew), AI-driven e-commerce (KaoriQ), AI-driven content media (mypcrig), AI-driven curation media (legacydram), and music & creative (Yureru).',
+      'Propel-Lab LLC is an AI/LLM technology company based in Fukuoka, Japan. We focus on LLMO audit & implementation support (LLM optimization consulting), educational content (LearningMate), AI-driven e-commerce (KaoriQ), AI-driven content media (mypcrig), AI-driven curation media (legacydram), and music & creative (Yureru).',
   },
   {
     question: 'What is LLMO?',
@@ -52,7 +47,7 @@ const en: QA[] = [
   {
     question: 'What services do you offer?',
     answer:
-      'LLMO audit & implementation support (LLM optimization consulting), LearningMate (educational content), AI-Loop (marketing automation), AutoCrew (business automation consulting), KaoriQ (AI-driven autonomous e-commerce), mypcrig (AI-driven content media), legacydram (AI-driven curation media), and Yureru (music & creative).',
+      'LLMO audit & implementation support (¥98,000+), LearningMate (educational content), and the LLMO website-building PDF guide (¥1,000). KaoriQ, mypcrig, legacydram, and Yureru are in-house projects that double as our LLMO live lab.',
   },
   {
     question: 'How do I get in touch?',
@@ -63,11 +58,6 @@ const en: QA[] = [
     question: 'Tell me about the founder.',
     answer:
       'Ken Imoto, software engineer with 8+ years of experience across Android/Web development, edge computing, and robotics, now focused on AI agent design, context engineering, and LLM applications. He has run up to five parallel projects spanning AWS, Azure, and Firebase. Full background on LinkedIn: https://linkedin.com/in/kenimo49',
-  },
-  {
-    question: 'What can AutoCrew automate?',
-    answer:
-      'AutoCrew automates routine work, data processing, and reporting via multi-agent LLM systems. We use MCP (Model Context Protocol) and CLI Skill patterns to build agents that fit your workflow.',
   },
 ];
 

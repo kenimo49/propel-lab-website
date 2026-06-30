@@ -8,7 +8,9 @@ import { llmoAuditServiceSchema } from '../lib/schemas';
 
 const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
 
-const otherOfferings = services.filter((s) => s.kind === 'offering' && s.id !== 'llmo-audit');
+const otherOfferings = services.filter(
+  (s) => s.kind === 'offering' && s.id !== 'llmo-audit' && s.published !== false,
+);
 
 const samplePdf = `${base}files/llmo-audit-sample-legacydram.pdf`;
 
@@ -66,7 +68,7 @@ const authorityItems = [
 
 <Layout
   title="サービス・教材 — LLMO診断 / 教材 / 受託 | Propel-Lab"
-  description="Propel-Labにご依頼いただけるプロダクト化サービスと教材の一覧。LLMO診断レポート（¥98,000）と実装伴走、PDF教材（¥1,000）、LearningMate・AI-Loop・AutoCrewまで。価格・範囲を明示、商談なし。"
+  description="Propel-Labにご依頼いただけるプロダクト化サービスと教材の一覧。LLMO診断レポート（¥98,000）と実装伴走、PDF教材（¥1,000）、LearningMate（教育コンテンツ）まで。価格・範囲を明示、商談なし。"
 >
   <script slot="head" type="application/ld+json" set:html={JSON.stringify([llmoAuditServiceSchema])} />
   <Header />

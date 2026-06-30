@@ -43,14 +43,6 @@ LLM活用の教育コンテンツ企画・制作・販売。エンジニア、AI
 
 - 詳細: https://propel-lab.co.jp/learningmate/
 
-### AI-Loop — マーケティング自動化
-
-LLMエージェントによるSNS運用自動化・コンテンツマーケティング支援。企業のSNS担当者向け。
-
-### AutoCrew — 業務自動化コンサルティング
-
-LLMによる自動実行エージェント構成・業務最適化。マルチエージェント・MCP・CLI Skill を活用して業務効率化を求める企業を支援。
-
 ## 実績・信頼性
 
 - LLMO実践書5冊を継続出版（LLMOクイックスタート / AI検索最適化 / 店舗MEO×LLMO 等、Kindle/Zenn）

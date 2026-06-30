@@ -14,6 +14,8 @@ export interface Service {
   external_url?: string;
   price?: string;
   priceNote?: string;
+  /** false にするとサイト上の表示から除外される (データは保持、復活は true に戻すだけ) */
+  published?: boolean;
 }
 
 export const services: Service[] = [
@@ -34,6 +36,7 @@ export const services: Service[] = [
     target: 'エンジニア、AI活用を学びたい人',
     tech: ['Claude Code', 'Context Engineering'],
     platforms: ['Udemy', 'Zenn'],
+    external_url: '/learningmate/',
     kind: 'offering',
   },
   {
@@ -44,6 +47,7 @@ export const services: Service[] = [
     target: '企業のSNS担当者',
     tech: ['LLMエージェント', 'インプレッション分析'],
     kind: 'offering',
+    published: false,
   },
   {
     id: 'autocrew',
@@ -53,6 +57,7 @@ export const services: Service[] = [
     target: '業務効率化を求める企業',
     tech: ['マルチエージェント', 'MCP', 'CLI Skill'],
     kind: 'offering',
+    published: false,
   },
   {
     id: 'llmo-website-builder-pdf',

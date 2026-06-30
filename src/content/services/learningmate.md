@@ -2,6 +2,7 @@
 title: LearningMate
 category: 教育コンテンツ
 order: 1
+kind: offering
 ---
 
 # LearningMate — 教育コンテンツ

@@ -3,9 +3,12 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { company } from '../data/company';
+import { services } from '../data/services';
 import { llmoAuditServiceSchema } from '../lib/schemas';
 
 const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+
+const otherOfferings = services.filter((s) => s.kind === 'offering' && s.id !== 'llmo-audit');
 
 const samplePdf = `${base}files/llmo-audit-sample-legacydram.pdf`;
 
@@ -62,8 +65,8 @@ const authorityItems = [
 ---
 
 <Layout
-  title="ご依頼いただけるサービス — LLMO診断・実装伴走 | Propel-Lab"
-  description="Propel-Labにご依頼いただけるプロダクト化サービスの一覧。無料のllmo-checker（OSS）、LLMO診断レポート（¥98,000・納期2週間）、実装伴走（月額）の3段階。価格・範囲を明示し、フォーム申込で完結します。"
+  title="サービス・教材 — LLMO診断 / 教材 / 受託 | Propel-Lab"
+  description="Propel-Labにご依頼いただけるプロダクト化サービスと教材の一覧。LLMO診断レポート（¥98,000）と実装伴走、PDF教材（¥1,000）、LearningMate・AI-Loop・AutoCrewまで。価格・範囲を明示、商談なし。"
 >
   <script slot="head" type="application/ld+json" set:html={JSON.stringify([llmoAuditServiceSchema])} />
   <Header />
@@ -77,10 +80,10 @@ const authorityItems = [
             <span class="font-mono text-xs text-gold tracking-[0.2em] uppercase">Work With Us</span>
           </div>
           <h1 class="text-3xl lg:text-5xl font-bold text-charcoal leading-tight mb-6 fade-in-up stagger-1">
-            ご依頼いただけるサービス
+            サービス・教材
           </h1>
           <p class="text-mid text-base leading-[1.9] fade-in-up stagger-2">
-            Propel-Lab のサービスはすべて、範囲と価格を先に明示した「プロダクト化サービス」です。見積もりのための商談はありません。無料のセルフチェックから始めて、必要になった段階だけご利用ください。
+            Propel-Lab のサービスはすべて、範囲と価格を先に明示した「プロダクト化サービス」です。見積もりのための商談はありません。LLMO診断・実装伴走を主力に、PDF教材（¥1,000）から月額伴走まで、必要な段階だけご利用ください。
           </p>
         </div>
       </div>
@@ -169,6 +172,72 @@ const authorityItems = [
               <p class="text-mid text-xs leading-[1.8]">{item.detail}</p>
             </div>
           ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- 商品ラインナップ -->
+    <section class="py-20 lg:py-28 bg-sand grain-overlay blueprint-grid relative">
+      <div class="mx-auto max-w-7xl px-6 lg:px-12 relative z-10">
+        <div class="mb-14 max-w-2xl">
+          <div class="flex items-center gap-3 mb-4 fade-in-up">
+            <div class="w-8 h-px bg-gold"></div>
+            <span class="font-mono text-xs text-gold tracking-[0.2em] uppercase">Product Lineup</span>
+          </div>
+          <h2 class="text-3xl lg:text-4xl font-bold text-charcoal mb-4 fade-in-up stagger-1">商品ラインナップ</h2>
+          <p class="text-mid text-base leading-relaxed fade-in-up stagger-2">
+            LLMO診断以外にもご利用いただける商品・教材・受託サービスです。¥1,000 のPDF教材で自走を試したい方から、企業のSNS自動化・業務自動化のご相談まで、用途に応じてお選びください。
+          </p>
+        </div>
+        <div class="grid md:grid-cols-2 gap-6">
+          {otherOfferings.map((service, i) => {
+            const navHref = service.external_url ?? null;
+            const isExternal = !!navHref && /^https?:/.test(navHref);
+            return (
+              <div class={`flex flex-col bg-parchment border border-charcoal/8 p-7 lg:p-8 card-lift fade-in-up stagger-${(i % 4) + 1}`}>
+                <div class="mb-4">
+                  <h3 class="text-xl font-bold text-charcoal mb-1">
+                    {navHref ? (
+                      <a
+                        href={navHref}
+                        {...(isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                        class="hover:text-gold transition-colors"
+                      >
+                        {service.name} <span class="text-gold">{isExternal ? '↗' : '→'}</span>
+                      </a>
+                    ) : (
+                      service.name
+                    )}
+                  </h3>
+                  <p class="font-mono text-[11px] text-gold-muted tracking-wide uppercase">{service.category}</p>
+                </div>
+                {service.price && (
+                  <div class="mb-4">
+                    <span class="text-2xl font-bold text-charcoal">{service.price}</span>
+                    {service.priceNote && (
+                      <span class="ml-2 font-mono text-[11px] text-dim tracking-wide">{service.priceNote}</span>
+                    )}
+                  </div>
+                )}
+                <p class="text-mid text-sm leading-[1.8] mb-5 flex-1">{service.summary}</p>
+                <div class="text-xs text-dim mb-4">
+                  <span class="font-mono uppercase tracking-wide text-[10px] mr-2">対象</span>
+                  <span>{service.target}</span>
+                </div>
+                {service.platforms && (
+                  <div class="text-xs text-dim mb-4">
+                    <span class="font-mono uppercase tracking-wide text-[10px] mr-2">提供形態</span>
+                    <span>{service.platforms.join(', ')}</span>
+                  </div>
+                )}
+                <div class="flex flex-wrap gap-2 pt-2 border-t border-charcoal/8">
+                  {service.tech.map((t) => (
+                    <span class="text-[11px] px-2.5 py-1 bg-navy/5 text-navy rounded-full font-mono">{t}</span>
+                  ))}
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

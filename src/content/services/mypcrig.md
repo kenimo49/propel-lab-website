@@ -2,6 +2,7 @@
 title: mypcrig
 category: AI駆動コンテンツメディア
 order: 6
+kind: project
 ---
 
 # mypcrig — AI駆動コンテンツメディア

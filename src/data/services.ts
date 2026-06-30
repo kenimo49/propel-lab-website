@@ -1,3 +1,5 @@
+export type ServiceKind = 'offering' | 'project';
+
 export interface Service {
   id: string;
   name: string;
@@ -5,10 +7,13 @@ export interface Service {
   summary: string;
   target: string;
   tech: string[];
+  kind: ServiceKind;
   platforms?: string[];
   youtube?: string;
   characters?: string[];
   external_url?: string;
+  price?: string;
+  priceNote?: string;
 }
 
 export const services: Service[] = [
@@ -19,6 +24,7 @@ export const services: Service[] = [
     summary: 'AI検索（Perplexity / Claude / Gemini / ChatGPT）での被引用を実測し、P0/P1/P2の優先度付き改善ロードマップを納品 — 無料OSSのllmo-checkerから診断レポート、実装伴走まで範囲固定・商談なしの3段階',
     target: 'AI検索経由の流入を増やしたい事業者・メディア運営者',
     tech: ['LLMO', 'JSON-LD', 'llms.txt', 'AI引用実測', 'harness-ops'],
+    kind: 'offering',
   },
   {
     id: 'learningmate',
@@ -28,6 +34,7 @@ export const services: Service[] = [
     target: 'エンジニア、AI活用を学びたい人',
     tech: ['Claude Code', 'Context Engineering'],
     platforms: ['Udemy', 'Zenn'],
+    kind: 'offering',
   },
   {
     id: 'ai-loop',
@@ -36,6 +43,7 @@ export const services: Service[] = [
     summary: 'SNS運用自動化・コンテンツマーケティング支援',
     target: '企業のSNS担当者',
     tech: ['LLMエージェント', 'インプレッション分析'],
+    kind: 'offering',
   },
   {
     id: 'autocrew',
@@ -44,6 +52,20 @@ export const services: Service[] = [
     summary: 'LLMによる自動実行エージェント構成・業務最適化',
     target: '業務効率化を求める企業',
     tech: ['マルチエージェント', 'MCP', 'CLI Skill'],
+    kind: 'offering',
+  },
+  {
+    id: 'llmo-website-builder-pdf',
+    name: 'LLMOウェブサイト構築ガイド（PDF教材）',
+    category: 'PDF教材',
+    summary: 'AI検索に引用されるサイトの構築手順を54ページにまとめたPDF教材。Astro + JSON-LD + llms.txt + URL.md パターンを実装ベースで解説。診断・伴走の前段として「まずは自分で作ってみたい」方向け。',
+    target: 'AI検索対応サイトを自分で構築したいエンジニア・サイト運営者',
+    tech: ['LLMO', 'Astro', 'JSON-LD', 'llms.txt'],
+    platforms: ['PDF (Stripe Payment Link直販)'],
+    external_url: '/products/llmo-website-builder/',
+    price: '¥1,000',
+    priceNote: '54ページ・PDF即時ダウンロード',
+    kind: 'offering',
   },
   {
     id: 'kaoriq',
@@ -54,6 +76,7 @@ export const services: Service[] = [
     tech: ['LLMエージェント', 'Shopify API', 'LLMO', 'harness-ops'],
     platforms: ['kaoriq.com'],
     external_url: 'https://kaoriq.com/',
+    kind: 'project',
   },
   {
     id: 'mypcrig',
@@ -64,6 +87,7 @@ export const services: Service[] = [
     tech: ['LLMエージェント', 'GA4 + Search Console', 'harness-ops', 'iris-lab実機ベンチマーク'],
     platforms: ['mypcrig.com'],
     external_url: 'https://mypcrig.com/',
+    kind: 'project',
   },
   {
     id: 'legacydram',
@@ -74,6 +98,7 @@ export const services: Service[] = [
     tech: ['LLMエージェント', 'harness-ops', 'context-forge人物・銘柄DB', 'EN/JAバイリンガル'],
     platforms: ['legacydram.com'],
     external_url: 'https://legacydram.com/',
+    kind: 'project',
   },
   {
     id: 'yureru',
@@ -84,5 +109,6 @@ export const services: Service[] = [
     tech: ['Suno AI', 'Stable Diffusion', 'Canva', 'CapCut'],
     characters: ['Yumei（メイン）', 'Silk Reign（洋楽バラード）'],
     youtube: 'https://youtube.com/@Yureru-s4n',
+    kind: 'project',
   },
 ];

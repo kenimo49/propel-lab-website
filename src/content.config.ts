@@ -14,6 +14,7 @@ const services = defineCollection({
     title: z.string(),
     category: z.string(),
     order: z.number().optional(),
+    kind: z.enum(['offering', 'project']).optional(),
   }),
 });
 

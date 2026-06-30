@@ -2,6 +2,7 @@
 title: Yureru
 category: 音楽・クリエイティブ
 order: 4
+kind: project
 ---
 
 # Yureru — 音楽・クリエイティブ

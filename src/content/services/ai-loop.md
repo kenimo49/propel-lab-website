@@ -2,6 +2,7 @@
 title: AI-Loop
 category: マーケティング自動化
 order: 2
+kind: offering
 ---
 
 # AI-Loop — マーケティング自動化

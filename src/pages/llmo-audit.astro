@@ -529,6 +529,29 @@ const faqSchema = {
       </div>
     </section>
 
+    <!-- PDF教材エントリー (ライト導線) -->
+    <section class="py-16 lg:py-20 bg-cream grain-overlay relative">
+      <div class="mx-auto max-w-4xl px-6 lg:px-12 relative z-10">
+        <div class="bg-parchment border border-charcoal/8 p-8 lg:p-10 flex flex-col lg:flex-row items-start lg:items-center gap-6 lg:gap-10 fade-in-up">
+          <div class="flex-1">
+            <div class="font-mono text-xs text-gold tracking-[0.2em] uppercase mb-3">For Self-Builders</div>
+            <h2 class="text-xl lg:text-2xl font-bold text-charcoal mb-3">
+              まず自分で作ってみたい方へ — PDF教材 ¥1,000
+            </h2>
+            <p class="text-mid text-sm leading-[1.9]">
+              診断・伴走の前段として、LLMOフレームワーク準拠のサイトを自分で構築する手順をまとめた54ページのPDF教材を販売しています。診断を依頼する前にAstro + JSON-LD + llms.txt + URL.md の実装を一通り試したい方向け。
+            </p>
+          </div>
+          <a
+            href={`${base}products/llmo-website-builder/`}
+            class="shrink-0 inline-flex items-center gap-3 px-7 py-3.5 border border-charcoal/15 hover:border-gold/50 text-charcoal text-sm font-mono tracking-wide transition-colors duration-300"
+          >
+            PDF教材の詳細を見る <span class="text-gold">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
     <!-- 申込 -->
     <section id="apply" class="py-24 lg:py-32 bg-charcoal grain-overlay grain-overlay-dark relative overflow-hidden">
       <div class="absolute inset-0 opacity-[0.03]" style="background-image: linear-gradient(rgba(139, 105, 20, 0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(139, 105, 20, 0.5) 1px, transparent 1px); background-size: 48px 48px;"></div>

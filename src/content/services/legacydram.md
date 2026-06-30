@@ -2,6 +2,7 @@
 title: legacydram
 category: AI駆動キュレーションメディア
 order: 7
+kind: project
 ---
 
 # legacydram — AI駆動キュレーションメディア

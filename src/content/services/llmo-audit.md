@@ -2,6 +2,7 @@
 title: LLMO診断・実装伴走
 category: LLM最適化コンサルティング
 order: 0
+kind: offering
 ---
 
 # LLMO診断・実装伴走 — LLM最適化コンサルティング

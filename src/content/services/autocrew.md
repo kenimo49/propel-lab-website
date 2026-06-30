@@ -2,6 +2,7 @@
 title: AutoCrew
 category: 業務自動化コンサルティング
 order: 3
+kind: offering
 ---
 
 # AutoCrew — 業務自動化コンサルティング

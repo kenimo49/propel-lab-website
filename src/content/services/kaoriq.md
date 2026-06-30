@@ -2,6 +2,7 @@
 title: KaoriQ
 category: AI駆動EC自動運用
 order: 5
+kind: project
 ---
 
 # KaoriQ — AI駆動EC自動運用

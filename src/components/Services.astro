@@ -3,6 +3,9 @@ import { services } from '../data/services';
 
 const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
 
+// PDF教材は home grid に含めず、/services/ ページで個別カード表示
+const featured = services.filter((s) => s.id !== 'llmo-website-builder-pdf');
+
 const serviceImages: Record<string, string> = {
   'LLMO診断・実装伴走': 'llmo-audit-diagnostic.jpg',
   'LearningMate': 'learningmate-education.jpg',
@@ -24,13 +27,13 @@ const serviceImages: Record<string, string> = {
         <div class="w-8 h-px bg-gold"></div>
         <span class="font-mono text-xs text-gold tracking-[0.2em] uppercase">Services</span>
       </div>
-      <h2 class="text-3xl lg:text-4xl font-bold text-charcoal mb-4 fade-in-up stagger-1">事業紹介</h2>
-      <p class="text-mid text-base leading-relaxed fade-in-up stagger-2">AI・LLM技術を軸にした8つの事業を展開</p>
+      <h2 class="text-3xl lg:text-4xl font-bold text-charcoal mb-4 fade-in-up stagger-1">サービスと自社プロジェクト</h2>
+      <p class="text-mid text-base leading-relaxed fade-in-up stagger-2">LLMO診断・教材・受託サービスと、自社運営のLLMO実証プロジェクトを展開</p>
     </div>
 
     <!-- Service cards: varied layout -->
     <div class="space-y-6 lg:space-y-0 lg:grid lg:grid-cols-12 lg:gap-6">
-      {services.map((service, i) => {
+      {featured.map((service, i) => {
         // Alternating card sizes for 8 services: each row sums to 12 (7-5 / 5-7 …)
         const colSpan = i % 4 === 0 || i % 4 === 3 ? 'lg:col-span-7' : 'lg:col-span-5';
         const imgFile = serviceImages[service.name] || '';
@@ -91,13 +94,20 @@ const serviceImages: Record<string, string> = {
       })}
     </div>
 
-    <!-- Link equity to /products/ detail page -->
-    <div class="mt-12 lg:mt-16 flex justify-center fade-in-up">
+    <!-- Link equity to /services/ and /products/ detail pages -->
+    <div class="mt-12 lg:mt-16 flex flex-wrap justify-center gap-4 fade-in-up">
+      <a
+        href={`${base}services/`}
+        class="group inline-flex items-center gap-3 px-7 py-3.5 border border-charcoal/15 hover:border-gold/50 text-charcoal text-sm font-mono tracking-wide transition-colors duration-300"
+      >
+        サービス・教材を見る
+        <span class="text-gold group-hover:translate-x-1 transition-transform duration-300">→</span>
+      </a>
       <a
         href={`${base}products/`}
         class="group inline-flex items-center gap-3 px-7 py-3.5 border border-charcoal/15 hover:border-gold/50 text-charcoal text-sm font-mono tracking-wide transition-colors duration-300"
       >
-        8事業の詳細を見る
+        自社プロジェクトを見る
         <span class="text-gold group-hover:translate-x-1 transition-transform duration-300">→</span>
       </a>
     </div>
